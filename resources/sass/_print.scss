@@ -1,0 +1,19 @@
+@media print {
+    .right-nav,
+    .pagination_wrapper,
+    button,
+    input,
+    select,
+    .select2,
+    .btn,
+    .form-group,
+    .custom-checkbox,
+    header {
+        display: none !important;
+        visibility: hidden !important;
+    }
+
+    .left-section {
+        width: 100% !important;
+    }
+}

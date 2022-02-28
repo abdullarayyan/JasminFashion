@@ -1,0 +1,236 @@
+/* Header style */
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 80px;
+    background-color: $primary-color;
+    box-shadow: 0 2px 4px #a4a4a4;
+    padding: 10px 30px;
+}
+
+header .logo-wrapper, header .logo-wrapper a {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+header .logo-wrapper .bx-menu {
+    font-size: 30px;
+    margin-left: 20px;
+    color: $text;
+    cursor: pointer;
+}
+
+header .logo {
+    height: 50px;
+    width: 50px;
+    overflow: hidden;
+    border-radius: 25px;
+}
+
+header .logo img {
+    max-height: 100%;
+    max-width: 100%;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+header .logo-wrapper .logo-title {
+    color: $secondary-color;
+    font-size: 25px;
+    white-space: nowrap;
+    padding: 0 15px;
+}
+
+header .left {
+    display: flex;
+    align-items: center;
+    padding-left: 15px;
+}
+
+header .left i {
+    padding: 6px;
+    background-color: rgba(119, 163, 142, 0.5);
+    border-radius: 50px;
+    color: $text;
+    cursor: pointer;
+    position: relative;
+}
+
+header .left i.bxs-chevron-down {
+    position: absolute;
+    top: 6px;
+    left: -20px;
+}
+
+header .dropdown-toggle::after {
+    display: none;
+}
+
+header .dropdown-menu.dropdown-menu-right.show {
+    top: 30px !important;
+    left: 20px !important;
+
+    a.dropdown-item {
+        text-align: center;
+        padding-bottom: 8px;
+
+        &:active,
+        &:hover {
+            background-color: $primary-lighten !important;
+            color: $text;
+        }
+    }
+}
+
+header .left .bx-bell {
+    &::after {
+        content: '';
+        position: absolute;
+        top: 0px;
+        right: 0px;
+        display: block;
+        width: 7px;
+        height: 7px;
+        border-radius: 10px;
+        background-color: #fa3a27;
+    }
+
+    &.hide_new {
+        &::after {
+            display: none;
+        }
+    }
+}
+
+header .left .profile {
+    display: flex;
+    padding: 0 15px;
+    position: relative;
+}
+
+header .left .bx-cog {
+    margin-left: 15px;
+}
+
+header .left .profile-name {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    font-weight: 600;
+    line-height: 18px;
+}
+
+header .left .name {
+    color: $text;
+}
+
+header .left .job-name {
+    color: $secondary-color;
+}
+
+header .left .profile-image {
+    width: 35px;
+    height: 35px;
+    margin-left: 15px;
+    background-color: white;
+    border-radius: 30px;
+}
+
+header .left .actions {
+    position: relative;
+}
+
+header .left .actions .tooltip {
+    display: none;
+    position: absolute;
+    left: 3px;
+    top: 35px;
+    border: 0;
+    padding: 0;
+    z-index: 22222222;
+    background-color: #fff;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1), 0 0 20px 0 rgba(0, 0, 0, 0.1);
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+body.show-tooltip header .left .actions .tooltip {
+    display: block;
+}
+
+header .left .actions .tooltip .arrow::before {
+    content: '';
+    position: absolute;
+    left: 13px;
+    top: -6px;
+    border-width: 6px;
+    border-bottom: 10px solid #fff;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    transform: translateX(-50%);
+}
+
+header .left .actions .tooltip ul {
+    margin: 10px 0;
+}
+
+header .left .actions .tooltip ul li {
+    margin: 3px 0;
+    min-height: auto;
+    line-height: 25px;
+    display: flex;
+    align-items: center;
+    padding: 3px 15px;
+    white-space: nowrap;
+    cursor: pointer;
+}
+
+header .left .actions .tooltip ul li:hover {
+    background-color: $primary-lighten;
+    color: $text;
+}
+
+@media screen and (max-width: 600px) {
+    header {
+        padding: 10px;
+    }
+    header .logo-wrapper .logo-title {
+        display: none;
+    }
+    body .main-section {
+        padding: 10px !important;
+    }
+    header .left .bx-cog {
+        margin-left: 7px;
+    }
+    header .left .profile {
+        padding: 0 7px;
+    }
+    header .logo-wrapper .bx-menu {
+        margin-left: 7px;
+    }
+}
+
+@media screen and (max-width: 360px) {
+    header .logo-wrapper .bx-menu {
+        font-size: 25px;
+    }
+    header .logo {
+        height: 40px;
+        width: 40px;
+    }
+    header .left .profile {
+        padding: 0 10px;
+    }
+    header .left .profile-image {
+        width: 30px;
+        height: 30px;
+    }
+    header i {
+        font-size: 12px;
+    }
+}

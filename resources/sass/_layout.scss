@@ -1,0 +1,340 @@
+body .main-section {
+    min-height: 85vh;
+    padding: 20px 30px;
+    display: flex;
+}
+
+body .main-section .right-nav {
+    width: 0;
+    opacity: 0;
+    pointer-events: none;
+    max-width: 280px;
+    height: 100%;
+    background-color: $primary-lighten;
+    color: $text;
+    font-size: 18px;
+    border-radius: 5px;
+    transition: all 0.2s;
+}
+
+body.menu-open .main-section .right-nav {
+    width: 280px;
+    opacity: 1;
+    pointer-events: all;
+    transition: all 0.2s;
+}
+
+@media screen and (max-width: 768px) {
+    body.menu-open .main-section .right-nav {
+        width: 100%;
+        max-width: none;
+        transition: all 0.2s;
+    }
+}
+
+body .right-nav ul.level1 a,
+body .right-nav ul.level1 span {
+    padding: 10px 20px;
+    display: flex;
+    color: $secondary-color;
+    background-color: $primary-color;
+    border-radius: 5px;
+}
+
+ul.level2 li {
+    margin: 5px 0;
+
+    &.active {
+        background-color: #328974;
+    }
+}
+
+body .right-nav ul.level1 a:hover {
+    background-color: #328974;
+}
+
+body .right-nav ul.level2 a {
+    color: $text;
+    background-color: transparent;
+}
+
+body .main-section .left-section {
+    width: 100%;
+    padding-right: 0;
+    transition: all 0.2s;
+}
+
+body .left-section {
+    width: 100%;
+    padding-right: 0;
+    transition: all 0.2s;
+
+    .page-title {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        margin: 15px 0;
+
+        h1 {
+            text-align: center;
+
+            @media screen and (max-width: 768px) {
+                font-size: 20px !important;
+            }
+        }
+    }
+}
+
+body.menu-open .main-section .left-section.auth {
+    width: calc(100% - 230px);
+    padding-right: 20px;
+    transition: all 0.2s;
+    overflow-x: hidden;
+}
+
+.card-section.login {
+    max-width: 400px;
+    margin: auto;
+}
+
+@media screen and (max-width: 768px) {
+    body.menu-open .main-section .left-section.auth {
+        width: 0;
+        height: 0;
+        padding: 0;
+        display: none;
+    }
+}
+
+body .main-section .left-section .page-title h1 {
+    color: $primary-color;
+    font-size: 30px;
+    margin: 15px 0;
+    font-weight: normal;
+}
+
+body .main-section .card-section {
+    background-color: white;
+    padding: 20px 30px;
+    border-radius: 5px;
+}
+
+@media screen and (max-width: 768px) {
+    body .main-section .card-section .results {
+        margin-top: 0;
+    }
+}
+
+body .main-section .card-section h3.title {
+    color: $primary-color;
+    font-size: 21px;
+    margin: 0 0 10px;
+    font-weight: normal;
+}
+
+body .main-section .date-picker {
+    margin-top: 20px;
+}
+
+body .main-section .date-picker label {
+    margin-left: 10px;
+    margin-bottom: 20px;
+}
+
+body .main-section .date-picker form {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+body .main-section .date-picker form > div {
+    width: 45%;
+    display: flex;
+    align-items: center;
+    flex-wrap: nowrap;
+}
+
+body .main-section input[type="date"] {
+    border-width: 1px;
+    border-radius: 3px;
+    width: 100%;
+}
+
+body .main-section input[type="date"]::-webkit-calendar-picker-indicator {
+    cursor: pointer;
+}
+
+body .card-section .results {
+    margin: 25px -10px -20px -10px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+}
+
+body .card-section .results .card-wrapper {
+    margin-bottom: 20px;
+    display: flex;
+}
+
+body .card-section .results .card-wrapper a {
+    background-color: $primary-color;
+    color: $secondary-color;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0 10px;
+    padding: 35px 30px 30px;
+    border-radius: 10px;
+    width: 100%;
+}
+
+body .card-section .results .label {
+    font-size: 25px;
+    text-align: center;
+}
+
+body .card-section .results .value {
+    font-size: 22px;
+    margin-top: 5px;
+    text-align: center;
+}
+
+@media screen and (min-width: 1400px) {
+    body .card-section .results .card-wrapper {
+        width: 25%;
+    }
+}
+
+@media screen and (max-width: 1400px) {
+    body .card-section .results .card-wrapper {
+        width: 33.33%;
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    body .card-section .results .card-wrapper {
+        width: 50%;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    body .card-section .results .card-wrapper,
+    body .main-section .date-picker form > div {
+        width: 100%;
+    }
+}
+
+form.custom-form {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 -10px;
+}
+
+form.custom-form > div {
+    width: 50%;
+    box-sizing: border-box;
+    padding: 0 10px;
+    margin-bottom: 0 !important;
+}
+
+@media screen and (max-width: 520px) {
+    form.custom-form > div {
+        width: 100%;
+    }
+}
+
+.add_warranty-section {
+    display: flex;
+    margin-bottom: 50px;
+}
+
+@media screen and (min-width: 521px) {
+    .add_warranty-section .card-section {
+        height: 90%;
+    }
+}
+
+.add_warranty-section .left-card,
+.add_warranty-section .right-card {
+    width: 50%;
+}
+
+.add_warranty-section .right-card {
+    margin-left: 15px;
+}
+
+.add_warranty-section .left-card {
+    margin-right: 15px;
+}
+
+@media screen and (max-width: 768px) {
+    .add_warranty-section {
+        flex-wrap: wrap;
+        margin: 0;
+    }
+    .add_warranty-section .left-card,
+    .add_warranty-section .right-card {
+        width: 100%;
+        margin: 0 0 30px 0;
+    }
+}
+
+.add_warranty-section .left-card form input {
+    width: 100%;
+    max-width: 350px;
+    margin-left: 0;
+    margin-right: 0;
+}
+
+.add_warranty-section .left-card form .form-group {
+    width: 100%;
+    max-width: 350px;
+    margin-left: 0;
+    margin-right: 0;
+}
+
+.sponsor_name_wrapper {
+    display: flex;
+    align-items: center;
+
+    i {
+        font-size: 35px;
+        margin-right: 10px;
+        color: $primary-color;
+        cursor: pointer;
+    }
+}
+
+.children-names {
+    max-width: 500px;
+    font-size: 18px;
+    background-color: #f3f2f3;
+    margin-top: 25px;
+    max-height: 308px;
+    overflow-y: auto;
+    overflow-x: hidden;
+
+    &::-webkit-scrollbar {
+        width: 5px;
+        border-radius: 5px;
+        background-color: #f3f2f3;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        border-radius: 5px;
+        background-color: $primary-color;
+    }
+}
+
+.children-names li {
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.children-names li:nth-child(even) {
+    background-color: $light-gray;
+}

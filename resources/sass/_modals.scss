@@ -1,0 +1,39 @@
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    button.close {
+        margin: 0;
+        padding: 0;
+        padding-bottom: 5px;
+    }
+}
+
+.modal-body {
+    padding: 30px 20px;
+}
+
+.modal-footer,
+.modal-header {
+    padding: 20px 20px;
+}
+
+.modal-footer {
+    button[type="submit"] {
+        margin: 0 20px;
+    }
+}
+
+.modal {
+    top: 71px;
+
+    button.close:focus {
+        border: 0;
+        outline: 0;
+    }
+}
+
+.modal-dialog {
+    max-width: 900px;
+}

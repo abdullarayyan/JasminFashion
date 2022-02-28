@@ -1,0 +1,92 @@
+body {
+    margin: 0;
+    padding: 0;
+    line-height: 20px;
+    text-align: right;
+    background-color: $gray;
+    box-sizing: border-box;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
+    font-family: "Nunito", sans-serif;
+}
+
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.full-width {
+    width: 100% !important;
+}
+
+
+.hide {
+    display: none;
+}
+
+.select2-container--disabled {
+    background-color: #eee;
+}
+
+.text-red {
+    color: #dc3545;
+}
+
+.clickable {
+    cursor: pointer;
+
+    i {
+        font-size: 10px;
+    }
+}
+
+.actions_cell i {
+    color: #dc3545;
+    cursor: pointer;
+    font-size: 20px;
+}
+
+#add_sponsor_modal .modal-dialog {
+    max-width: 700px;
+}
+
+.soon,
+.draft,
+.merchant {
+    background-color: #f7a752;
+    border-radius: 10px;
+    padding: 0 7px;
+    color: #ffffff;
+    font-size: 13px;
+}
+
+.card-section {
+    .header {
+        display: flex;
+        justify-content: space-between;
+    }
+}
+
+.card_title {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 25px;
+    font-size: 18px;
+}
+
+.hide-on-print {
+    @media print {
+        display: none !important;
+    }
+}

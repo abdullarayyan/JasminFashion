@@ -1,21 +1,20 @@
 @extends('layouts.app')
 
 @section('title', 'تسجيل الدخول')
-@if(1==2)
 @section('page_title', 'تسجيل الدخول')
-@endif
 
 @section('content')
-    <section class="">
+    <section class="height-80 text-center">
         <div class="container ">
+
             <div class="row">
-                <div class="">
-                    <h2 style="display: flex; justify-content: center">تسجيل الدخول</h2>
-                    <p style="display: flex; justify-content: center" class="lead">
+                <div class="col-md-7 col-lg-5">
+                    <h2>تسجيل الدخول</h2>
+                    <p class="lead">
                         مرحبا بك، قم بادخال بياناتك هنا
                     </p>
                     <form action="{{route("login")}}" method="post">
-{{--                        @include("customers.messages")--}}
+                        {{--                        @include("customers.messages")--}}
                         {{csrf_field()}}
                         <div class="row">
                             <div class="col-md-12">
@@ -40,15 +39,14 @@
                         </div>
                         <!--end of row-->
                     </form>
-                    <span style="display: flex; justify-content: center" class="type--fine-print block">ليس لديك حساب ؟
+                    <span style="" class="type--fine-print block">ليس لديك حساب ؟
                                 <a href="{{route("register")}}">سجل الان</a>
                             </span>
-                    <span style="display: flex; justify-content: center" class="type--fine-print block">نسيت كلمة المرور ؟
+                    <span style="" class="type--fine-print block">نسيت كلمة المرور ؟
                                 <a href="{{route("password.request")}}">إستعادة كلمة المرور</a>
                             </span>
                 </div>
             </div>
         </div>
-        <!--end of container-->
     </section>
 @endsection

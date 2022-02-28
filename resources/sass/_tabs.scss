@@ -1,0 +1,40 @@
+.nav-tabs {
+    margin-bottom: 20px;
+
+    .nav-link {
+        border: 0;
+        padding-bottom: 15px;
+        transition: 0.3s ease;
+        position: relative;
+        font-weight: 500;
+
+        &::before {
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            content: "";
+            height: 2px;
+            width: 0;
+            background-color: $primary-color;
+            transition: 0.5s ease;
+        }
+
+        &,
+        .nav-link.disabled {
+            color: #212529 !important;
+        }
+
+        &.active {
+            color: $primary-color !important;
+            transition: 0.3s ease;
+
+            &::before {
+                width: 100%;
+            }
+        }
+    }
+
+    .nav-item {
+        margin-bottom: 0;
+    }
+}

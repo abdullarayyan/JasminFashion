@@ -1,14 +1,14 @@
 @extends('layouts.app')
 
-@section('content')
-    <div class="container">
+@section("content")
+    <section class="height-80 text-center">
         <div class="container ">
 
 
             <div class="row">
                 <div class="col-md-7 col-lg-5">
-                    <h2 style="display: flex; justify-content: center">تسجيل حساب جديد</h2>
-                    <p style="display: flex; justify-content: center" class="lead">
+                    <h2>تسجيل حساب جديد</h2>
+                    <p class="lead">
                         مرحبا بك، قم بادخال بياناتك هنا
                     </p>
                     <form action="{{route("register")}}" method="post">
@@ -32,48 +32,31 @@
                         <div class="row">
                             <div class="col-md-12">
                                 <input type="text" name="name" value="{{request()->old("name")}}" placeholder="الاسم">
-                                @error('name')
-                                <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
                             </div>
-
+{{--                            <div class="col-md-6">--}}
+{{--                                <input type="text" name="last_name" value="{{request()->old("last_name")}}" placeholder="الاسم الاخير">--}}
+{{--                            </div>--}}
                             <div class="col-md-12">
-                                <input type="email" class="form-control @error('email') is-invalid @enderror" required
-                                       name="email" value="{{request()->old("email")}}" placeholder="البريد الالكتروني">
-                                @error('email')
-                                <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
+                                <input type="text" name="email" value="{{request()->old("email")}}" placeholder="البريد الالكتروني">
                             </div>
                             <div class="col-md-12">
-                                <input type="password" class="form-control @error('password') is-invalid @enderror"
-                                       required name="password" placeholder="كلمة المرور">
-                                @error('password')
-                                <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
+                                <input type="password" name="password" placeholder="كلمة المرور">
                             </div>
                             <div class="col-md-12">
-                                <input type="password" class="form-control" name="password_confirmation" required
-                                       placeholder="تأكيد كلمة المرور">
+                                <input type="password" name="password_confirmation" placeholder="تأكيد كلمة المرور">
                             </div>
-
                             <div class="col-md-12">
                                 <button class="btn btn--primary type--uppercase" type="submit">تسجيل</button>
                             </div>
 
                         </div>
-                        <!--end of row-->
+                            <!--end of row-->
                     </form>
-                    <span style="display: flex; justify-content: center" class="type--fine-print block"> لديك حساب ؟
+                    <span class="type--fine-print block"> لديك حساب ؟
                                 <a href="{{route("login")}}">تسجيل الدخول</a>
                             </span>
                 </div>
-            </div>
-        </div>
-    </div>
+            </div>        </div>
+        <!--end of container-->
+    </section>
 @endsection

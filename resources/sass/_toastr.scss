@@ -1,0 +1,12 @@
+#toast-container {
+    div.toast {
+        background-image: none !important;
+        opacity: 1;
+        padding: 15px 20px !important;
+        width: auto;
+
+        &:hover {
+            box-shadow: 0 0 12px #999 !important;
+        }
+    }
+}

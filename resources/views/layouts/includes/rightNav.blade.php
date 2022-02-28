@@ -89,26 +89,29 @@
 {{--        </ul>--}}
 {{--    </ul>--}}
 
-{{--    <ul class="level1">--}}
-{{--        <li>--}}
-{{--            <span>الرسائل</span>--}}
-{{--        </li>--}}
-{{--        <ul class="level2">--}}
+    <ul class="level1">
+        <li>
+            <span>المتجر</span>
+        </li>
+        <ul class="level2">
 
-{{--            <li>--}}
-{{--                <a href="{{ url('message-template') }}">انشاء رسالة</a>--}}
-{{--            </li>--}}
+            <li>
+                <a href="#">الموديلات</a>
+            </li>
 
-{{--        </ul>--}}
+        </ul>
 
-{{--        <ul class="level2">--}}
+        <ul class="level2">
+<hr style="margin: 0">
+            <li>
+                <a href="/product"> عرض الموديلات <i class="fa fa-eye" style="margin: 10px"></i></a>
+            </li>
+            <hr style="margin: 0">
 
-{{--            <li>--}}
-{{--                <a href="{{ url('group-message') }}">--}}
-{{--                    مجموعات الرسائل--}}
-{{--                </a>--}}
-{{--            </li>--}}
-
-{{--        </ul>--}}
-{{--    </ul>--}}
+            <li>
+                <a href="/product/create">  اضافة موديل<i class="fa fa-plus" style="margin: 10px"></i>
+                </a>
+            </li>
+        </ul>
+    </ul>
 </div>

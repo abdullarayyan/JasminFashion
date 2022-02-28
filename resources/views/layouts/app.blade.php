@@ -119,10 +119,10 @@
 
 <!-- Page -->
     <section class="left-section @auth auth @endauth">
-{{--        <div class="page-title">--}}
-{{--            <h1 id="previousPageTitle"></h1>--}}
-{{--            <h1>@yield('page_title')</h1>--}}
-{{--        </div>--}}
+        <div class="page-title">
+            <h1 id="previousPageTitle"></h1>
+            <h1>@yield('page_title')</h1>
+        </div>
 
         @yield('content')
     </section>
