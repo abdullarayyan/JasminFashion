@@ -68,7 +68,7 @@ class ProductController extends Controller
        $data =$request->except(['_token']);
        Product::query()->insert($data);
 
-        return redirect(url('/product'))->with('success', 'تم اضافة الموديل بنجاح');
+        return redirect(url('/product'))->with('success', 'تم اضافة البدلات زفاف بنجاح');
 
     }
 
@@ -144,7 +144,7 @@ class ProductController extends Controller
 
         $product->delete();
 
-        return redirect(url('/product'))->with('success', 'تم حذف الموديل بنجاح');
+        return redirect(url('/product'))->with('success', 'تم حذف البدلات زفاف بنجاح');
 
     }
 }

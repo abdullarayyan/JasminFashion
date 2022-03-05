@@ -1,7 +1,7 @@
 @extends("layouts.app")
 
-@section('title', 'موديل')
-@section('page_title', 'الموديلات')
+@section('title', 'بدلات زفاف')
+@section('page_title', 'البدلات زفافات')
 
 @section('css')
     <style>
@@ -29,7 +29,7 @@
     <div class="card-section">
         <div class="actions">
             <a href="{{route("product.create")}}" class="btn btn-primary" style="background-color: #fcefba!important;">
-                <i class="fa fa-plus"></i> اضافة موديل </a>
+                <i class="fa fa-plus"></i> اضافة بدلات زفاف </a>
         </div>
         <div class="actions">
             <input type="hidden" name="filter" value="" id="hidden_filter">
@@ -57,7 +57,7 @@
                                 <thead>
                                 <tr>
                                     <th class="clickable full_name_head">
-                                        صورة الموديل
+                                        صورة البدلات زفاف
                                         <i class='bx bxs-up-arrow'></i>
                                     </th>
                                     <th class="clickable full_name_head">
@@ -65,7 +65,7 @@
                                         <i class='bx bxs-up-arrow'></i>
                                     </th>
                                     <th class="clickable idc_head">
-                                        الموديل
+                                        البدلات زفاف
                                         <i class='bx bxs-up-arrow'></i>
                                     </th>
                                     <th class="clickable nationality_head">
@@ -111,7 +111,7 @@
                                     </td>
 
                                     <td>
-                                        {{Form::text("model",Request::get("title",NULL),['class'=>"form-control form-filter input-sm",'placeholder'=>'الموديل'])}}
+                                        {{Form::text("model",Request::get("title",NULL),['class'=>"form-control form-filter input-sm",'placeholder'=>'البدلات زفاف'])}}
                                     </td>
                                     <td>
                                         {{Form::text("code",Request::get("title",NULL),['class'=>"form-control form-filter input-sm",'placeholder'=>'بحث بواسطة الكود'])}}

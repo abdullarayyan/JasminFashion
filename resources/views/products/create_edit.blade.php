@@ -1,8 +1,8 @@
 @extends('layouts.app')
 
 
-@section('title', 'اضافة موديل')
-@section('page_title', 'اضافة موديل')
+@section('title', 'اضافة بدلات زفاف')
+@section('page_title', 'اضافة بدلات زفاف')
 
 @section('css')
     <style>
@@ -93,7 +93,7 @@
             @enderror
         </div>
         <div class="form-group">
-            <label for="model"><span class="required_lbl">*</span>{{ __('موديل القطعه') }}</label>
+            <label for="model"><span class="required_lbl">*</span>{{ __('بدلات زفاف القطعه') }}</label>
             <input id="model" type="text" class="form-control required @error('model') is-invalid @enderror"
                    name="model" value="{{ $product->model??old('model')  }}" required
                    autocomplete="name">

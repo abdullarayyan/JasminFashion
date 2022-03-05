@@ -96,7 +96,7 @@
         <ul class="level2">
 
             <li>
-                <a href="#">الموديلات</a>
+                <a href="#">البدلات زفافات</a>
             </li>
 
         </ul>
@@ -104,12 +104,12 @@
         <ul class="level2">
 <hr style="margin: 0">
             <li>
-                <a href="/product"> عرض الموديلات <i class="fa fa-eye" style="margin: 10px"></i></a>
+                <a href="/product"> عرض البدلات زفافات <i class="fa fa-eye" style="margin: 10px"></i></a>
             </li>
             <hr style="margin: 0">
 
             <li>
-                <a href="/product/create">  اضافة موديل<i class="fa fa-plus" style="margin: 10px"></i>
+                <a href="/product/create">  اضافة بدلات زفاف<i class="fa fa-plus" style="margin: 10px"></i>
                 </a>
             </li>
         </ul>
