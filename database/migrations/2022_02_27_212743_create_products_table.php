@@ -21,6 +21,8 @@ class CreateProductsTable extends Migration
             $table->boolean('status')->default(false);
             $table->string('code')->nullable();
             $table->string('color')->nullable();
+            $table->string('img')->nullable();
+            $table->string('file')->nullable();
             $table->string('description')->nullable();
             $table->boolean('sale')->default(false);
 

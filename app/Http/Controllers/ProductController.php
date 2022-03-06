@@ -14,7 +14,7 @@ class ProductController extends Controller
      */
     public function index(Request $request)
     {
-        $products = Product::select("*")->orderBy("id","desc");
+        $products = Product::select("*")->orderBy("id", "desc");
         $status = $request->input('status', 0);
         $model = $request->input('model', NULL);
         switch ($status) {
@@ -54,19 +54,30 @@ class ProductController extends Controller
      */
     public function store(Request $request)
     {
+//dd($request->file->extension());
 
-       $this->validate($request,[
-           'name'=>'required',
-           'color'=>'required',
-           'description'=>'required',
-           'size'=>'required',
-           'sale'=>'required',
-           'status'=>'required',
-           'model'=>'required',
-           'code'=>'required',
-       ]);
-       $data =$request->except(['_token']);
-       Product::query()->insert($data);
+
+        $this->validate($request, [
+            'name' => 'required',
+            'color' => 'required',
+            'description' => 'required',
+            'size' => 'required',
+            'sale' => 'required',
+            'status' => 'required',
+            'model' => 'required',
+            'code' => 'required',
+            'file' => [
+                'required',
+                'file',
+                'mimes:jpg,jpeg,png',
+                'max:1024'
+            ],
+        ]);
+        $imgName = time() . '-' . $request->name . '.' . $request->file('file')->extension();
+//dd($imgName);
+        $request->file->move(public_path('images'), $imgName);
+        $data = $request->except(['_token']);
+        Product::query()->insert($data);
 
         return redirect(url('/product'))->with('success', 'تم اضافة البدلات زفاف بنجاح');
 
@@ -107,16 +118,25 @@ class ProductController extends Controller
 //        dd($request->all());
 //        $product =Product::query()->firstOrFail($product);
 
-        $this->validate($request,[
-            'name'=>'required',
-            'color'=>'required',
-            'description'=>'required',
-            'size'=>'required',
-            'sale'=>'required',
-            'status'=>'required',
-            'model'=>'required',
-            'code'=>'required',
+        $this->validate($request, [
+            'name' => 'required',
+            'color' => 'required',
+            'description' => 'required',
+            'size' => 'required',
+            'sale' => 'required',
+            'status' => 'required',
+            'model' => 'required',
+            'code' => 'required',
+            'file' => [
+                'required',
+                'file',
+                'mimes:jpg,jpeg,png',
+                'max:1024'
+            ],
         ]);
+        $imgName = time() . '-' . $request->name . '.' . $request->file('file')->extension();
+//dd($imgName);
+        $request->file->move(public_path('images'), $imgName);
 
         $product->name = $request->name;
         $product->color = $request->color;
@@ -126,6 +146,8 @@ class ProductController extends Controller
         $product->status = $request->status;
         $product->model = $request->model;
         $product->code = $request->code;
+        $product->file = $imgName;
+
         $product->save();
 
 

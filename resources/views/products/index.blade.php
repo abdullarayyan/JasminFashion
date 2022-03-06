@@ -1,7 +1,7 @@
 @extends("layouts.app")
 
-@section('title', 'بدلات زفاف')
-@section('page_title', 'البدلات زفافات')
+@section('title', "فساتين الزفاف")
+@section('page_title', 'فساتين زفافات')
 
 @section('css')
     <style>
@@ -29,7 +29,7 @@
     <div class="card-section">
         <div class="actions">
             <a href="{{route("product.create")}}" class="btn btn-primary" style="background-color: #fcefba!important;">
-                <i class="fa fa-plus"></i> اضافة بدلات زفاف </a>
+                <i class="fa fa-plus"></i> اضافة فستان </a>
         </div>
         <div class="actions">
             <input type="hidden" name="filter" value="" id="hidden_filter">
@@ -57,7 +57,7 @@
                                 <thead>
                                 <tr>
                                     <th class="clickable full_name_head">
-                                        صورة البدلات زفاف
+                                        صور الفساتين
                                         <i class='bx bxs-up-arrow'></i>
                                     </th>
                                     <th class="clickable full_name_head">
@@ -65,7 +65,7 @@
                                         <i class='bx bxs-up-arrow'></i>
                                     </th>
                                     <th class="clickable idc_head">
-                                        البدلات زفاف
+                                        الموديل
                                         <i class='bx bxs-up-arrow'></i>
                                     </th>
                                     <th class="clickable nationality_head">
@@ -111,7 +111,7 @@
                                     </td>
 
                                     <td>
-                                        {{Form::text("model",Request::get("title",NULL),['class'=>"form-control form-filter input-sm",'placeholder'=>'البدلات زفاف'])}}
+                                        {{Form::text("model",Request::get("title",NULL),['class'=>"form-control form-filter input-sm",'placeholder'=>'المودبل'])}}
                                     </td>
                                     <td>
                                         {{Form::text("code",Request::get("title",NULL),['class'=>"form-control form-filter input-sm",'placeholder'=>'بحث بواسطة الكود'])}}
@@ -142,7 +142,8 @@
                                 @forelse($products as $product)
                                     <tr>
                                         <td>
-                                            <img alt="Image" src="{{ $product->image }}" style="max-width: 100%;">
+                                            <img alt="Image" src="{{ asset('images/').'/'.$product->file }}" style="max-width: 100px;
+    max-height: 100%;" class="w-100 shadow-xl">
                                         </td>
                                         <td>
                                             {{$product->name}}
@@ -182,13 +183,14 @@
                                         </td>
 
                                         <td>
-                                                {{Form::open(['route'=>["product.destroy",$product->id],'method'=>"delete"])}}
-                                                <a href="{{url('/product/'.$product->id.'/edit')}}"
-                                                   class="btn btn-info btn-sm" style="background-color: #0cdcff" title="Edit"><i
-                                                        class="fa fa-edit"></i> @lang("تعديل")</a>
-                                                <button onclick="return confirm('are you sure?')" type="submit"
-                                                        class="btn btn-danger btn-sm" title="Delete"><i
-                                                        class="fa fa-trash"></i> @lang("حذف")</button>
+                                            {{Form::open(['route'=>["product.destroy",$product->id],'method'=>"delete"])}}
+                                            <a href="{{url('/product/'.$product->id.'/edit')}}"
+                                               class="btn btn-info btn-sm" style="background-color: #0cdcff"
+                                               title="Edit"><i
+                                                    class="fa fa-edit"></i> @lang("تعديل")</a>
+                                            <button onclick="return confirm('are you sure?')" type="submit"
+                                                    class="btn btn-danger btn-sm" title="Delete"><i
+                                                    class="fa fa-trash"></i> @lang("حذف")</button>
 
                                             {!! Form::close() !!}
                                         </td>
