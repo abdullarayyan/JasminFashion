@@ -57,6 +57,9 @@
             font-size: 14px;
         }
 
+        .select2 .select2-container .select2-container--default {
+            border: 1px solid #fcefba !important;
+        }
     </style>
 @endsection
 
@@ -83,7 +86,8 @@
         <div class="form-group">
             <label for="code"><span class="required_lbl">*</span>{{ __('كود القطعه') }}</label>
             <input id="code" type="text" class="form-control required @error('code') is-invalid @enderror"
-                   name="code" value="{{ "#".Haruncpi\LaravelIdGenerator\IdGenerator::generate(['table' => 'products', 'length' => 5, 'prefix' =>\App\classes\IHouse::getSequenceProduct()]) }}"
+                   name="code"
+                   value="{{ "#".Haruncpi\LaravelIdGenerator\IdGenerator::generate(['table' => 'products', 'length' => 5, 'prefix' =>\App\classes\IHouse::getSequenceProduct()]) }}"
 
                    required
                    autocomplete="code">
@@ -118,18 +122,16 @@
             </span>
             @enderror
         </div>
+
         <div class="form-group">
-            <label for="size"><span class="required_lbl">*</span>{{ __('الحجم') }}</label>
-            <select class="js-example-basic-single" name="size">
-                <option value="{{$product->exists?$product->size:''}}">{{$product->exists?$product->size:''}}</option>
-                <option value="small">Small</option>
-                ...
-                <option value="medium">Medium</option>
-                <option value="large">Large</option>
-                <option value="x-large">X-Large</option>
+            <label for="sale"><span class="required_lbl">*</span>{{ __('الخصم') }}</label>
+            <select class="js-example-basic-single" name="sale">
+                <option value="" selected></option>
+
+                <option {{$product->status==1?'selected' : ''}} value="1">مسموح</option>
+                <option {{$product->status==0?'selected' : ''}} value="0">غير مسموح</option>
             </select>
         </div>
-
         <div class="form-group">
             <label for="status"><span class="required_lbl">*</span>{{ __('الحالة') }}</label>
             <select class="js-example-basic-single" name="status">
@@ -154,38 +156,6 @@
         </div>
 
         <div class="form-group">
-            <label for="sale"><span class="required_lbl">*</span>{{ __('الخصم') }}</label>
-            <select class="js-example-basic-single" name="sale">
-                <option value="" selected></option>
-
-                <option {{$product->status==1?'selected' : ''}} value="1">مسموح</option>
-                <option {{$product->status==0?'selected' : ''}} value="0">غير مسموح</option>
-            </select>
-        </div>
-
-
-{{--        <div class="form-group">--}}
-
-{{--            <label for="choose_file"><span class="required_lbl">*</span>اختر صورة</label>--}}
-
-{{--            <div class="form-control form-upload" style="border: solid 1px #fcefba !important; width: 100%;font-size: 16px;">--}}
-{{--                <div class="d-flex align-items-center">--}}
-{{--                    <button type="button" onclick="document.getElementById('file_upload').click()" style="border: solid 1px #fcefba !important; color: black ;background-color: #fcefba ">--}}
-{{--                        اختار صورة--}}
-{{--                    </button>--}}
-{{--                    <label for="img" class="filename"></label>--}}
-{{--                </div>--}}
-{{--                <input required type='file' class="hidden_file_input" name="file"--}}
-{{--                       id="file_upload">--}}
-{{--            </div>--}}
-{{--        </div>--}}
-
-
-        <div class="form-group">
-            <label for="description">الوصف</label>
-            {{Form::textarea("description", $product->exists?$product->description:"", ['class'=>"form-control",'style'=>'height: 100px'])}}
-        </div>
-        <div class="form-group">
 
             <label for="choose_file"><span
                     class="required_lbl">*</span>{{ __('اختيار صورة') }}</label>
@@ -201,6 +171,26 @@
                 <input required type='file' class="hidden_file_input" name="file"
                        id="file_upload">
             </div>
+        </div>
+
+        <div class="form-group">
+            <label for="size"><span class="required_lbl">*</span>{{ __('الحجم') }}</label>
+            <select class="js-example-basic-multiple" name="size[]" multiple="multiple"
+                    style="border: 1px solid #fcefba!important;">
+                <option value="{{$product->exists?$product->size:''}}">{{$product->exists?$product->size:''}}</option>
+                <option value="small">Small</option>
+                ...
+                <option value="medium">Medium</option>
+                <option value="large">Large</option>
+                <option value="x-large">X-Large</option>
+                <option value="x-large">All Size</option>
+            </select>
+
+        </div>
+
+        <div class="form-group">
+            <label for="description">الوصف</label>
+            {{Form::textarea("description", $product->exists?$product->description:"", ['class'=>"form-control",'style'=>'height: 73px!important'])}}
         </div>
 
 
@@ -220,5 +210,11 @@
 
 @endsection
 @section('js')
+    <script>
+
+        $(document).ready(function () {
+            $('.js-example-basic-multiple').select2();
+        });
+    </script>
 
 @endsection

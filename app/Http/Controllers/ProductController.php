@@ -83,10 +83,13 @@ class ProductController extends Controller
                 'max:1024'
             ],
         ]);
+
         $imgName = time() . '-' . $request->name . '.' . $request->file('file')->extension();
 
         $request->file->move(public_path('images'), $imgName);
         $data = $request->except(['_token']);
+        $data['size'] = json_encode($request->size);
+
         Product::query()->insert($data);
 
         return redirect(url('/product'))->with('success', 'تم اضافة الفستان بنجاح');
