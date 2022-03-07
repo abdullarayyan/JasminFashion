@@ -17,6 +17,8 @@ class ProductController extends Controller
         $products = Product::select("*")->orderBy("id", "desc");
         $status = $request->input('status', 0);
         $model = $request->input('model', NULL);
+        $name = $request->input('name', NULL);
+        $code = $request->input('code', NULL);
         switch ($status) {
             case '1':
                 $products->where("status", 1);
@@ -27,6 +29,12 @@ class ProductController extends Controller
         }
         if ($model) {
             $products->where("model", "LIKE", "%$model%");
+        }
+        if ($code) {
+            $products->where("code", "LIKE", "%$code%");
+        }
+        if ($name) {
+            $products->where("name", "LIKE", "%$name%");
         }
         $products = $products->paginate(30);
         return view("products.index")->with("products", $products);
@@ -42,6 +50,7 @@ class ProductController extends Controller
     {
 
         $product = new Product();
+
         return view('products.create_edit')->with(compact('product'));
 
     }
@@ -66,6 +75,7 @@ class ProductController extends Controller
             'status' => 'required',
             'model' => 'required',
             'code' => 'required',
+            'price'=>'required',
             'file' => [
                 'required',
                 'file',
@@ -74,12 +84,12 @@ class ProductController extends Controller
             ],
         ]);
         $imgName = time() . '-' . $request->name . '.' . $request->file('file')->extension();
-//dd($imgName);
+
         $request->file->move(public_path('images'), $imgName);
         $data = $request->except(['_token']);
         Product::query()->insert($data);
 
-        return redirect(url('/product'))->with('success', 'تم اضافة البدلات زفاف بنجاح');
+        return redirect(url('/product'))->with('success', 'تم اضافة الفستان بنجاح');
 
     }
 
@@ -127,6 +137,7 @@ class ProductController extends Controller
             'status' => 'required',
             'model' => 'required',
             'code' => 'required',
+            'price'=>'required',
             'file' => [
                 'required',
                 'file',
@@ -166,7 +177,7 @@ class ProductController extends Controller
 
         $product->delete();
 
-        return redirect(url('/product'))->with('success', 'تم حذف البدلات زفاف بنجاح');
+        return redirect(url('/product'))->with('success', 'تم حذف الفستان بنجاح');
 
     }
 }

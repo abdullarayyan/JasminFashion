@@ -83,7 +83,8 @@
         <div class="form-group">
             <label for="code"><span class="required_lbl">*</span>{{ __('كود القطعه') }}</label>
             <input id="code" type="text" class="form-control required @error('code') is-invalid @enderror"
-                   name="code" value="{{ $product->code??'#'.str_pad($product->id??'A' . 1, 8, "0", STR_PAD_LEFT) }}"
+                   name="code" value="{{ "#".Haruncpi\LaravelIdGenerator\IdGenerator::generate(['table' => 'products', 'length' => 5, 'prefix' =>\App\classes\IHouse::getSequenceProduct()]) }}"
+
                    required
                    autocomplete="code">
 
@@ -100,6 +101,18 @@
                    autocomplete="name">
 
             @error('model')
+            <span class="invalid-feedback" role="alert">
+                <strong>{{ $message }}</strong>
+            </span>
+            @enderror
+        </div>
+        <div class="form-group">
+            <label for="price"><span class="required_lbl">*</span>{{ __('سعر الفستان') }}</label>
+            <input id="price" type="number" class="form-control required @error('model') is-invalid @enderror"
+                   name="price" value="{{ $product->price??old('price')  }}" required
+                   autocomplete="name">
+
+            @error('price')
             <span class="invalid-feedback" role="alert">
                 <strong>{{ $message }}</strong>
             </span>
@@ -149,23 +162,7 @@
                 <option {{$product->status==0?'selected' : ''}} value="0">غير مسموح</option>
             </select>
         </div>
-        <div class="form-group">
 
-            <label for="choose_file"><span
-                    class="required_lbl">*</span>{{ __('اختيار المرفق') }}</label>
-
-            <div class="form-control form-upload">
-                <div class="d-flex align-items-center">
-                    <button type="button"
-                            onclick="document.getElementById('file_upload').click()">
-                        اختار ملف
-                    </button>
-                    <label class="filename"></label>
-                </div>
-                <input required type='file' class="hidden_file_input" name="file"
-                       id="file_upload">
-            </div>
-        </div>
 
 {{--        <div class="form-group">--}}
 
@@ -183,6 +180,30 @@
 {{--            </div>--}}
 {{--        </div>--}}
 
+
+        <div class="form-group">
+            <label for="description">الوصف</label>
+            {{Form::textarea("description", $product->exists?$product->description:"", ['class'=>"form-control",'style'=>'height: 100px'])}}
+        </div>
+        <div class="form-group">
+
+            <label for="choose_file"><span
+                    class="required_lbl">*</span>{{ __('اختيار صورة') }}</label>
+
+            <div class="form-control form-upload" style="border: 1px solid #fcefba;">
+                <div class="d-flex align-items-center">
+                    <button type="button" style="color: #0e0d0d;background-color: #d4b880"
+                            onclick="document.getElementById('file_upload').click()">
+                        اختار ملف
+                    </button>
+                    <label class="filename"></label>
+                </div>
+                <input required type='file' class="hidden_file_input" name="file"
+                       id="file_upload">
+            </div>
+        </div>
+
+
         @if (isset($errors) && $errors->any())
             <div class="alert alert-danger">
                 @foreach ($errors->all() as $error)
@@ -190,13 +211,6 @@
                 @endforeach
             </div>
         @endif
-
-        <div class="form-group">
-            <label for="description">الوصف</label>
-            {{Form::textarea("description", $product->exists?$product->description:"", ['class'=>"form-control",'style'=>'height: 100px'])}}
-        </div>
-
-
         <div class="col-md-12">
             <button class="btn btn--primary type--uppercase" type="submit" style="width: 10%">تخزين</button>
         </div>

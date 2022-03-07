@@ -1,5 +1,6 @@
 <?php
 
+use Haruncpi\LaravelIdGenerator\IdGenerator;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -13,6 +14,13 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::get('foo',function (){
+//    $prefix = "#";
+//    $id = IdGenerator::generate(['table' => 'products', 'length' => 9, 'prefix' =>$prefix]);
+    $orderObj = \DB::table('products')->latest('id')->first();
+
+    dd($orderObj);
+});
 Auth::routes();
 
 Route::get('/', 'App\Http\Controllers\HomeController@index')->name('home');
