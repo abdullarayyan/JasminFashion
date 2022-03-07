@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Product;
+use App\Models\accessory;
 use Illuminate\Http\Request;
 
-class ProductController extends Controller
+class AccessoryController extends Controller
 {
     public function __construct()
     {
@@ -18,31 +18,31 @@ class ProductController extends Controller
      */
     public function index(Request $request)
     {
-        $products = Product::select("*")->orderBy("id", "desc");
+        $accessories = Accessory::query()->select("*")->orderBy("id", "desc");
         $status = $request->input('status', 0);
         $model = $request->input('model', NULL);
         $name = $request->input('name', NULL);
         $code = $request->input('code', NULL);
         switch ($status) {
             case '1':
-                $products->where("status", 1);
+                $accessories->where("status", 1);
                 break;
             case '2':
-                $products->where("status", 0);
+                $accessories->where("status", 0);
                 break;
         }
         if ($model) {
-            $products->where("model", "LIKE", "%$model%");
+            $accessories->where("model", "LIKE", "%$model%");
         }
         if ($code) {
-            $products->where("code", "LIKE", "%$code%");
+            $accessories->where("code", "LIKE", "%$code%");
         }
         if ($name) {
-            $products->where("name", "LIKE", "%$name%");
+            $accessories->where("name", "LIKE", "%$name%");
         }
-        $products = $products->paginate(30);
-        return view("products.index")->with("products", $products);
-//        return view('products.index');
+        $accessories = $accessories->paginate(30);
+        return view("accessories.index")->with("accessories", $accessories);
+//        return view('accessory.index');
     }
 
     /**
@@ -53,9 +53,9 @@ class ProductController extends Controller
     public function create()
     {
 
-        $product = new Product();
+        $accessory = new Accessory();
 
-        return view('products.create_edit')->with(compact('product'));
+        return view('accessories.create_edit')->with(compact('accessory'));
 
     }
 
@@ -67,15 +67,16 @@ class ProductController extends Controller
      */
     public function store(Request $request)
     {
-//dd($request->file->extension());
+//dd($request->all());
 
 
         $this->validate($request, [
             'name' => 'required',
             'color' => 'required',
             'description' => 'required',
-            'size' => 'required',
             'sale' => 'required',
+            'quantity' => 'required',
+            'brand' => 'required',
             'status' => 'required',
             'model' => 'required',
             'code' => 'required',
@@ -92,21 +93,21 @@ class ProductController extends Controller
 
         $request->file->move(public_path('images'), $imgName);
         $data = $request->except(['_token']);
-        $data['size'] = json_encode($request->size);
+//        $data['size'] = json_encode($request->size);
 
-        Product::query()->insert($data);
+        accessory::query()->insert($data);
 
-        return redirect(url('/product'))->with('success', 'تم اضافة الفستان بنجاح');
+        return redirect(url('/accessory'))->with('success', 'تم اضافة الاكسسوار بنجاح');
 
     }
 
     /**
      * Display the specified resource.
      *
-     * @param \App\Models\Product $product
+     * @param \App\Models\Product $accessory
      * @return \Illuminate\Http\Response
      */
-    public function show(Product $product)
+    public function show(Accessory $accessory)
     {
         //
     }
@@ -114,12 +115,12 @@ class ProductController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param \App\Models\Product $product
+     * @param \App\Models\Product $accessory
      * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View|\Illuminate\Http\Response
      */
-    public function edit(Product $product)
+    public function edit(Accessory $accessory)
     {
-        return view("products.create_edit")->with("product", $product);
+        return view("accessories.create_edit")->with("accessory", $accessory);
 
     }
 
@@ -127,24 +128,25 @@ class ProductController extends Controller
      * Update the specified resource in storage.
      *
      * @param \Illuminate\Http\Request $request
-     * @param \App\Models\Product $product
+     * @param \App\Models\Product $accessory
      * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Http\RedirectResponse|\Illuminate\Http\Response|\Illuminate\Routing\Redirector
      */
-    public function update(Request $request, Product $product)
+    public function update(Request $request, Accessory $accessory)
     {
 //        dd($request->all());
-//        $product =Product::query()->firstOrFail($product);
+//        $accessory =Product::query()->firstOrFail($accessory);
 
         $this->validate($request, [
             'name' => 'required',
             'color' => 'required',
             'description' => 'required',
-            'size' => 'required',
             'sale' => 'required',
             'status' => 'required',
             'model' => 'required',
             'code' => 'required',
             'price'=>'required',
+            'quantity' => 'required',
+            'brand' => 'required',
             'file' => [
                 'required',
                 'file',
@@ -153,40 +155,39 @@ class ProductController extends Controller
             ],
         ]);
         $imgName = time() . '-' . $request->name . '.' . $request->file('file')->extension();
-//dd($imgName);
+
         $request->file->move(public_path('images'), $imgName);
 
-        $product->name = $request->name;
-        $product->color = $request->color;
-        $product->description = $request->description;
-//        $data['size'] = json_encode($request->size);
+        $accessory->name = $request->name;
+        $accessory->color = $request->color;
+        $accessory->description = $request->description;
+        $accessory->quantity = $request->quantity;
+        $accessory->sale = $request->sale;
+        $accessory->brand = $request->brand;
+        $accessory->status = $request->status;
+        $accessory->model = $request->model;
+        $accessory->code = $request->code;
+        $accessory->file = $imgName;
 
-        $product->size = $request->size;
-        $product->sale = $request->sale;
-        $product->status = $request->status;
-        $product->model = $request->model;
-        $product->code = $request->code;
-        $product->file = $imgName;
-
-        $product->save();
+        $accessory->save();
 
 
-        return redirect(url('/product'))->with('success', 'تم التعديل بنجاح');
+        return redirect(url('/accessory'))->with('success', 'تم تعديل الاكسسوار بنجاح');
 
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param \App\Models\Product $product
+     * @param \App\Models\Product $accessory
      * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Http\JsonResponse|\Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
      */
-    public function destroy(Product $product)
+    public function destroy(Accessory $accessory)
     {
 
-        $product->delete();
+        $accessory->delete();
 
-        return redirect(url('/product'))->with('success', 'تم حذف الفستان بنجاح');
+        return redirect(url('/accessory'))->with('success', 'تم حذف الاكسسوار بنجاح');
 
     }
 }
