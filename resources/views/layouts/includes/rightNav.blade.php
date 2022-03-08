@@ -24,6 +24,14 @@
             </li>
         </ul>
         <hr style="margin: 0">
+        <ul class="level2">
+            <li>
+                <a href="#" id="party">فساتين السهرة
+                    <i style="margin: 10px" id="p" class='fas fa-angle-left'></i>
+                </a>
+            </li>
+        </ul>
+        <hr style="margin: 0">
 
         <ul class="level2">
             <li>
@@ -38,38 +46,70 @@
     <ul class="level2">
         <hr style="margin: 0">
         <li>
-            <a href="/product"> <i class="fa fa-eye" style="margin: 10px"></i>عرض فساتين الزفاف </a>
+            <a href="/product"> <i class="fa fa-eye" style="margin: 10px"></i>عرض </a>
         </li>
         <hr style="margin: 0">
 
         <li>
-            <a href="/product/create"> <i class="fa fa-plus" style="margin: 10px"></i> اضافة فستان
+            <a href="/product/create"> <i class="fa fa-plus" style="margin: 10px"></i> اضافة
             </a>
         </li>
     </ul>
 </div>
-<div class="right-nav hide" id="accessorysub" style="margin-top: 238px; background-color: #fcefba">
+
+<div class="right-nav hide" id="subparty" style="margin-top: 238px; background-color: #fcefba">
     <ul class="level2">
         <hr style="margin: 0">
         <li>
-            <a href="/accessory"> <i class="fa fa-eye" style="margin: 10px"></i>عرض الاكسسوارات </a>
+            <a href="/party"> <i class="fa fa-eye" style="margin: 10px"></i>عرض </a>
         </li>
         <hr style="margin: 0">
 
         <li>
-            <a href="/accessory/create"> <i class="fa fa-plus" style="margin: 10px"></i> اضافة اكسسوار
+            <a href="/party/create"> <i class="fa fa-plus" style="margin: 10px"></i> اضافة
             </a>
         </li>
     </ul>
 </div>
 
+<div class="right-nav hide" id="accessorysub" style="margin-top: 306px; background-color: #fcefba ;">
+{{--    width: 10%!important--}}
+    <ul class="level2">
+        <hr style="margin: 0">
+        <li>
+            <a href="/accessory"> <i class="fa fa-eye" style="margin: 10px"></i>عرض  </a>
+        </li>
+        <hr style="margin: 0">
+
+        <li>
+            <a href="/accessory/create"> <i class="fa fa-plus" style="margin: 10px"></i> اضافة
+            </a>
+        </li>
+    </ul>
+</div>
+
+
+
 <script>
     $(document).ready(function () {
-        $('li').find('#accessory').click(function () {
-            $("#accessorysub").toggle();
+        $('li').find('#accessory').mouseover(function () {
+            $("#accessorysub").show();
+            $("#productsub").hide();
+            $("#subparty").hide();
+
         })
-        $('li').find('#product').click(function () {
-            $("#productsub").toggle();
+        $('li').find('#product').mouseover(function () {
+            $("#productsub").show();
+            $("#accessorysub").hide();
+            $("#subparty").hide();
+
+        })
+
+        $('li').find('#party').mouseover(function () {
+            $("#productsub").hide();
+            $("#accessorysub").hide();
+            $("#subparty").show();
+
         })
     });
 </script>

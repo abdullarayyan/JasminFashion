@@ -80,6 +80,8 @@ class ProductController extends Controller
             'model' => 'required',
             'code' => 'required',
             'price'=>'required',
+            'quantity' => 'required',
+
             'file' => [
                 'required',
                 'file',
@@ -145,6 +147,7 @@ class ProductController extends Controller
             'model' => 'required',
             'code' => 'required',
             'price'=>'required',
+            'quantity' => 'required',
             'file' => [
                 'required',
                 'file',

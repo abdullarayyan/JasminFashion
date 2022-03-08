@@ -122,7 +122,18 @@
             </span>
             @enderror
         </div>
+        <div class="form-group">
+            <label for="quantity"><span class="required_lbl">*</span>{{ __('الكمية') }}</label>
+            <input id="quantity" type="number" class="form-control required @error('model') is-invalid @enderror"
+                   name="quantity" value="{{ $product->quantity??old('quantity')  }}" required
+                   autocomplete="name">
 
+            @error('quantity')
+            <span class="invalid-feedback" role="alert">
+                <strong>{{ $message }}</strong>
+            </span>
+            @enderror
+        </div>
         <div class="form-group">
             <label for="sale"><span class="required_lbl">*</span>{{ __('الخصم') }}</label>
             <select class="js-example-basic-single" name="sale">

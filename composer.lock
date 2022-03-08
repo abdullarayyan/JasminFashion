@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "25f15e822e5717797def23ff20da34aa",
+    "content-hash": "6853244403eb4d3fb9683cc14e0da943",
     "packages": [
         {
             "name": "brick/math",
@@ -5581,6 +5581,51 @@
                 "source": "https://github.com/webmozarts/assert/tree/1.10.0"
             },
             "time": "2021-03-09T10:59:23+00:00"
+        },
+        {
+            "name": "ynacorp/nova-swatches",
+            "version": "v1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/ynacorp/nova-swatches.git",
+                "reference": "bb02ca3d8c7afba7b046c89f76cd9b163ce3aaf3"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/ynacorp/nova-swatches/zipball/bb02ca3d8c7afba7b046c89f76cd9b163ce3aaf3",
+                "reference": "bb02ca3d8c7afba7b046c89f76cd9b163ce3aaf3",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.1.0"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Yna\\NovaSwatches\\FieldServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Yna\\NovaSwatches\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "A beautiful color picking field for Laravel Nova.",
+            "keywords": [
+                "laravel",
+                "nova"
+            ],
+            "support": {
+                "issues": "https://github.com/ynacorp/nova-swatches/issues",
+                "source": "https://github.com/ynacorp/nova-swatches/tree/v1.0.0"
+            },
+            "time": "2020-04-02T17:01:37+00:00"
         }
     ],
     "packages-dev": [
@@ -8095,7 +8140,8 @@
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {
-        "php": "^7.3|^8.0"
+        "php": "^7.3|^8.0",
+        "ext-json": "*"
     },
     "platform-dev": [],
     "plugin-api-version": "2.2.0"

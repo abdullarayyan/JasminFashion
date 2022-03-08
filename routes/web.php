@@ -26,6 +26,7 @@ Auth::routes();
 Route::get('/', 'App\Http\Controllers\HomeController@index')->name('home');
 
 Route::resource('/product','App\Http\Controllers\ProductController');
+Route::resource('/party','App\Http\Controllers\PartyController');
 Route::resource('/accessory','App\Http\Controllers\AccessoryController');
 
 

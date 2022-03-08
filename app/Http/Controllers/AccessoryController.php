@@ -42,7 +42,6 @@ class AccessoryController extends Controller
         }
         $accessories = $accessories->paginate(30);
         return view("accessories.index")->with("accessories", $accessories);
-//        return view('accessory.index');
     }
 
     /**

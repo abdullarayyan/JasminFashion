@@ -3,27 +3,6 @@
 @section('title', "فساتين الزفاف")
 @section('page_title', 'فساتين زفافات')
 
-@section('css')
-    <style>
-        a {
-            color: #057a65;
-        }
-
-        table a:hover {
-            text-decoration: underline;
-        }
-
-        #fathersTable .father_name {
-            min-width: 180px;
-        }
-
-        #fathersTable .alert {
-            margin-bottom: 0;
-            text-align: center;
-        }
-
-    </style>
-@endsection
 @section('content')
 
     <div class="card-section">
@@ -47,10 +26,9 @@
                     </div>
                 @endif
             </div>
+
             <div class="mt-5">
                 <div id="tableWrapper">
-
-
                     <div class="portlet-body" style="background-color: #fdfdf9!important">
                         <div class="table-scrollable">
                             <table id="fathersTable" class="table table-hover">
@@ -72,6 +50,14 @@
                                         الكود
                                         <i class='bx bxs-up-arrow'></i>
                                     </th>
+                                    <th class="clickable nationality_head">
+                                        الكمية
+                                        <i class='bx bxs-up-arrow'></i>
+                                    </th>
+                                    <th class="clickable nationality_head">
+                                        السعر
+                                        <i class='bx bxs-up-arrow'></i>
+                                    </th>
                                     <th class="clickable">
                                         اللون
                                         <i class='bx bxs-up-arrow'></i>
@@ -84,7 +70,7 @@
                                         الوصف
                                         <i class='bx bxs-up-arrow'></i>
                                     </th>
-                                    <th class="clickable">
+                                    <th class="clickable" style="width: 20px">
                                         الحالة(متوفر؟)
                                         <i class='bx bxs-up-arrow'></i>
                                     </th>
@@ -106,16 +92,20 @@
                                     <td>
                                     </td>
                                     <td>
-                                        {{Form::text("name",Request::get("title",NULL),['class'=>"form-control form-filter input-sm",'placeholder'=>'الاسم'])}}
+                                        {{Form::text("name",Request::get("name",NULL),['class'=>"form-control form-filter input-sm",'placeholder'=>'الاسم'])}}
 
                                     </td>
 
                                     <td>
-                                        {{Form::text("model",Request::get("title",NULL),['class'=>"form-control form-filter input-sm",'placeholder'=>'المودبل'])}}
+                                        {{Form::text("model",Request::get("model",NULL),['class'=>"form-control form-filter input-sm",'placeholder'=>'المودبل'])}}
                                     </td>
                                     <td>
-                                        {{Form::text("code",Request::get("title",NULL),['class'=>"form-control form-filter input-sm",'placeholder'=>'بحث بواسطة الكود'])}}
+                                        {{Form::text("code",Request::get("code",NULL),['class'=>"form-control form-filter input-sm",'placeholder'=>'بحث بواسطة الكود'])}}
 
+                                    </td>
+                                    <td>
+                                    </td>
+                                    <td>
                                     </td>
                                     <td>
                                     </td>
@@ -153,6 +143,10 @@
                                         </td>
                                         <td>
                                             {{$product->code}}
+                                        </td><td>
+                                            {{$product->quantity}}
+                                        </td><td>
+                                            {{$product->price}}
                                         </td>
                                         <td>
                                             {{$product->color}}
@@ -208,39 +202,38 @@
                             </table>
                         </div>
                     </div>
+                </div>
 
-
-                    <div class="pagination_wrapper">
-                        <div class="pagination_details mb-2 mt-4 text-left">
-                            <span id="pagination_details"></span>
+                <div class="pagination_wrapper">
+                    <div class="pagination_details mb-2 mt-4 text-left">
+                        <span id="pagination_details"></span>
+                    </div>
+                    <div class="d-flex justify-content-between align-items-center table-pager">
+                        <div class="pagination">
+                            <li class="page-item" id="previous-page">
+                                <a class="page-link" href="javascript:void(0)">السابق</a>
+                            </li>
+                            <li class="page-item" id="first-page">
+                                <a class="page-link" href="javascript:void(0)">1</a>
+                            </li>
+                            <li class="page-item">
+                                <input id="custom-page" onblur="changePage()" type="number" value="1">
+                            </li>
+                            <li class="page-item" id="last-page">
+                                <a id="last-page-link" class="page-link" href="javascript:void(0)"></a>
+                            </li>
+                            <li class="page-item" id="next-page">
+                                <a class="page-link" href="javascript:void(0)">التالي</a>
+                            </li>
                         </div>
-                        <div class="d-flex justify-content-between align-items-center table-pager">
-                            <div class="pagination">
-                                <li class="page-item" id="previous-page">
-                                    <a class="page-link" href="javascript:void(0)">السابق</a>
-                                </li>
-                                <li class="page-item" id="first-page">
-                                    <a class="page-link" href="javascript:void(0)">1</a>
-                                </li>
-                                <li class="page-item">
-                                    <input id="custom-page" onblur="changePage()" type="number" value="1">
-                                </li>
-                                <li class="page-item" id="last-page">
-                                    <a id="last-page-link" class="page-link" href="javascript:void(0)"></a>
-                                </li>
-                                <li class="page-item" id="next-page">
-                                    <a class="page-link" href="javascript:void(0)">التالي</a>
-                                </li>
-                            </div>
-                            <div class="form-group m-0">
-                                <select onchange="changePageSize()" id="pageSize" name="pageSize"
-                                        class="form-control m-0">
-                                    <option value="10">10</option>
-                                    <option value="25">25</option>
-                                    <option value="50">50</option>
-                                    <option value="100">100</option>
-                                </select>
-                            </div>
+                        <div class="form-group m-0">
+                            <select onchange="changePageSize()" id="pageSize" name="pageSize"
+                                    class="form-control m-0">
+                                <option value="10">10</option>
+                                <option value="25">25</option>
+                                <option value="50">50</option>
+                                <option value="100">100</option>
+                            </select>
                         </div>
                     </div>
                 </div>

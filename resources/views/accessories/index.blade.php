@@ -71,6 +71,9 @@
                                     <th class="clickable nationality_head">
                                         الكود
                                         <i class='bx bxs-up-arrow'></i>
+                                    </th>    <th class="clickable nationality_head">
+                                        سعر
+                                        <i class='bx bxs-up-arrow'></i>
                                     </th>
                                     <th class="clickable">
                                         اللون
@@ -122,6 +125,7 @@
 
                                     </td>
                                     <td>
+                                    </td><td>
                                     </td>
                                     <td>
                                     </td>
@@ -159,6 +163,8 @@
                                         </td>
                                         <td>
                                             {{$accessory->code}}
+                                        </td> <td>
+                                            {{$accessory->price}}
                                         </td>
                                         <td>
                                             {{$accessory->color}}
