@@ -13,7 +13,7 @@ class Accessories extends Migration
      */
     public function up()
     {
-        Schema::create('accessory', function (Blueprint $table) {
+        Schema::create('accessories', function (Blueprint $table) {
             $table->id();
             $table->string('name')->nullable();
             $table->string('quantity')->nullable();
@@ -40,6 +40,6 @@ class Accessories extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('accessory');
+        Schema::dropIfExists('accessories');
     }
 }
