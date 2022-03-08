@@ -14,4 +14,14 @@ class IHouse
             return 1;
         }
     }
+    public function getSequenceAccessories()
+    {
+        $orderObj = \DB::table('accessories')->latest('id')->first();
+        if ($orderObj) {
+            return $orderObj->id;
+        } else {
+            return 1;
+        }
+    }
+
 }
