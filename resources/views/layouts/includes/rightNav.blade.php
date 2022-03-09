@@ -12,7 +12,7 @@
             </li>
         </ul>
     </ul>
-    <ul class="level1">
+    <ul class="level1" style="margin: 0;">
         <li>
             <span>المتجر</span>
         </li>
@@ -40,6 +40,23 @@
                 </a>
             </li>
         </ul>
+    </ul>
+
+    <ul class="level1">
+        <li>
+            <span>الحجوزات</span>
+        </li>
+        <ul class="level2">
+            <li>
+                <a href="#" id="reservation">حجز
+                    <i style="margin: 10px" id="p" class='fas fa-angle-left'></i>
+                </a>
+            </li>
+        </ul>
+
+        <hr style="margin: 0">
+
+
     </ul>
 </div>
 <div class="right-nav hide" id="productsub" style="    margin-top: 172px; background-color: #fcefba">
@@ -73,11 +90,11 @@
 </div>
 
 <div class="right-nav hide" id="accessorysub" style="margin-top: 306px; background-color: #fcefba ;">
-{{--    width: 10%!important--}}
+    {{--    width: 10%!important--}}
     <ul class="level2">
         <hr style="margin: 0">
         <li>
-            <a href="/accessory"> <i class="fa fa-eye" style="margin: 10px"></i>عرض  </a>
+            <a href="/accessory"> <i class="fa fa-eye" style="margin: 10px"></i>عرض </a>
         </li>
         <hr style="margin: 0">
 
@@ -88,7 +105,21 @@
     </ul>
 </div>
 
+<div class="right-nav hide" id="reservationsub" style="margin-top: 454px; background-color: #fcefba ;">
+    {{--    width: 10%!important--}}
+    <ul class="level2">
+        <hr style="margin: 0">
+        <li>
+            <a href="/reservation"> <i class="fa fa-eye" style="margin: 10px"></i>عرض </a>
+        </li>
+        <hr style="margin: 0">
 
+        <li>
+            <a href="/reservation/create"> <i class="fa fa-plus" style="margin: 10px"></i> اضافة
+            </a>
+        </li>
+    </ul>
+</div>
 
 <script>
     $(document).ready(function () {
@@ -102,6 +133,7 @@
             $("#productsub").show();
             $("#accessorysub").hide();
             $("#subparty").hide();
+            $("#reservationsub").hide();
 
         })
 
@@ -109,6 +141,15 @@
             $("#productsub").hide();
             $("#accessorysub").hide();
             $("#subparty").show();
+            $("#reservationsub").hide();
+
+        })
+
+        $('li').find('#reservation').mouseover(function () {
+            $("#productsub").hide();
+            $("#accessorysub").hide();
+            $("#subparty").hide();
+            $("#reservationsub").show();
 
         })
     });

@@ -156,7 +156,6 @@
         </div>
 
         <div class="form-group">
-            <input class="custom_form colorpicker">
             <label for="color"><span class="required_lbl">*</span>{{ __('اللون') }}</label>
             <select class="js-example-basic-single" name="color">
                 <option value="{{$party->exists?$party->color:""}}">{{$party->exists?$party->color:""}}</option>
