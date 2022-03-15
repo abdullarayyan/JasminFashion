@@ -73,16 +73,14 @@
     <div class="tab-pane fade show active custom_form" id="profile" role="tabpanel" aria-labelledby="profile-tab">
 
         <div class="form-group">
-            <label for="name"><span class="required_lbl">*</span>{{ __('الإسم') }}</label>
-            <input id="name" type="text" class="form-control required @error('name') is-invalid @enderror"
-                   name="name" value="{{ $party->name??old('name')  }}" required
-                   autocomplete="name">
+            <label for="name"><span class="required_lbl">*</span>{{ __('اسم الفستان') }}</label>
+            <select class="js-example-basic-single" name="name">
+                <option value="{{$party->exists?$party->name:""}}">{{$party->exists?$party->name:""}}</option>
+                <option value="فستان سواريه" style="background-color: #eeeeee">فستان سواريه</option>
+                ...
+                <option value="فستان سهرة قصير " style="background-color: #eeeeee">فستان سهرة قصير </option>
 
-            @error('name')
-            <span class="invalid-feedback" role="alert">
-                <strong>{{ $message }}</strong>
-            </span>
-            @enderror
+            </select>
         </div>
         <div class="form-group">
             <label for="code"><span class="required_lbl">*</span>{{ __('كود القطعه') }}</label>
@@ -91,7 +89,7 @@
                    value="{{ "#".Haruncpi\LaravelIdGenerator\IdGenerator::generate(['table' => 'parties', 'length' => 5, 'prefix' =>\App\classes\IHouse::getSequenceParties()]) }}"
 
                    required
-                   autocomplete="code">
+                   autocomplete="code" maxlength="10">
 
             @error('code')
             <span class="invalid-feedback" role="alert">
@@ -101,21 +99,20 @@
         </div>
         <div class="form-group">
             <label for="model"><span class="required_lbl">*</span>{{ __('موديل الفستان') }}</label>
-            <input id="model" type="text" class="form-control required @error('model') is-invalid @enderror"
-                   name="model" value="{{ $party->model??old('model')  }}" required
-                   autocomplete="name">
-
-            @error('model')
-            <span class="invalid-feedback" role="alert">
-                <strong>{{ $message }}</strong>
-            </span>
-            @enderror
+            <select class="js-example-basic-single" name="model">
+                <option value="{{$party->exists?$party->model:""}}">{{$party->exists?$party->model:""}}</option>
+                <option value="2019" style="background-color: #eeeeee">2019</option>
+                ...
+                <option value="2020" style="background-color: #eeeeee">2020</option>
+                <option value="2021" style="background-color: #eeeeee">2021</option>
+                <option value="2022" style="background-color: #eeeeee">2022</option>
+            </select>
         </div>
         <div class="form-group">
             <label for="price"><span class="required_lbl">*</span>{{ __('سعر الفستان') }}</label>
-            <input id="price" type="number" class="form-control required @error('model') is-invalid @enderror"
+            <input id="price" type="text" class="form-control required @error('model') is-invalid @enderror"
                    name="price" value="{{ $party->price??old('price')  }}" required
-                   autocomplete="name">
+                   autocomplete="name" maxlength="10">
 
             @error('price')
             <span class="invalid-feedback" role="alert">
@@ -125,9 +122,9 @@
         </div>
         <div class="form-group">
             <label for="quantity"><span class="required_lbl">*</span>{{ __('الكمية') }}</label>
-            <input id="quantity" type="number" class="form-control required @error('model') is-invalid @enderror"
+            <input id="quantity" type="text" class="form-control required @error('model') is-invalid @enderror"
                    name="quantity" value="{{ $party->quantity??old('quantity')  }}" required
-                   autocomplete="name">
+                   autocomplete="name" maxlength="10">
 
             @error('quantity')
             <span class="invalid-feedback" role="alert">
@@ -176,7 +173,7 @@
                 <div class="d-flex align-items-center">
                     <button type="button" style="color: #0e0d0d;background-color: #d4b880"
                             onclick="document.getElementById('file_upload').click()">
-                        اختار ملف
+                        اختار صورة
                     </button>
                     <label class="filename"></label>
                 </div>

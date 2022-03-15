@@ -24,25 +24,25 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="817c0f37-c9d6-4d2d-a9e2-ab43987fb601" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/resources/views/reservation/accessory-tab.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/reservation/add_yatem.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/reservation/dress-tab.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/reservation/partials/add_brother.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/reservation/partials/import.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/reservation/partials/import_result.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/reservation/party-tab.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/reservation/print.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/reservation/show.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/reservation/zbone-tab.blade.php" afterDir="false" />
+    <list default="true" id="817c0f37-c9d6-4d2d-a9e2-ab43987fb601" name="Default Changelist" comment="push reservation">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ProductController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ProductController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/css/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/app.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/accessories/create_edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/accessories/create_edit.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/accessories/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/accessories/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layouts/includes/header.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/includes/header.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/layouts/includes/rightNav.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/includes/rightNav.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/parties/create_edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/parties/create_edit.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/composer/autoload_classmap.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/autoload_classmap.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/composer/autoload_files.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/autoload_files.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/composer/autoload_static.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/autoload_static.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/parties/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/parties/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/products/create_edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/products/create_edit.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/products/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/products/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/reservation/accessory-tab.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/reservation/accessory-tab.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/reservation/add_yatem.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/reservation/add_yatem.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/reservation/dress-tab.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/reservation/dress-tab.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/reservation/partials/import.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/reservation/partials/import.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/reservation/party-tab.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/reservation/party-tab.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/reservation/zbone-tab.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/reservation/zbone-tab.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -182,7 +182,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/views/reservation" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -239,7 +239,12 @@
       <workItem from="1646744788555" duration="983000" />
       <workItem from="1646774073908" duration="6080000" />
       <workItem from="1646780821706" duration="2225000" />
-      <workItem from="1646849104679" duration="11864000" />
+      <workItem from="1646849104679" duration="12494000" />
+      <workItem from="1646923584756" duration="1191000" />
+      <workItem from="1647193370343" duration="12844000" />
+      <workItem from="1647290965852" duration="8185000" />
+      <workItem from="1647327224526" duration="13000" />
+      <workItem from="1647373315480" duration="7776000" />
     </task>
     <task id="LOCAL-00001" summary="push product">
       <created>1646048349470</created>
@@ -346,7 +351,14 @@
       <option name="project" value="LOCAL" />
       <updated>1646782722464</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="push reservation">
+      <created>1646864125895</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1646864125895</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -371,7 +383,8 @@
     <MESSAGE value="fix search,seq," />
     <MESSAGE value="accessory" />
     <MESSAGE value="push accessory" />
-    <option name="LAST_COMMIT_MESSAGE" value="push accessory" />
+    <MESSAGE value="push reservation" />
+    <option name="LAST_COMMIT_MESSAGE" value="push reservation" />
   </component>
   <component name="WindowStateProjectService">
     <state x="386" y="64" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1646688975675">
@@ -382,21 +395,21 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="371" y="95" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1280.680/1920.0.1920.1040@0.0.1280.680" timestamp="1646039127635" />
-    <state x="264" y="0" key="CommitChangelistDialog2" timestamp="1646782721376">
+    <state x="264" y="0" key="CommitChangelistDialog2" timestamp="1646864147013">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="264" y="0" key="CommitChangelistDialog2/0.0.1280.680/1920.0.1920.1040@0.0.1280.680" timestamp="1646745462541" />
-    <state x="264" y="0" key="CommitChangelistDialog2/0.0.1280.680@0.0.1280.680" timestamp="1646782721376" />
-    <state x="121" y="50" key="DiffContextDialog" timestamp="1646745457053">
+    <state x="264" y="0" key="CommitChangelistDialog2/0.0.1280.680@0.0.1280.680" timestamp="1646864147013" />
+    <state x="121" y="50" key="DiffContextDialog" timestamp="1646864142621">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="121" y="50" key="DiffContextDialog/0.0.1280.680/1920.0.1920.1040@0.0.1280.680" timestamp="1646745457053" />
-    <state x="121" y="50" key="DiffContextDialog/0.0.1280.680@0.0.1280.680" timestamp="1646695348584" />
-    <state x="502" y="253" key="Github.Dialog.Accounts.Choose" timestamp="1646782819322">
+    <state x="121" y="50" key="DiffContextDialog/0.0.1280.680@0.0.1280.680" timestamp="1646864142621" />
+    <state x="502" y="253" key="Github.Dialog.Accounts.Choose" timestamp="1646864134341">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="502" y="253" key="Github.Dialog.Accounts.Choose/0.0.1280.680/1920.0.1920.1040@0.0.1280.680" timestamp="1646745544583" />
-    <state x="502" y="253" key="Github.Dialog.Accounts.Choose/0.0.1280.680@0.0.1280.680" timestamp="1646782819322" />
+    <state x="502" y="253" key="Github.Dialog.Accounts.Choose/0.0.1280.680@0.0.1280.680" timestamp="1646864134341" />
     <state x="482" y="220" key="Github.ShareDialog" timestamp="1645897278094">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
@@ -417,30 +430,30 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="142" y="0" key="SettingsEditor/0.0.1280.680@0.0.1280.680" timestamp="1645897121165" />
-    <state width="534" height="446" key="SwitcherDM" timestamp="1646855249208">
+    <state width="534" height="446" key="SwitcherDM" timestamp="1647376417864">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state width="534" height="446" key="SwitcherDM/0.0.1280.680/1920.0.1920.1040@0.0.1280.680" timestamp="1646046813820" />
-    <state width="534" height="446" key="SwitcherDM/0.0.1280.680@0.0.1280.680" timestamp="1646855249208" />
-    <state x="233" y="73" key="Vcs.Push.Dialog.v2" timestamp="1646782726350">
+    <state width="534" height="446" key="SwitcherDM/0.0.1280.680@0.0.1280.680" timestamp="1647376417864" />
+    <state x="233" y="73" key="Vcs.Push.Dialog.v2" timestamp="1646864131495">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="233" y="73" key="Vcs.Push.Dialog.v2/0.0.1280.680/1920.0.1920.1040@0.0.1280.680" timestamp="1646745542067" />
-    <state x="233" y="73" key="Vcs.Push.Dialog.v2/0.0.1280.680@0.0.1280.680" timestamp="1646782726350" />
-    <state x="93" y="93" width="1095" height="495" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1646682747554">
+    <state x="233" y="73" key="Vcs.Push.Dialog.v2/0.0.1280.680@0.0.1280.680" timestamp="1646864131495" />
+    <state x="93" y="93" width="1095" height="495" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1647375519403">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="93" y="93" width="1095" height="495" key="com.intellij.history.integration.ui.views.FileHistoryDialog/0.0.1280.680@0.0.1280.680" timestamp="1646682747554" />
+    <state x="93" y="93" width="1095" height="495" key="com.intellij.history.integration.ui.views.FileHistoryDialog/0.0.1280.680@0.0.1280.680" timestamp="1647375519403" />
     <state x="480" y="74" key="com.intellij.openapi.vcs.changes.SpecificFilesViewDialog" timestamp="1646695330276">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="480" y="74" key="com.intellij.openapi.vcs.changes.SpecificFilesViewDialog/0.0.1280.680@0.0.1280.680" timestamp="1646695330276" />
-    <state x="483" y="88" width="557" height="592" key="find.popup" timestamp="1646781482684">
+    <state x="483" y="88" width="557" height="592" key="find.popup" timestamp="1647205756489">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="483" y="88" width="557" height="592" key="find.popup/0.0.1280.680/1920.0.1920.1040@0.0.1280.680" timestamp="1646521930278" />
     <state x="2586" y="253" width="587" height="534" key="find.popup/0.0.1280.680/1920.0.1920.1040@1920.0.1920.1040" timestamp="1645568135848" />
-    <state x="483" y="88" width="557" height="592" key="find.popup/0.0.1280.680@0.0.1280.680" timestamp="1646781482684" />
+    <state x="483" y="88" width="557" height="592" key="find.popup/0.0.1280.680@0.0.1280.680" timestamp="1647205756489" />
     <state x="416" y="242" key="git4idea.remote.GitConfigureRemotesDialog" timestamp="1645897067941">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
@@ -449,10 +462,10 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="297" y="151" key="run.anything.popup/0.0.1280.680/1920.0.1920.1040@0.0.1280.680" timestamp="1646043619603" />
-    <state x="303" y="1" width="672" height="678" key="search.everywhere.popup" timestamp="1646781316802">
+    <state x="303" y="1" width="672" height="678" key="search.everywhere.popup" timestamp="1647298794760">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="303" y="1" width="672" height="678" key="search.everywhere.popup/0.0.1280.680@0.0.1280.680" timestamp="1646781316802" />
+    <state x="303" y="1" width="672" height="678" key="search.everywhere.popup/0.0.1280.680@0.0.1280.680" timestamp="1647298794760" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

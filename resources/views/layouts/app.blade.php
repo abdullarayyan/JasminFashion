@@ -113,17 +113,12 @@
 @include('layouts.includes.header')
 
 <section id="app" class="main-section">
-@auth
-    @include('layouts.includes.rightNav')
-@endauth
+{{--@auth--}}
+{{--    @include('layouts.includes.rightNav')--}}
+{{--@endauth--}}
 
 <!-- Page -->
     <section class="left-section @auth auth @endauth">
-        <div class="page-title">
-            <h1 id="previousPageTitle"></h1>
-            <h1>@yield('page_title')</h1>
-        </div>
-
         @yield('content')
     </section>
     <!-- End Page -->

@@ -27,7 +27,7 @@
                                         <div class="d-flex align-items-center">
                                             <button type="button"
                                                     onclick="document.getElementById('file_upload').click()">
-                                                اختار ملف
+                                                اختار صورة
                                             </button>
                                             <label class="filename"></label>
                                         </div>

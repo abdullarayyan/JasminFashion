@@ -445,11 +445,11 @@ body .left-section {
 }
 
 body .left-section .page-title {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-  margin: 15px 0;
+  /*display: flex;*/
+  /*flex-wrap: wrap;*/
+  /*justify-content: center;*/
+  /*align-items: center;*/
+  /*margin: 15px 0;*/
 }
 
 body .left-section .page-title h1 {
@@ -463,8 +463,8 @@ body .left-section .page-title h1 {
 }
 
 body.menu-open .main-section .left-section.auth {
-  width: calc(100% - 230px);
-  padding-right: 20px;
+  width:100%;
+  padding-right: 0px;
   transition: all 0.2s;
   overflow-x: hidden;
 }
@@ -1581,11 +1581,11 @@ button.btn, input[type="submit"].btn {
 }
 
 .table tbody tr:first-child td {
-  border-top: 1px solid #111;
+  /*border-top: 1px solid #111;*/
 }
 
 .table tbody tr:last-child td {
-  border-bottom: 1px solid #111;
+  /*border-bottom: 1px solid #111;*/
 }
 
 .page-item.active .page-link {

@@ -11,6 +11,7 @@ class ProductController extends Controller
     {
         $this->middleware('auth');
     }
+
     /**
      * Display a listing of the resource.
      *
@@ -40,7 +41,7 @@ class ProductController extends Controller
         if ($name) {
             $products->where("name", "LIKE", "%$name%");
         }
-        $products = $products->paginate(30);
+        $products = $products->paginate(5);
         return view("products.index")->with("products", $products);
 //        return view('products.index');
     }
@@ -79,7 +80,7 @@ class ProductController extends Controller
             'status' => 'required',
             'model' => 'required',
             'code' => 'required',
-            'price'=>'required',
+            'price' => 'required',
             'quantity' => 'required',
 
             'file' => [
@@ -146,7 +147,7 @@ class ProductController extends Controller
             'status' => 'required',
             'model' => 'required',
             'code' => 'required',
-            'price'=>'required',
+            'price' => 'required',
             'quantity' => 'required',
             'file' => [
                 'required',
@@ -186,7 +187,7 @@ class ProductController extends Controller
      */
     public function destroy(Product $product)
     {
-
+        dd($product);
         $product->delete();
 
         return redirect(url('/product'))->with('success', 'تم حذف الفستان بنجاح');

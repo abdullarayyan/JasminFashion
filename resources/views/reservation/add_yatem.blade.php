@@ -131,11 +131,12 @@
 @endsection
 
 @section('js')
-{{--    <script src="{{ url('js/pages/yatem/add_yatem.js') }}"></script>--}}
-{{--    <script>--}}
-{{--        const isYatem = {!! json_encode(isset()) !!};--}}
-{{--        if (isYatem) {--}}
-{{--            console.log(isYatem);--}}
-{{--        }--}}
-{{--    </script>--}}
+    <script>
+
+        $(document).ready(function () {
+            $('.js-example-basic-multiple').select2();
+        });
+    </script>
+
 @endsection
+

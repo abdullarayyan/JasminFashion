@@ -11,12 +11,12 @@
                 <input type="hidden" id="yatem_id" name="yatem_id">
 
                 <div class="form-group">
-                    <label for="mother_full_name"><span class="required_lbl">*</span>{{ __('الإسم الرباعي') }}</label>
+                    <label for="mother_full_name"><span class="required_lbl">*</span>{{ __('الإسم واسم العائلة') }}</label>
                     <input id="mother_full_name" type="text"
                            class="form-control required @error('mother_full_name') is-invalid @enderror"
                            name="mother_full_name"
                            value="{{ old('mother_full_name')  }}"
-                           autocomplete="mother_full_name">
+                           autocomplete="mother_full_name" maxlength="20">
 
                     @error('mother_full_name')
                     <span class="invalid-feedback" role="alert">
@@ -29,7 +29,7 @@
                     <label for="mother_idc"><span class="required_lbl">*</span>{{ __('رقم الهوية') }}</label>
                     <input id="mother_idc" type="number"
                            class="form-control required @error('mother_idc') is-invalid @enderror" name="mother_idc"
-                           value="{{ old('mother_idc') }}" autocomplete="mother_idc">
+                           value="{{ old('mother_idc') }}" autocomplete="mother_idc" maxlength="10">
 
                     @error('mother_idc')
                     <span class="invalid-feedback" role="alert">
@@ -43,7 +43,7 @@
                            class="form-control @error('mother_nationality') is-invalid @enderror"
                            name="mother_nationality"
                            value="{{ old('mother_nationality') }}"
-                           autocomplete="mother_nationality">
+                           autocomplete="mother_nationality" maxlength="10">
 
                     @error('mother_nationality')
                     <span class="invalid-feedback" role="alert">
