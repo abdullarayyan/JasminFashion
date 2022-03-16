@@ -26,7 +26,7 @@
 
     <div class="card-section">
         <div class="actions">
-            <a href="{{route("party.create")}}" class="btn btn-primary" style="background-color: #fcefba!important;">
+            <a href="{{route("product.create")}}" class="btn btn-primary" style="background-color: #fcefba!important;">
                 <i class="fa fa-plus"></i> اضافة فستان سهرة </a>
         </div>
         <div class="actions">

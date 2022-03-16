@@ -44,7 +44,6 @@ class ProductController extends Controller
         }
         $products = $products->paginate(5);
         return view("products.index")->with("products", $products);
-//        return view('products.index');
     }
 
     /**
@@ -69,8 +68,6 @@ class ProductController extends Controller
      */
     public function store(Request $request)
     {
-//dd($request->file->extension());
-
 
         $this->validate($request, [
             'name' => 'required',
@@ -92,7 +89,7 @@ class ProductController extends Controller
             ],
         ]);
 
-        $imgName = time() . '-' . $request->name . '.' . $request->file('file')->extension();
+        $imgName =  $request->name . '.' . $request->file('file')->extension();
 
         $request->file->move(public_path('images'), $imgName);
         $data = $request->except(['_token']);
@@ -136,8 +133,6 @@ class ProductController extends Controller
      */
     public function update(Request $request, Product $product)
     {
-//        dd($request->all());
-//        $product =Product::query()->firstOrFail($product);
 
         $this->validate($request, [
             'name' => 'required',
@@ -158,7 +153,6 @@ class ProductController extends Controller
             ],
         ]);
         $imgName =  $request->name . '.' . $request->file('file')->extension();
-//dd($imgName);
         $request->file->move(public_path('images'), $imgName);
 
         $product->name = $request->name;

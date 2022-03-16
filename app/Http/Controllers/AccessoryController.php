@@ -89,7 +89,7 @@ class AccessoryController extends Controller
             ],
         ]);
 
-        $imgName = time() . '-' . $request->name . '.' . $request->file('file')->extension();
+        $imgName =  $request->name . '.' . $request->file('file')->extension();
 
         $request->file->move(public_path('images'), $imgName);
         $data = $request->except(['_token']);
@@ -154,7 +154,7 @@ class AccessoryController extends Controller
                 'max:1024'
             ],
         ]);
-        $imgName = time() . '-' . $request->name . '.' . $request->file('file')->extension();
+        $imgName =  $request->name . '.' . $request->file('file')->extension();
 
         $request->file->move(public_path('images'), $imgName);
 

@@ -65,8 +65,6 @@ class PartyController extends Controller
      */
     public function store(Request $request)
     {
-//dd($request->file->extension());
-
 
         $this->validate($request, [
             'name' => 'required',
@@ -88,7 +86,7 @@ class PartyController extends Controller
             ],
         ]);
 
-        $imgName = time() . '-' . $request->name . '.' . $request->file('file')->extension();
+        $imgName =  $request->name . '.' . $request->file('file')->extension();
 
         $request->file->move(public_path('images'), $imgName);
         $data = $request->except(['_token']);
@@ -152,7 +150,7 @@ class PartyController extends Controller
                 'max:1024'
             ],
         ]);
-        $imgName = time() . '-' . $request->name . '.' . $request->file('file')->extension();
+        $imgName =  $request->name . '.' . $request->file('file')->extension();
 //dd($imgName);
         $request->file->move(public_path('images'), $imgName);
 
