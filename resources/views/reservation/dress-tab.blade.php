@@ -6,19 +6,17 @@
     </div>
     <div class="collapse accordion-content" id="dress_section">
         <div class="mothers_form">
-            <form id="add_dress_form" class="custom_form">
-                {!! csrf_field() !!}
                 <input type="hidden" id="yatem_id" name="yatem_id">
 
                 <div class="form-group">
-                    <label for="mother_full_name"><span class="required_lbl">*</span>{{ __('اسم الفستان') }}</label>
-                    <input id="mother_full_name" type="text"
-                           class="form-control required @error('mother_full_name') is-invalid @enderror"
-                           name="mother_full_name"
-                           value="{{ old('mother_full_name')  }}"
-                           autocomplete="mother_full_name" maxlength="20">
+                    <label for="dress_name"><span class="required_lbl">*</span>{{ __('اسم الفستان') }}</label>
+                    <input id="dress_name" type="text"
+                           class="form-control required @error('dress_name') is-invalid @enderror"
+                           name="dress_name"
+                           value="{{ old('dress_name')  }}"
+                           autocomplete="dress_name" maxlength="20">
 
-                    @error('mother_full_name')
+                    @error('dress_name')
                     <span class="invalid-feedback" role="alert">
                             <strong>{{ $message }}</strong>
                         </span>
@@ -26,20 +24,20 @@
                 </div>
 
                 <div class="form-group">
-                    <label for="mother_idc"><span class="required_lbl">*</span>{{ __('كود الفستان') }}</label>
-                    <input id="mother_idc" type="text"
-                           class="form-control required @error('mother_idc') is-invalid @enderror" name="mother_idc"
-                           value="{{ old('mother_idc') }}" autocomplete="mother_idc" maxlength="10">
+                    <label for="dress_code"><span class="required_lbl">*</span>{{ __('كود الفستان') }}</label>
+                    <input id="dress_code" type="text"
+                           class="form-control required @error('dress_code') is-invalid @enderror" name="dress_code"
+                           value="{{ old('dress_code') }}" autocomplete="dress_code" maxlength="10">
 
-                    @error('mother_idc')
+                    @error('dress_code')
                     <span class="invalid-feedback" role="alert">
                             <strong>{{ $message }}</strong>
                         </span>
                     @enderror
                 </div>
                 <div class="form-group">
-                    <label for="model"><span class="required_lbl">*</span>{{ __('موديل الفستان') }}</label>
-                    <select class="js-example-basic-single" name="model">
+                    <label for="dress_model"><span class="required_lbl">*</span>{{ __('موديل الفستان') }}</label>
+                    <select class="js-example-basic-single" name="dress_model">
                         <option value=""></option>
                         <option value="2019" style="background-color: #eeeeee">2019</option>
                         ...
@@ -49,14 +47,14 @@
                     </select>
                 </div>
                 <div class="form-group">
-                    <label for="mother_nationality"><span class="required_lbl">*</span>{{ __('سعر') }}</label>
-                    <input id="mother_nationality" type="text"
-                           class="form-control @error('mother_nationality') is-invalid @enderror"
-                           name="mother_nationality"
-                           value="{{ old('mother_nationality') }}"
-                           autocomplete="mother_nationality" maxlength="10">
+                    <label for="dress_price"><span class="required_lbl">*</span>{{ __('سعر') }}</label>
+                    <input id="dress_price" type="text"
+                           class="form-control @error('dress_price') is-invalid @enderror"
+                           name="dress_price"
+                           value="{{ old('dress_price') }}"
+                           autocomplete="dress_price" maxlength="10">
 
-                    @error('mother_nationality')
+                    @error('dress_price')
                     <span class="invalid-feedback" role="alert">
                             <strong>{{ $message }}</strong>
                         </span>
@@ -64,8 +62,8 @@
                 </div>
 
                 <div class="form-group">
-                    <label for="size"><span class="required_lbl">*</span>{{ __('الحجم') }}</label>
-                    <select class="js-example-basic-multiple" name="size[]" multiple="multiple"
+                    <label for="dress_size"><span class="required_lbl">*</span>{{ __('الحجم') }}</label>
+                    <select class="js-example-basic-multiple" name="dress_size[]" multiple="multiple"
                             style="border: 1px solid #fcefba!important;">
                         <option value=""></option>
                         <option value="small">Small</option>
@@ -79,8 +77,8 @@
                 </div>
 
                 <div class="form-group">
-                    <label for="color"><span class="required_lbl">*</span>{{ __('اللون') }}</label>
-                    <select class="js-example-basic-single" name="color">
+                    <label for="dress_color"><span class="required_lbl">*</span>{{ __('اللون') }}</label>
+                    <select class="js-example-basic-single" name="dress_color">
                         <option value=""></option>
                         <option value="ابيض" style="background-color: white">ابيض</option>
                         ...
@@ -101,8 +99,8 @@
                 </div>
 
                 <div class="form-group">
-                    <label for="name"><span class="required_lbl">*</span>{{ __('اسم الاكسسوار') }}</label>
-                    <select class="js-example-basic-single" name="name">
+                    <label for="dress_name_acc"><span class="required_lbl">*</span>{{ __('اسم الاكسسوار') }}</label>
+                    <select class="js-example-basic-single" name="dress_name_acc">
                         <option value=""></option>
                         <option value="عقد الالماس" style="background-color: #eeeeee">عقد الالماس</option>
                         ...
@@ -115,12 +113,12 @@
                 </div>
 
                 <div class="form-group">
-                    <label for="mother_idc"><span class="required_lbl">*</span>{{ __('كود الاكسسوار') }}</label>
-                    <input id="mother_idc" type="number"
-                           class="form-control required @error('mother_idc') is-invalid @enderror" name="mother_idc"
-                           value="{{ old('mother_idc') }}" autocomplete="mother_idc">
+                    <label for="dress_code_acc"><span class="required_lbl">*</span>{{ __('كود الاكسسوار') }}</label>
+                    <input id="dress_name_acc" type="number"
+                           class="form-control required @error('dress_name_acc') is-invalid @enderror" name="dress_name_acc"
+                           value="{{ old('dress_name_acc') }}" autocomplete="dress_name_acc">
 
-                    @error('mother_idc')
+                    @error('dress_name_acc')
                     <span class="invalid-feedback" role="alert">
                             <strong>{{ $message }}</strong>
                         </span>
@@ -128,14 +126,14 @@
                 </div>
 
                 <div class="form-group">
-                    <label for="mother_nationality"><span class="required_lbl">*</span>{{ __('سعر الاكسسوار') }}</label>
-                    <input id="mother_nationality" type="text"
-                           class="form-control @error('mother_nationality') is-invalid @enderror"
-                           name="mother_nationality"
-                           value="{{ old('mother_nationality') }}"
-                           autocomplete="mother_nationality">
+                    <label for="dress_price_acc"><span class="required_lbl">*</span>{{ __('سعر الاكسسوار') }}</label>
+                    <input id="dress_price_acc" type="text"
+                           class="form-control @error('dress_price_acc') is-invalid @enderror"
+                           name="dress_price_acc"
+                           value="{{ old('dress_price_acc') }}"
+                           autocomplete="dress_price_acc">
 
-                    @error('mother_nationality')
+                    @error('dress_price_acc')
                     <span class="invalid-feedback" role="alert">
                             <strong>{{ $message }}</strong>
                         </span>
@@ -143,8 +141,8 @@
                 </div>
 
                 <div class="form-group">
-                    <label for="color"><span class="required_lbl">*</span>{{ __('اللون') }}</label>
-                    <select class="js-example-basic-single" name="color">
+                    <label for="dress_color_acc"><span class="required_lbl">*</span>{{ __('اللون') }}</label>
+                    <select class="js-example-basic-single" name="dress_color_acc">
                         <option value=""></option>
                         <option value="ابيض" style="background-color: #ffb101">ذهبي</option>
                         ...
@@ -153,12 +151,7 @@
                 </div>
 
 
-                <div class="btns mt-4">
-                    <button type="button" id="add_mother" class="btn btn-primary">
-                        {{ __('حفظ') }}
-                    </button>
-                </div>
-            </form>
+
         </div>
     </div>
 </div>

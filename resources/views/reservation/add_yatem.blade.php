@@ -72,14 +72,6 @@
                     {{ session('message.yatem.added') }}
                 </div>
             @endif
-
-            <div class="father-not-found alert alert-danger hide" role="alert">
-                يجب ادخال معلومات الأب أولاً
-            </div>
-
-            <div class="mother-not-found alert alert-danger hide" role="alert">
-                يجب ادخال معلومات الأم أولاً
-            </div>
         </div>
 
         <div class="required_fields mt-2 mb-4 d-none">
@@ -87,52 +79,78 @@
                 الرجاء ملئ جميع الخانات المطلوبة
             </div>
         </div>
-        <ul class="nav nav-tabs" id="add_yatem_tab" role="tablist">
+        {!! Form::open($reservation->exists?
+                                            ["route"=>["reservation.update",$reservation->id],"files"=>true,"class"=>"ajax-form",'method'=>'PUT']:
+                                            ["route"=>["reservation.store"],"files"=>true,"class"=>"ajax-form",'method'=>'POST'] ) !!}
+        @csrf
+            <ul class="nav nav-tabs" id="add_yatem_tab" role="tablist">
 
-            <li class="nav-item">
-                <a class="nav-link active show" id="parents-tab" data-toggle="tab" href="#parents" role="tab" aria-controls="parents" aria-selected="true">معلومات الحجز</a>
-            </li>
+                <li class="nav-item">
+                    <a class="nav-link active show" id="parents-tab" data-toggle="tab" href="#parents" role="tab"
+                       aria-controls="parents" aria-selected="true">معلومات الحجز</a>
+                </li>
 
-        </ul>
+            </ul>
+            @include('reservation.zbone-tab')
+            @include('reservation.dress-tab')
+            @include('reservation.party-tab')
+            <div class="col-md-4" style="    margin-top: 32px;">
 
-        @include('reservation.zbone-tab')
-        @include('reservation.dress-tab')
-        @include('reservation.party-tab')
-{{--        @include('reservation.accessory-tab')--}}
+                @if (isset($errors) && $errors->any())
+                    <div class="alert alert-danger">
+                        @foreach ($errors->all() as $error)
+                            {{ $error }}
+                        @endforeach
+                    </div>
+                @endif
+                <div class="col-md-12">
+                    <button class="btn btn--primary type--uppercase" type="submit" style="width: 10%">تخزين</button>
+                </div>
+        {!! Form::close() !!}
+
+        {{--            <div class="actions">--}}
+        {{--                <button class="btn btn-outline-primary ml-0 small" onclick="window.print()">--}}
+        {{--                    <i class='bx bx-printer'></i>--}}
+        {{--                    {{ __('طباعة') }}--}}
+        {{--                </button>--}}
+        {{--            </div>--}}
+        {{--        </form>--}}
+
+
+        {{--        @include('reservation.accessory-tab')--}}
 
     </div>
-
-        <div class="card-section">
-            <div class="header">
-                <span class="card_title">سِجِل الحجز</span>
-{{--                @if(@isset(->yatemHistory) and count(->yatemHistory) > 0)--}}
-                    <div class="actions">
-                        <button class="btn btn-outline-primary ml-0 small" onclick="window.print()">
-                            <i class='bx bx-printer'></i>
-                            {{ __('طباعة') }}
-                        </button>
-                    </div>
-{{--                @endif--}}
+    <div class="card-section">
+        <div class="header">
+            <span class="card_title">سِجِل الحجز</span>
+            {{--                @if(@isset(->yatemHistory) and count(->yatemHistory) > 0)--}}
+            <div class="actions">
+                <button class="btn btn-outline-primary ml-0 small" onclick="window.print()">
+                    <i class='bx bx-printer'></i>
+                    {{ __('طباعة') }}
+                </button>
             </div>
-                <ul class="logs">
-                        <li class="log_item">
-                            <div class="details">
-                                <span class="indicator"></span>
-                                <span class="message"></span>
-                            </div>
-                            <div class="time"></div>
-                        </li>
-                </ul>
-
-                <div class="alert alert-info mt-3" role="alert">
-                    لا يوجد سجل لهذا الحجز
-                </div>
+            {{--                @endif--}}
         </div>
+        <ul class="logs">
+            <li class="log_item">
+                <div class="details">
+                    <span class="indicator"></span>
+                    <span class="message"></span>
+                </div>
+                <div class="time"></div>
+            </li>
+        </ul>
+
+        <div class="alert alert-info mt-3" role="alert">
+            لا يوجد سجل لهذا الحجز
+        </div>
+    </div>
+
 @endsection
 
 @section('js')
     <script>
-
         $(document).ready(function () {
             $('.js-example-basic-multiple').select2();
         });

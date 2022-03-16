@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\Party;
 use Haruncpi\LaravelIdGenerator\IdGenerator;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
@@ -17,7 +18,8 @@ use Illuminate\Support\Facades\Route;
 Route::get('foo',function (){
 //    $prefix = "#";
 //    $id = IdGenerator::generate(['table' => 'products', 'length' => 9, 'prefix' =>$prefix]);
-    $orderObj = \DB::table('products')->latest('id')->first();
+    $orderObj = Party::query()->count();
+
 
     dd($orderObj);
 });
