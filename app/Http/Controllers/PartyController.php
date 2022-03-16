@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Party;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\File;
 
 class PartyController extends Controller
 {
@@ -40,7 +41,7 @@ class PartyController extends Controller
         if ($name) {
             $parties->where("name", "LIKE", "%$name%");
         }
-        $parties = $parties->paginate(30);
+        $parties = $parties->paginate(5);
         return view("parties.index")->with("parties", $parties);
 //        return view('parties.index');
     }
@@ -180,6 +181,8 @@ class PartyController extends Controller
      */
     public function destroy(Party $party)
     {
+        File::delete(public_path('images').'/'.$party->file);
+
 
         $party->delete();
 

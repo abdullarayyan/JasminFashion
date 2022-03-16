@@ -3,31 +3,35 @@
 
 namespace App\classes;
 
+use App\Models\Accessory;
+use App\Models\Party;
+use App\Models\Product;
+
 class IHouse
 {
     public function getSequenceProduct()
     {
-        $orderObj = \DB::table('products')->latest('id')->first();
+        $orderObj = Product::query()->count();
         if ($orderObj) {
-            return $orderObj->id;
+            return $orderObj+1;
         } else {
             return 1;
         }
     }
     public function getSequenceAccessories()
     {
-        $orderObj = \DB::table('accessories')->latest('id')->first();
+        $orderObj = Accessory::query()->count();
         if ($orderObj) {
-            return $orderObj->id;
+            return $orderObj+1;
         } else {
             return 1;
         }
     }
     public function getSequenceParties()
     {
-        $orderObj = \DB::table('parties')->latest('id')->first();
+        $orderObj = Party::query()->count();
         if ($orderObj) {
-            return $orderObj->id;
+            return $orderObj+1;
         } else {
             return 1;
         }

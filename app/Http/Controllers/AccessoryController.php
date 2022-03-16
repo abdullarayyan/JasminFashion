@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\accessory;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\File;
 
 class AccessoryController extends Controller
 {
@@ -40,7 +41,7 @@ class AccessoryController extends Controller
         if ($name) {
             $accessories->where("name", "LIKE", "%$name%");
         }
-        $accessories = $accessories->paginate(30);
+        $accessories = $accessories->paginate(5);
         return view("accessories.index")->with("accessories", $accessories);
     }
 
@@ -183,6 +184,7 @@ class AccessoryController extends Controller
      */
     public function destroy(Accessory $accessory)
     {
+        File::delete(public_path('images').'/'.$accessory->file);
 
         $accessory->delete();
 

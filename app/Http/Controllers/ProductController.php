@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Product;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\File;
 
 class ProductController extends Controller
 {
@@ -156,7 +157,7 @@ class ProductController extends Controller
                 'max:1024'
             ],
         ]);
-        $imgName = time() . '-' . $request->name . '.' . $request->file('file')->extension();
+        $imgName =  $request->name . '.' . $request->file('file')->extension();
 //dd($imgName);
         $request->file->move(public_path('images'), $imgName);
 
@@ -187,7 +188,10 @@ class ProductController extends Controller
      */
     public function destroy(Product $product)
     {
-        dd($product);
+
+
+        File::delete(public_path('images').'/'.$product->file);
+
         $product->delete();
 
         return redirect(url('/product'))->with('success', 'تم حذف الفستان بنجاح');
