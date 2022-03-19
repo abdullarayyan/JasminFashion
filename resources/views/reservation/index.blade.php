@@ -138,14 +138,19 @@
                                 <td style="width: 20%">
                                     {{$reservation->start}}
                                 </td>
+                                <div class="hide">
+{{--                                    {{dd(DB::table('cities')->where('id',$reservation->city)->first())}}--}}
+                                    {{$city = \App\Models\City::query()->where('id',$reservation->city)->first()}}
+                                    {{$city_ = \App\Models\City::query()->where('id',$reservation->from)->first()}}
+                                </div>
                                 <td style="width: 20%">
                                     {{$reservation->end}}
                                 </td>
                                 <td>
-                                    {{$reservation->city}}
+                                    {{$city->name}}
                                 </td>
                                 <td>
-                                    {{$reservation->from}}
+                                    {{$city_->name}}
                                 </td>
 
                                 {{--{{dd($reservation->dress_code)}}--}}

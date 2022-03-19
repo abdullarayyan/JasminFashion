@@ -7,6 +7,7 @@ use App\Models\Party;
 use App\Models\Product;
 use App\Models\Reservation;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class ReservationController extends Controller
 {
@@ -102,21 +103,28 @@ class ReservationController extends Controller
         $reservation->save();
 //        dd($reservation);
         $product = Product::query()->where('code',$reservation->dress_code)->first();
-        $product->update(['status'=>0]);
+        if ($product!=null){
+            $product->update(['status'=>0]);
+
+        }
 
         $party = Party::query()->where('code',$reservation->party_code)->first();
-        $party->update(['status'=>0]);
+        if ($party!=null){
+            $party->update(['status'=>0]);
+
+        }
 
         $product_acc = Accessory::query()->where('code',$reservation->dress_code_acc)->first();
-        $product_acc->update(['status'=>0]);
+        if ($product_acc){
+            $product_acc->update(['status'=>0]);
+        }
 
         $party_acc = Accessory::query()->where('code',$reservation->dress_code_acc)->first();
-        $party_acc->update(['status'=>0]);
+        if ($party_acc){
+            $party_acc->update(['status'=>0]);
 
-//        $data = $request->except(['_token']);
-//        Reservation::query()->insert($data);
+        }
 
-//        dd($request->all());
         return redirect(url('/reservation'))->with('success', 'تم اضافة الحجز بنجاح');
 
     }
@@ -173,4 +181,13 @@ class ReservationController extends Controller
         return view('reservation.invoice')->with(compact('customer'));
 
     }
+    public function get_cities(Request $request){
+        $id = $request->id;
+        if ($id) {
+            $categories = DB::table('cities')->where("city_id", $id)->select("id", "name")->get()->toArray();
+            return response()->json($categories);
+        }
+    }
+
+
 }

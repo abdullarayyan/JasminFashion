@@ -146,9 +146,9 @@
             <select class="js-example-basic-single" name="status">
                 <option value=""></option>
 
-                <option {{$party->status==1?'selected':""}} value="1">محجوز</option>
+                <option {{$party->status==0?'selected':""}} value="1">محجوز</option>
                 ...
-                <option {{$party->status==0?'selected' : ''}} value="0">غير محجوز</option>
+                <option {{$party->status==1?'selected' : ''}} value="0">غير محجوز</option>
             </select>
         </div>
 
@@ -186,7 +186,7 @@
             <label for="size"><span class="required_lbl">*</span>{{ __('الحجم') }}</label>
             <select class="js-example-basic-multiple" name="size[]" multiple="multiple"
                     style="border: 1px solid #fcefba!important;">
-                <option value="{{$party->exists?$party->size:''}}">{{$party->exists?$party->size:''}}</option>
+                <option value="{{$party->exists?$party->size[0]:''}}">{{$party->exists?$party->size[0]:''}}</option>
                 <option value="small">Small</option>
                 ...
                 <option value="medium">Medium</option>

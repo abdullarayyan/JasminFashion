@@ -137,8 +137,8 @@
             <select class="js-example-basic-single" name="sale">
                 <option value="" selected></option>
 
-                <option {{$product->status==1?'selected' : ''}} value="1">مسموح</option>
-                <option {{$product->status==0?'selected' : ''}} value="0">غير مسموح</option>
+                <option {{$product->status==0?'selected' : ''}} value="0">مسموح</option>
+                <option {{$product->status==1?'selected' : ''}} value="1">غير مسموح</option>
             </select>
         </div>
         <div class="form-group">
@@ -146,9 +146,9 @@
             <select class="js-example-basic-single" name="status">
                 <option value=""></option>
 
-                <option {{$product->status==1?'selected':""}} value="1">محجوز</option>
+                <option {{$product->status==0?'selected':""}} value="0">محجوز</option>
                 ...
-                <option {{$product->status==0?'selected' : ''}} value="0">غير محجوز</option>
+                <option {{$product->status==1?'selected' : ''}} value="1">غير محجوز</option>
             </select>
         </div>
 
@@ -185,7 +185,7 @@
             <label for="size"><span class="required_lbl">*</span>{{ __('الحجم') }}</label>
             <select class="js-example-basic-multiple" name="size[]" multiple="multiple"
                     style="border: 1px solid #fcefba!important;">
-                <option value="{{$product->exists?$product->size:''}}">{{$product->exists?$product->size:''}}</option>
+                <option value="{{$product->exists?$product->size[0]:''}}">{{$product->exists?$product->size[0]:''}}</option>
                 <option value="small">Small</option>
                 ...
                 <option value="medium">Medium</option>

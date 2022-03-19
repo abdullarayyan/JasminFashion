@@ -6,6 +6,7 @@ namespace App\classes;
 use App\Models\Accessory;
 use App\Models\Party;
 use App\Models\Product;
+use Illuminate\Support\Facades\DB;
 
 class IHouse
 {
@@ -35,5 +36,8 @@ class IHouse
         } else {
             return 1;
         }
+    }
+    public function city(){
+        return DB::table('cities')->whereNull("city_id")->pluck("name", "id");
     }
 }
