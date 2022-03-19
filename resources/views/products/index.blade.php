@@ -139,7 +139,6 @@
                                     <i class="fa fa-eraser"></i></a>
                             </td>
                         </tr>
-
                         {!! Form::close() !!}
                         </thead>
                         <tbody>
@@ -168,7 +167,10 @@
                                     {{$product->color}}
                                 </td>
                                 <td>
-                                    {{$product->size}}
+                                    {{ $product->size[0]??''}}
+                                    {{$product->size[2]??''}}
+                                    {{$product->size[1]??''}}
+                                    {{$product->size[3]??''}}
                                 </td>
                                 <td style="    word-break: break-all;">
                                     {{$product->description}}

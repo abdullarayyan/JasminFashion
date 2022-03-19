@@ -12,4 +12,7 @@ class Party extends Model
 
 
     protected $table = 'parties';
+    protected $casts = [
+        'size' => 'array'
+    ];
 }

@@ -149,8 +149,10 @@
                                     {{$party->color}}
                                 </td>
                                 <td>
-                                    {{$party->size}}
-                                </td>
+                                    {{ $party->size[0]??''}}
+                                    {{$party->size[2]??''}}
+                                    {{$party->size[1]??''}}
+                                    {{$party->size[3]??''}}                                </td>
                                 <td style="    word-break: break-all;">
                                     {{$party->description}}
                                 </td>

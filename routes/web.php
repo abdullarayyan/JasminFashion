@@ -2,8 +2,10 @@
 
 use App\Models\Party;
 use Haruncpi\LaravelIdGenerator\IdGenerator;
+use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Schema;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,21 +18,21 @@ use Illuminate\Support\Facades\Route;
 |
 */
 Route::get('foo',function (){
-//    $prefix = "#";
-//    $id = IdGenerator::generate(['table' => 'products', 'length' => 9, 'prefix' =>$prefix]);
-    $orderObj = Party::query()->count();
-
-
-    dd($orderObj);
+dd(Auth::user()->name);
 });
 Auth::routes();
 
 Route::get('/', 'App\Http\Controllers\HomeController@index')->name('home');
 
+Route::post('/get-product','App\Http\Controllers\ProductController@getProduct')->name('get-product');
+Route::post('/get-accessory','App\Http\Controllers\AccessoryController@getAccessory')->name('get-accessory');
+Route::post('/get-party','App\Http\Controllers\PartyController@getParty')->name('get-party');
 Route::resource('/product','App\Http\Controllers\ProductController');
 Route::resource('/party','App\Http\Controllers\PartyController');
 Route::resource('/accessory','App\Http\Controllers\AccessoryController');
-Route::resource('/reservation','App\Http\Controllers\ReservationController');
+Route::get('/reservation/invoice/{id}','App\Http\Controllers\ReservationController@invoice')->name('reservation.invoice');
+
+Route::resource('reservation','App\Http\Controllers\ReservationController');
 
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

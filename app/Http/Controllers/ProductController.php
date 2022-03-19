@@ -68,6 +68,7 @@ class ProductController extends Controller
      */
     public function store(Request $request)
     {
+//        dd($request->all());
 
         $this->validate($request, [
             'name' => 'required',
@@ -89,7 +90,7 @@ class ProductController extends Controller
             ],
         ]);
 
-        $imgName =  $request->name . '.' . $request->file('file')->extension();
+        $imgName = $request->name . '.' . $request->file('file')->extension();
 
         $request->file->move(public_path('images'), $imgName);
         $data = $request->except(['_token']);
@@ -152,7 +153,7 @@ class ProductController extends Controller
                 'max:1024'
             ],
         ]);
-        $imgName =  $request->name . '.' . $request->file('file')->extension();
+        $imgName = $request->name . '.' . $request->file('file')->extension();
         $request->file->move(public_path('images'), $imgName);
 
         $product->name = $request->name;
@@ -184,11 +185,39 @@ class ProductController extends Controller
     {
 
 
-        File::delete(public_path('images').'/'.$product->file);
+        File::delete(public_path('images') . '/' . $product->file);
 
         $product->delete();
 
         return redirect(url('/product'))->with('success', 'تم حذف الفستان بنجاح');
 
+    }
+
+    public function getProduct(Request $request)
+    {
+        $term = trim($request->get('q'));
+        $model = "App\Models\\{$request->get('model')}";
+
+        if (empty($term)) {
+            return \Response::json([]);
+        }
+
+        $product = $model::query()
+            ->where('status','<>',0)
+            ->where('code', 'LIKE', '%' . $term . '%')->first();
+//            $query->where('status', 0);
+
+
+        $formatted_sponsors []= [
+            'id' => $product->id,
+            'text' => $product->name,
+            'name'=>$product->name,
+            'code' => $product->code,
+            'size' => $product->size,
+            'model' => $product->model,
+            'price' => $product->price,
+            'color' => $product->color
+        ];
+        return \Response::json($formatted_sponsors);
     }
 }

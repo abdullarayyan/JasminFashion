@@ -191,4 +191,32 @@ class AccessoryController extends Controller
         return redirect(url('/accessory'))->with('success', 'تم حذف الاكسسوار بنجاح');
 
     }
+
+    public function getAccessory(Request $request)
+    {
+        $term = trim($request->get('q'));
+        $model = "App\Models\\{$request->get('model')}";
+
+        if (empty($term)) {
+            return \Response::json([]);
+        }
+
+        $accessory = $model::query()
+            ->where('status','<>',0)
+            ->where('code', 'LIKE', '%' . $term . '%')->first();
+//            $query->where('status', 0);
+
+
+        $formatted_sponsors []= [
+            'id' => $accessory->id,
+            'text' => $accessory->name,
+            'name'=>$accessory->name,
+            'code' => $accessory->code,
+            'size' => $accessory->size,
+            'model' => $accessory->model,
+            'price' => $accessory->price,
+            'color' => $accessory->color
+        ];
+        return \Response::json($formatted_sponsors);
+    }
 }

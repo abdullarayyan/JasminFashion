@@ -108,17 +108,6 @@
                 </div>
         {!! Form::close() !!}
 
-        {{--            <div class="actions">--}}
-        {{--                <button class="btn btn-outline-primary ml-0 small" onclick="window.print()">--}}
-        {{--                    <i class='bx bx-printer'></i>--}}
-        {{--                    {{ __('طباعة') }}--}}
-        {{--                </button>--}}
-        {{--            </div>--}}
-        {{--        </form>--}}
-
-
-        {{--        @include('reservation.accessory-tab')--}}
-
     </div>
     <div class="card-section">
         <div class="header">

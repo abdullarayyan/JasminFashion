@@ -30,6 +30,8 @@ class CreateReservationsTable extends Migration
             $table->string('dress_color_acc')->nullable();
             $table->string('dress_price_acc')->nullable();
             $table->string('dress_name_acc')->nullable();
+            $table->string('dress_code_acc')->nullable();
+
 //
             $table->string('party_name')->nullable();
             $table->string('party_code')->nullable();
@@ -38,6 +40,7 @@ class CreateReservationsTable extends Migration
 
             $table->string('party_color_acc')->nullable();
             $table->string('party_price_acc')->nullable();
+            $table->string('party_code_acc')->nullable();
             $table->string('party_name_acc')->nullable();
             $table->timestamps();
         });

@@ -8,8 +8,13 @@ use Illuminate\Database\Eloquent\Model;
 class Product extends Model
 {
     use HasFactory;
+
     protected $guarded = ['id'];
 
 
     protected $table = 'products';
+
+    protected $casts = [
+        'size' => 'array'
+    ];
 }

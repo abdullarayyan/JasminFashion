@@ -86,7 +86,7 @@
             <label for="code"><span class="required_lbl">*</span>{{ __('كود القطعه') }}</label>
             <input id="code" type="text" class="form-control required @error('code') is-invalid @enderror"
                    name="code"
-                   value="{{ "#".Haruncpi\LaravelIdGenerator\IdGenerator::generate(['table' => 'parties', 'length' => 5, 'prefix' =>\App\classes\IHouse::getSequenceParties()]) }}"
+                   value="{{ "#".\App\classes\IHouse::getSequenceParties().'001' }}"
 
                    required
                    autocomplete="code" maxlength="10">

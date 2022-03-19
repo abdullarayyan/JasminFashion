@@ -187,4 +187,30 @@ class PartyController extends Controller
         return redirect(url('/party'))->with('success', 'تم حذف الفستان بنجاح');
 
     }
+    public function getParty(Request $request)
+    {
+//        dd($request->all());
+        $term = trim($request->get('q'));
+        $model = "App\Models\\{$request->get('model')}";
+
+        if (empty($term)) {
+            return \Response::json([]);
+        }
+
+        $party = $model::query()
+            ->where('status','<>',0)
+            ->where('code', 'LIKE', '%' . $term . '%')->first();
+
+        $formatted_sponsors []= [
+            'id' => $party->id,
+            'text' => $party->name,
+            'name'=>$party->name,
+            'code' => $party->code,
+            'size' => $party->size,
+            'model' => $party->model,
+            'price' => $party->price,
+            'color' => $party->color
+        ];
+        return \Response::json($formatted_sponsors);
+    }
 }

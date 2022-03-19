@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Product;
 use App\Models\Reservation;
 use Illuminate\Http\Request;
 
@@ -32,7 +33,8 @@ class ReservationController extends Controller
     {
         $reservation = new Reservation();
 
-        return view('reservation.add_yatem')->with(compact('reservation'));
+        $products = Product::query()->get();
+        return view('reservation.add_yatem')->with(compact('reservation','products'));
 
     }
 
@@ -44,6 +46,7 @@ class ReservationController extends Controller
      */
     public function store(Request $request)
     {
+//        dd($request->all());
         $this->validate($request, [
             "customer_name" => 'required',
             "mobile" => 'required',
@@ -52,19 +55,6 @@ class ReservationController extends Controller
             "from" => 'required',
             "to" => 'required',
             "dress_name" => 'required',
-            "dress_code" => 'required',
-            "dress_model" => 'required',
-            "dress_price" => 'required',
-            "dress_color" => 'required',
-            "dress_name_acc" => 'required',
-            "dress_price_acc" => 'required',
-            "dress_color_acc" => 'required',
-            "party_model" => 'required',
-            "party_price" => 'required',
-            "party_color" => 'required',
-            "party_name_acc" => 'required',
-            "party_price_acc" => 'required',
-            "party_color_acc" => 'required',
         ],[
             'customer_name.required' => 'هذا الحقل مطلوب',
             'mobile.required' => 'هذا الحقل مطلوب',
@@ -73,20 +63,13 @@ class ReservationController extends Controller
             'party_color.required' => 'هذا الحقل مطلوب',
             'from.required' => 'هذا الحقل مطلوب',
             'to.required' => 'هذا الحقل مطلوب',
-            'dress_name.required' => 'هذا الحقل مطلوب',
-            'dress_code.required' => 'هذا الحقل مطلوب',
-            'dress_model.required' => 'هذا الحقل مطلوب',
-            'dress_price.required' => 'هذا الحقل مطلوب',
-            'dress_color_acc.required' => 'هذا الحقل مطلوب',
-            'dress_name_acc.required' => 'هذا الحقل مطلوب',
-            'party_price_acc.required' => 'هذا الحقل مطلوب',
-            'party_model.required' => 'هذا الحقل مطلوب',
-            'party_color_acc.required' => 'هذا الحقل مطلوب'
+            'dress_name.required' => 'يرجى اكمال عملية الحجز ',
 
         ]);
 
         $reservation = new  Reservation();
 
+//        dd($request->all());
         $reservation->customer_name=$request->customer_name;
         $reservation->mobile=$request->mobile;
         $reservation->from=$request->town;
@@ -102,6 +85,7 @@ class ReservationController extends Controller
         $reservation->dress_name_acc=$request->dress_name_acc;
         $reservation->dress_price_acc=$request->dress_price_acc;
         $reservation->dress_color_acc=$request->dress_color_acc;
+        $reservation->dress_code_acc=$request->dress_code_acc;
 
         $reservation->party_name=$request->party_name;
         $reservation->party_code=$request->party_code;
@@ -111,6 +95,7 @@ class ReservationController extends Controller
         $reservation->party_name_acc=$request->party_name_acc;
         $reservation->party_price_acc=$request->party_price_acc;
         $reservation->party_color_acc=$request->party_color_acc;
+        $reservation->party_code_acc=$request->party_code_acc;
 
         $reservation->save();
 //        $data = $request->except(['_token']);
@@ -159,10 +144,18 @@ class ReservationController extends Controller
      * Remove the specified resource from storage.
      *
      * @param \App\Models\Reservation $reservation
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Http\RedirectResponse|\Illuminate\Http\Response|\Illuminate\Routing\Redirector
      */
     public function destroy(Reservation $reservation)
     {
-        //
+        $reservation->delete();
+        return redirect(url('/reservation'))->with('success', 'تم حذف الحجز بنجاح');
+
+    }
+
+    public function invoice($id){
+        $customer = Reservation::query()->where('id',$id)->first();
+        return view('reservation.invoice')->with(compact('customer'));
+
     }
 }

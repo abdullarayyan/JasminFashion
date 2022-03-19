@@ -5,153 +5,263 @@
         <span class="bx bxs-chevron-down"></span>
     </div>
     <div class="collapse accordion-content" id="dress_section">
-        <div class="mothers_form">
-                <input type="hidden" id="yatem_id" name="yatem_id">
+        <div class="">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="dress_name">{{ __('اسم الفستان') }}</label>
+                        <select name="dress_name" data-model="Product" class="form-control" id="dress_search" required>
+                        </select>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="dress_code"><span class="required_lbl">*</span>{{ __('كود الفستان') }}</label>
+                        <input id="dress_code" type="text"
+                               class="form-control required @error('dress_code') is-invalid @enderror" name="dress_code"
+                               value="{{ old('dress_code') }}" autocomplete="dress_code" maxlength="10">
 
-                <div class="form-group">
-                    <label for="dress_name"><span class="required_lbl">*</span>{{ __('اسم الفستان') }}</label>
-                    <input id="dress_name" type="text"
-                           class="form-control required @error('dress_name') is-invalid @enderror"
-                           name="dress_name"
-                           value="{{ old('dress_name')  }}"
-                           autocomplete="dress_name" maxlength="20">
-
-                    @error('dress_name')
-                    <span class="invalid-feedback" role="alert">
+                        @error('dress_code')
+                        <span class="invalid-feedback" role="alert">
                             <strong>{{ $message }}</strong>
                         </span>
-                    @enderror
+                        @enderror
+                    </div>
                 </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="dress_model"><span class="required_lbl">*</span>{{ __('موديل الفستان') }}</label>
+                        <select class="js-example-basic-single" name="dress_model" id="dress_model">
+                            <option value="" id=""></option>
+                        </select>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="dress_price"><span class="required_lbl">*</span>{{ __('سعر') }}</label>
+                        <input id="dress_price" type="text"
+                               class="form-control @error('dress_price') is-invalid @enderror"
+                               name="dress_price"
+                               value="{{ old('dress_price') }}"
+                               autocomplete="dress_price" maxlength="10">
 
-                <div class="form-group">
-                    <label for="dress_code"><span class="required_lbl">*</span>{{ __('كود الفستان') }}</label>
-                    <input id="dress_code" type="text"
-                           class="form-control required @error('dress_code') is-invalid @enderror" name="dress_code"
-                           value="{{ old('dress_code') }}" autocomplete="dress_code" maxlength="10">
-
-                    @error('dress_code')
-                    <span class="invalid-feedback" role="alert">
+                        @error('dress_price')
+                        <span class="invalid-feedback" role="alert">
                             <strong>{{ $message }}</strong>
                         </span>
-                    @enderror
+                        @enderror
+                    </div>
                 </div>
-                <div class="form-group">
-                    <label for="dress_model"><span class="required_lbl">*</span>{{ __('موديل الفستان') }}</label>
-                    <select class="js-example-basic-single" name="dress_model">
-                        <option value=""></option>
-                        <option value="2019" style="background-color: #eeeeee">2019</option>
-                        ...
-                        <option value="2020" style="background-color: #eeeeee">2020</option>
-                        <option value="2021" style="background-color: #eeeeee">2021</option>
-                        <option value="2022" style="background-color: #eeeeee">2022</option>
-                    </select>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="dress_size"><span class="required_lbl">*</span>{{ __('الحجم') }}</label>
+                        <select class="js-example-basic-single" name="dress_size" id="dress_size">
+                            <option value="" id=""></option>
+                        </select>
+                    </div>
                 </div>
-                <div class="form-group">
-                    <label for="dress_price"><span class="required_lbl">*</span>{{ __('سعر') }}</label>
-                    <input id="dress_price" type="text"
-                           class="form-control @error('dress_price') is-invalid @enderror"
-                           name="dress_price"
-                           value="{{ old('dress_price') }}"
-                           autocomplete="dress_price" maxlength="10">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="dress_color"><span class="required_lbl">*</span>{{ __('اللون') }}</label>
+                        <select class="js-example-basic-single" name="dress_color" id="dress_color">
+                            <option value="" id=""></option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group col-md-12">
 
-                    @error('dress_price')
-                    <span class="invalid-feedback" role="alert">
+                <ul class="nav nav-tabs" id="add_yatem_tab" role="tablist">
+
+                    <li class="nav-item">
+                        <a class="nav-link active show" id="parents-tab" data-toggle="tab" href="#parents" role="tab"
+                           aria-controls="parents" aria-selected="true">اضافة معلومات للاكسسوار</a>
+                    </li>
+
+                </ul>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="dress_name_acc">{{ __('اسم الاكسسوار') }}</label>
+                        <select name="dress_name_acc" data-model="Accessory" class="form-control" id="dress_name_acc">
+                        </select>
+                    </div>
+                </div>
+                <div class="col-md-6">
+
+                    <div class="form-group">
+                        <label for="dress_code_acc"><span class="required_lbl">*</span>{{ __('كود الاكسسوار') }}</label>
+                        <input id="dress_code_acc" type="text"
+                               class="form-control required @error('dress_code_acc') is-invalid @enderror"
+                               name="dress_code_acc"
+                               value="{{ old('dress_code_acc') }}" autocomplete="dress_code_acc">
+
+                        @error('dress_code_acc')
+                        <span class="invalid-feedback" role="alert">
                             <strong>{{ $message }}</strong>
                         </span>
-                    @enderror
+                        @enderror
+                    </div>
                 </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="dress_price_acc"><span class="required_lbl">*</span>{{ __('سعر الاكسسوار') }}
+                        </label>
+                        <input id="dress_price_acc" type="text"
+                               class="form-control @error('dress_price_acc') is-invalid @enderror"
+                               name="dress_price_acc"
+                               value="{{ old('dress_price_acc') }}"
+                               autocomplete="dress_price_acc">
 
-                <div class="form-group">
-                    <label for="dress_size"><span class="required_lbl">*</span>{{ __('الحجم') }}</label>
-                    <select class="js-example-basic-multiple" name="dress_size[]" multiple="multiple"
-                            style="border: 1px solid #fcefba!important;">
-                        <option value=""></option>
-                        <option value="small">Small</option>
-                        ...
-                        <option value="medium">Medium</option>
-                        <option value="large">Large</option>
-                        <option value="x-large">X-Large</option>
-                        <option value="x-large">All Size</option>
-                    </select>
-
-                </div>
-
-                <div class="form-group">
-                    <label for="dress_color"><span class="required_lbl">*</span>{{ __('اللون') }}</label>
-                    <select class="js-example-basic-single" name="dress_color">
-                        <option value=""></option>
-                        <option value="ابيض" style="background-color: white">ابيض</option>
-                        ...
-                        <option value="احمر" style="background-color: #f6f3e8">سكري</option>
-
-                    </select>
-                </div>
-
-                <div class="form-group col-md-12">
-
-                    <ul class="nav nav-tabs" id="add_yatem_tab" role="tablist">
-
-                        <li class="nav-item">
-                            <a class="nav-link active show" id="parents-tab" data-toggle="tab" href="#parents" role="tab" aria-controls="parents" aria-selected="true">اضافة معلومات للاكسسوار</a>
-                        </li>
-
-                    </ul>
-                </div>
-
-                <div class="form-group">
-                    <label for="dress_name_acc"><span class="required_lbl">*</span>{{ __('اسم الاكسسوار') }}</label>
-                    <select class="js-example-basic-single" name="dress_name_acc">
-                        <option value=""></option>
-                        <option value="عقد الالماس" style="background-color: #eeeeee">عقد الالماس</option>
-                        ...
-                        <option value="حلق الاذن المميز" style="background-color: #eeeeee">حلق الاذن المميز</option>
-                        <option value="تاج راس بسيط" style="background-color: #eeeeee">تاج راس بسيط</option>
-                        <option value="حلق اذن" style="background-color: #eeeeee">حلق اذن</option>
-                        <option value="تاج" style="background-color: #eeeeee">تاج</option>
-                        <option value="طقم اكسسوار" style="background-color: #eeeeee">طقم اكسسوار</option>
-                    </select>
-                </div>
-
-                <div class="form-group">
-                    <label for="dress_code_acc"><span class="required_lbl">*</span>{{ __('كود الاكسسوار') }}</label>
-                    <input id="dress_name_acc" type="number"
-                           class="form-control required @error('dress_name_acc') is-invalid @enderror" name="dress_name_acc"
-                           value="{{ old('dress_name_acc') }}" autocomplete="dress_name_acc">
-
-                    @error('dress_name_acc')
-                    <span class="invalid-feedback" role="alert">
+                        @error('dress_price_acc')
+                        <span class="invalid-feedback" role="alert">
                             <strong>{{ $message }}</strong>
                         </span>
-                    @enderror
+                        @enderror
+                    </div>
                 </div>
-
-                <div class="form-group">
-                    <label for="dress_price_acc"><span class="required_lbl">*</span>{{ __('سعر الاكسسوار') }}</label>
-                    <input id="dress_price_acc" type="text"
-                           class="form-control @error('dress_price_acc') is-invalid @enderror"
-                           name="dress_price_acc"
-                           value="{{ old('dress_price_acc') }}"
-                           autocomplete="dress_price_acc">
-
-                    @error('dress_price_acc')
-                    <span class="invalid-feedback" role="alert">
-                            <strong>{{ $message }}</strong>
-                        </span>
-                    @enderror
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="dress_color_acc"><span class="required_lbl">*</span>{{ __('اللون') }}</label>
+                        <select class="js-example-basic-single" name="dress_color_acc" id="dress_color_acc">
+                            <option value="" id=""></option>
+                        </select>
+                    </div>
                 </div>
-
-                <div class="form-group">
-                    <label for="dress_color_acc"><span class="required_lbl">*</span>{{ __('اللون') }}</label>
-                    <select class="js-example-basic-single" name="dress_color_acc">
-                        <option value=""></option>
-                        <option value="ابيض" style="background-color: #ffb101">ذهبي</option>
-                        ...
-                        <option value="احمر" style="background-color: #eeeeee">فضي</option>
-                    </select>
-                </div>
-
-
-
+            </div>
         </div>
     </div>
 </div>
+
+@section('js')
+    <script>
+        $(document).ready(function () {
+            $('.js-example-basic-multiple').select2();
+        });
+    </script>
+    <script>
+        $('#dress_search').on('click', function () {
+            let element = $(this);
+
+            if (element.data('model') === "Product") {
+                Url = '/get-product'
+                model = element.data('model')
+                placeholder = 'اختر الفستان بواسطة البحث عن طريق الكود'
+            }
+            $('#dress_search').select2({
+                placeholder: placeholder,
+                minimumInputLength: 2,
+                ajax: {
+                    type: 'POST',
+                    url: Url,
+                    dataType: 'json',
+                    data: function (params) {
+                        return {
+                            q: $.trim(params.term),
+                            model: model
+                        };
+                    },
+                    processResults: function (data) {
+                        return {
+                            results: data
+                        };
+                    }, success: (data) => {
+                        console.log(data[0].size)
+
+                        // console.log(data.text)
+                        $("#dress_code").val(data[0].code);
+                        // dress_search
+                        // $("#dress_search").val(data[0].name);
+                        // $("#dress_model").val(data.text);
+                        $('#dress_search').append(`<option selected value="${data[0].name}">
+                                     ${data[0].name}
+                                  </option>`);
+                        $('#dress_model').append(`<option selected value="${data[0].model}">
+                                     ${data[0].model}
+                                  </option>`);
+
+                        $("#dress_price").val(data[0].price);
+                        $("#dress_color").val(data[0].color);
+                        // $("#dress_size").val(data[0].size);
+                        $('#dress_size').append(`<option selected value="${data[0].size}">
+                                     ${data[0].size}
+                                  </option>`);
+                        $('#dress_color').append(`<option selected value="${data[0].color}">
+                                     ${data[0].color}
+                                  </option>`);
+                    },
+                    // cache: true
+                }
+            });
+        })
+        $('#dress_name_acc').on('click', function () {
+            let element = $(this);
+
+            if (element.data('model') === "Accessory") {
+                Url = '/get-accessory'
+                model = element.data('model')
+                placeholder = 'اختر الاكسسوار بواسطة البحث عن طريق الكود'
+
+                $('#dress_name_acc').select2({
+                    placeholder: placeholder,
+                    minimumInputLength: 2,
+                    ajax: {
+                        type: 'POST',
+                        url: Url,
+                        dataType: 'json',
+                        data: function (params) {
+                            return {
+                                q: $.trim(params.term),
+                                model: model
+                            };
+                        },
+                        processResults: function (data) {
+                            return {
+                                results: data
+                            };
+                        }, success: (data) => {
+                            console.log(data)
+
+                            // console.log(data.text)
+                            $("#dress_code_acc").val(data[0].code);
+                            // dress_search
+                            // $("#dress_search").val(data[0].name);
+                            // $("#dress_model").val(data.text);
+                            $('#dress_name_acc').append(`<option selected value="${data[0].name}">
+                                     ${data[0].name}
+                                  </option>`);
+                            $('#dress_model_acc').append(`<option selected value="${data[0].model}">
+                                     ${data[0].model}
+                                  </option>`);
+
+                            $("#dress_price_acc").val(data[0].price);
+                            $("#dress_color_acc").val(data[0].color);
+                            // $("#dress_size").val(data[0].size);
+                            $('#dress_size_acc').append(`<option selected value="${data[0].size}">
+                                     ${data[0].size}
+                                  </option>`);
+                            $('#dress_color_acc').append(`<option selected value="${data[0].color}">
+                                     ${data[0].color}
+                                  </option>`);
+                        },
+                        // cache: true
+                    }
+                });
+            }
+        })
+    </script>
+
+
+    <script>
+        console.log('ddd')
+
+
+    </script>
+@endsection
