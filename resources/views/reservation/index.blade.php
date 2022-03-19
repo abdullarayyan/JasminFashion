@@ -150,6 +150,7 @@
                                     {{$city->name}}
                                 </td>
                                 <td>
+
                                     {{$city_->name}}
                                 </td>
 
