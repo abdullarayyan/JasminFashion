@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Accessory;
+use App\Models\Party;
 use App\Models\Product;
 use App\Models\Reservation;
 use Illuminate\Http\Request;
@@ -98,11 +100,24 @@ class ReservationController extends Controller
         $reservation->party_code_acc=$request->party_code_acc;
 
         $reservation->save();
+//        dd($reservation);
+        $product = Product::query()->where('code',$reservation->dress_code)->first();
+        $product->update(['status'=>0]);
+
+        $party = Party::query()->where('code',$reservation->party_code)->first();
+        $party->update(['status'=>0]);
+
+        $product_acc = Accessory::query()->where('code',$reservation->dress_code_acc)->first();
+        $product_acc->update(['status'=>0]);
+
+        $party_acc = Accessory::query()->where('code',$reservation->dress_code_acc)->first();
+        $party_acc->update(['status'=>0]);
+
 //        $data = $request->except(['_token']);
 //        Reservation::query()->insert($data);
 
 //        dd($request->all());
-        return redirect(url('/reservation'))->with('success', 'تم اضافة الفستان بنجاح');
+        return redirect(url('/reservation'))->with('success', 'تم اضافة الحجز بنجاح');
 
     }
 
