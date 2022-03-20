@@ -158,7 +158,7 @@
                 <option value="{{$product->exists?$product->color:""}}">{{$product->exists?$product->color:""}}</option>
                 <option value="ابيض" style="background-color: white">ابيض</option>
                 ...
-                <option value="احمر" style="background-color: #f6f3e8">سكري</option>
+                <option value="سكري" style="background-color: #f6f3e8">سكري</option>
 
             </select>
         </div>

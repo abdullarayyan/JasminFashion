@@ -174,9 +174,9 @@
             <label for="color"><span class="required_lbl">*</span>{{ __('اللون') }}</label>
             <select class="js-example-basic-single" name="color">
                 <option value="{{$accessory->exists?$accessory->color:""}}">{{$accessory->exists?$accessory->color:""}}</option>
-                <option value="ابيض" style="background-color: #ffb101">ذهبي</option>
+                <option value="ذهبي" style="background-color: #ffb101">ذهبي</option>
                 ...
-                <option value="احمر" style="background-color: #eeeeee">فضي</option>
+                <option value="فضي" style="background-color: #eeeeee">فضي</option>
             </select>
         </div>
 
