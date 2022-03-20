@@ -112,10 +112,10 @@
             <br>
         </div>
         <div style="display: none">
-            {{$dress=\App\Models\Product::query()->where('code',$customer->dress_code_acc)->first()??''}}
+            {{$dress=\App\Models\Product::query()->where('code',$customer->dress_code)->first()??''}}
             <br>
         </div>
-
+{{--{{dd($dress)}}}--}}
         <table class="table">
             <thead>
             <tr style="    border:solid 1px black !important ;">
@@ -126,33 +126,33 @@
             </tr>
             </thead>
             <tbody>
-            @if($customer->dress_name)
+            @if($dress)
                 <tr style="    border:solid 1px black !important ;">
-                    <th scope="col">{{$dress->name}}</th>
-                    <th scope="col">{{$customer->dress_code}}</th>
-                    <th scope="col">{{$customer->dress_price}}</th>
+                    <th scope="col">{{$dress->name??''}}</th>
+                    <th scope="col">{{$customer->dress_code??''}}</th>
+                    <th scope="col">{{$customer->dress_price??''}}</th>
                     <th scope="col"></th>
                 </tr>
             @endif
-            @if($customer->party_name)
+            @if($party)
                 <tr style="    border:solid 1px black !important ;">
-                    <th scope="col">{{$party->name}}</th>
+                    <th scope="col">{{$party->name??''}}</th>
                     <th scope="col">{{$customer->party_code}}</th>
                     <th scope="col">{{$customer->party_price}}</th>
                     <th scope="col"></th>
                 </tr>
             @endif
-            @if($customer->dress_name_acc)
+            @if($acc_dress)
                 <tr style="    border:solid 1px black !important ;">
-                    <th scope="col">{{$acc_dress->name}}</th>
+                    <th scope="col">{{$acc_dress->name??''}}</th>
                     <th scope="col">{{$customer->dress_code_acc}}</th>
                     <th scope="col">{{$customer->party_price_acc}}</th>
                     <th scope="col"></th>
                 </tr>
             @endif
-            @if($customer->party_name_acc)
+            @if($acc_party)
                 <tr style="    border:solid 1px black !important ;">
-                    <th scope="col">{{$acc_party->name}}</th>
+                    <th scope="col">{{$acc_party->name??''}}</th>
                     <th scope="col">{{$customer->dress_code_acc}}</th>
                     <th scope="col">{{$customer->party_price_acc}}</th>
                     <th scope="col"></th>
