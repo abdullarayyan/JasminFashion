@@ -27,7 +27,7 @@
     <div class="card-section">
         <div class="actions">
             <a href="{{route("product.create")}}" class="btn btn-primary" style="background-color: #fcefba!important;">
-                <i class="fa fa-plus"></i> اضافة فستان سهرة </a>
+                <i class="fa fa-plus"></i> اضافة فستان زفاف </a>
         </div>
         <div class="actions">
             <input type="hidden" name="filter" value="" id="hidden_filter">
