@@ -66,8 +66,16 @@
                 <div class="row" style="display: flex;align-items: baseline;    margin-right: 29px; width: 40%">
                     <h3 style="font-size: 15px">المشتري</h3>
                     <div class="cc" style="margin-right: 15px;">
+                        <div class="hide">
+                            {{$customer}}
+                        </div>
+                        <div style="display: none">
+                            {{$city=\App\Models\City::query()->where('id',$customer->city)->first()??''}}
+                            <br>
+{{--                            {{dd($city)}}--}}
+                        </div>
                         <h6>الاسم: <span style="font-size:larger;color: black">{{$customer->customer_name}} </span></h6>
-                        <h6>المدينة:<span style="font-size:larger;color: black">{{$customer->from}} </span></h6>
+                        <h6>المدينة:<span style="font-size:larger;color: black">{{$city->name}} </span></h6>
                         <h6>الهاتف: <span style="font-size:larger;color: black">{{$customer->mobile}} </span></h6>
                     </div>
                 </div>
@@ -115,6 +123,7 @@
             {{$dress=\App\Models\Product::query()->where('code',$customer->dress_code)->first()??''}}
             <br>
         </div>
+
 {{--{{dd($dress)}}}--}}
         <table class="table">
             <thead>
