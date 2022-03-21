@@ -80,7 +80,6 @@ class ProductController extends Controller
             'model' => 'required',
             'code' => 'required',
             'price' => 'required',
-            'quantity' => 'required',
 
             'file' => [
                 'required',
@@ -90,12 +89,15 @@ class ProductController extends Controller
             ],
         ]);
 
-        $imgName = $request->name . '.' . $request->file('file')->extension();
+
+        $data = $request->except(['_token']);
+        $data['quantity']=mt_rand(1000, 9999);
+        $imgName = $data['quantity']  . $request->file('file')->extension();
 
         $request->file->move(public_path('images'), $imgName);
-        $data = $request->except(['_token']);
         $data['size'] = json_encode($request->size);
 
+        $data['file']=$imgName;
         Product::query()->insert($data);
 
         return redirect(url('/product'))->with('success', 'تم اضافة الفستان بنجاح');
@@ -143,30 +145,22 @@ class ProductController extends Controller
             'sale' => 'required',
             'status' => 'required',
             'model' => 'required',
-            'code' => 'required',
             'price' => 'required',
-            'quantity' => 'required',
-            'file' => [
-                'required',
-                'file',
-                'mimes:jpg,jpeg,png',
-                'max:1024'
-            ],
+
         ]);
-        $imgName = $request->name . '.' . $request->file('file')->extension();
-        $request->file->move(public_path('images'), $imgName);
 
         $product->name = $request->name;
         $product->color = $request->color;
         $product->description = $request->description;
-//        $data['size'] = json_encode($request->size);
-
+        if ($request->hasFile('file')) {
+            $imgName = $product->quantity  . $request->file('file')->extension();
+            $request->file->move(public_path('images'), $imgName);
+            $product->file = $imgName;
+        }
         $product->size = $request->size;
         $product->sale = $request->sale;
         $product->status = $request->status;
         $product->model = $request->model;
-        $product->code = $request->code;
-        $product->file = $imgName;
 
         $product->save();
 

@@ -19,7 +19,9 @@ use Illuminate\Support\Facades\Schema;
 |
 */
 Route::get('foo',function () {
-
+//$test="#1234";
+//str
+//dd(str_replace($test,'#',1));
 });
 Auth::routes();
 

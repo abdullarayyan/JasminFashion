@@ -76,8 +76,6 @@ class PartyController extends Controller
             'model' => 'required',
             'code' => 'required',
             'price'=>'required',
-            'quantity' => 'required',
-
             'file' => [
                 'required',
                 'file',
@@ -86,11 +84,14 @@ class PartyController extends Controller
             ],
         ]);
 
-        $imgName =  $request->name . '.' . $request->file('file')->extension();
+        $data = $request->except(['_token']);
+        $data['quantity']=mt_rand(1000, 9999);
+        $imgName = $data['quantity']  . $request->file('file')->extension();
 
         $request->file->move(public_path('images'), $imgName);
-        $data = $request->except(['_token']);
         $data['size'] = json_encode($request->size);
+
+        $data['file']=$imgName;
 
         Party::query()->insert($data);
 
@@ -142,29 +143,21 @@ class PartyController extends Controller
             'model' => 'required',
             'code' => 'required',
             'price'=>'required',
-            'quantity' => 'required',
-            'file' => [
-                'required',
-                'file',
-                'mimes:jpg,jpeg,png',
-                'max:1024'
-            ],
         ]);
-        $imgName =  $request->name . '.' . $request->file('file')->extension();
-//dd($imgName);
-        $request->file->move(public_path('images'), $imgName);
 
         $party->name = $request->name;
         $party->color = $request->color;
         $party->description = $request->description;
-//        $data['size'] = json_encode($request->size);
-
+        if ($request->hasFile('file')) {
+            $imgName = $party->quantity  . $request->file('file')->extension();
+            $request->file->move(public_path('images'), $imgName);
+            $party->file = $imgName;
+        }
         $party->size = $request->size;
         $party->sale = $request->sale;
         $party->status = $request->status;
         $party->model = $request->model;
-        $party->code = $request->code;
-        $party->file = $imgName;
+
 
         $party->save();
 

@@ -10,7 +10,7 @@
                 <div class="col-md-6">
                     <div class="form-group">
                         <label for="dress_name">{{ __('اسم الفستان') }}</label>
-                        <select name="dress_name" data-model="Product" class="form-control" id="dress_search" required>
+                        <select name="dress_name" data-model="Product" class="form-control" id="dress_search">
                         </select>
                     </div>
                 </div>

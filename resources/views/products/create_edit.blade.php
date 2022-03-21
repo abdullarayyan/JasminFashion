@@ -108,10 +108,11 @@
                 <option value="2022" style="background-color: #eeeeee">2022</option>
             </select>
         </div>
+{{--        {{dd($product->price)}}--}}
         <div class="form-group">
             <label for="price"><span class="required_lbl">*</span>{{ __('سعر الفستان') }}</label>
             <input id="price" type="text" class="form-control required @error('model') is-invalid @enderror"
-                   name="price" value="{{ $product->price??old('price')  }}" required
+                   name="price" value="{{ $product->price??'' }}" required
                    autocomplete="name" maxlength="10">
 
             @error('price')
@@ -120,18 +121,7 @@
             </span>
             @enderror
         </div>
-        <div class="form-group">
-            <label for="quantity"><span class="required_lbl">*</span>{{ __('الكمية') }}</label>
-            <input id="quantity" type="text" class="form-control required @error('model') is-invalid @enderror"
-                   name="quantity" value="{{ $product->quantity??old('quantity')  }}" required
-                   autocomplete="name" maxlength="10">
 
-            @error('quantity')
-            <span class="invalid-feedback" role="alert">
-                <strong>{{ $message }}</strong>
-            </span>
-            @enderror
-        </div>
         <div class="form-group">
             <label for="sale"><span class="required_lbl">*</span>{{ __('الخصم') }}</label>
             <select class="js-example-basic-single" name="sale">
@@ -174,18 +164,17 @@
                             onclick="document.getElementById('file_upload').click()">
                         اختار صورة
                     </button>
-                    <label class="filename"></label>
+                    <label class="filename">{{$product->file??''}}</label>
                 </div>
-                <input required type='file' class="hidden_file_input" name="file"
+                <input  type='file' class="hidden_file_input" name="file"
                        id="file_upload">
             </div>
         </div>
-
         <div class="form-group">
             <label for="size"><span class="required_lbl">*</span>{{ __('الحجم') }}</label>
             <select class="js-example-basic-multiple" name="size[]" multiple="multiple"
                     style="border: 1px solid #fcefba!important;">
-                <option value="{{$product->exists?$product->size[0]:''}}">{{$product->exists?$product->size[0]:''}}</option>
+                <option value="{{$product->size[0]??''}}" selected>{{$product->size[0]??''}}</option>
                 <option value="small">Small</option>
                 ...
                 <option value="medium">Medium</option>

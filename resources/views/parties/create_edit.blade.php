@@ -111,7 +111,7 @@
         <div class="form-group">
             <label for="price"><span class="required_lbl">*</span>{{ __('سعر الفستان') }}</label>
             <input id="price" type="text" class="form-control required @error('model') is-invalid @enderror"
-                   name="price" value="{{ $party->price??old('price')  }}" required
+                   name="price" value="{{ $party->price }}" required
                    autocomplete="name" maxlength="10">
 
             @error('price')
@@ -120,25 +120,14 @@
             </span>
             @enderror
         </div>
-        <div class="form-group">
-            <label for="quantity"><span class="required_lbl">*</span>{{ __('الكمية') }}</label>
-            <input id="quantity" type="text" class="form-control required @error('model') is-invalid @enderror"
-                   name="quantity" value="{{ $party->quantity??old('quantity')  }}" required
-                   autocomplete="name" maxlength="10">
 
-            @error('quantity')
-            <span class="invalid-feedback" role="alert">
-                <strong>{{ $message }}</strong>
-            </span>
-            @enderror
-        </div>
         <div class="form-group">
             <label for="sale"><span class="required_lbl">*</span>{{ __('الخصم') }}</label>
             <select class="js-example-basic-single" name="sale">
                 <option value="" selected></option>
 
-                <option {{$party->status==1?'selected' : ''}} value="1">مسموح</option>
-                <option {{$party->status==0?'selected' : ''}} value="0">غير مسموح</option>
+                <option {{$party->status==0?'selected' : ''}} value="0">مسموح</option>
+                <option {{$party->status==1?'selected' : ''}} value="1">غير مسموح</option>
             </select>
         </div>
         <div class="form-group">
@@ -146,9 +135,9 @@
             <select class="js-example-basic-single" name="status">
                 <option value=""></option>
 
-                <option {{$party->status==0?'selected':""}} value="1">محجوز</option>
+                <option {{$party->status==0?'selected':""}} value="0">محجوز</option>
                 ...
-                <option {{$party->status==1?'selected' : ''}} value="0">غير محجوز</option>
+                <option {{$party->status==1?'selected' : ''}} value="1">غير محجوز</option>
             </select>
         </div>
 
@@ -175,9 +164,9 @@
                             onclick="document.getElementById('file_upload').click()">
                         اختار صورة
                     </button>
-                    <label class="filename"></label>
+                    <label class="filename">{{$accessory->file??''}}</label>
                 </div>
-                <input required type='file' class="hidden_file_input" name="file"
+                <input  type='file' class="hidden_file_input" name="file"
                        id="file_upload">
             </div>
         </div>
@@ -186,7 +175,7 @@
             <label for="size"><span class="required_lbl">*</span>{{ __('الحجم') }}</label>
             <select class="js-example-basic-multiple" name="size[]" multiple="multiple"
                     style="border: 1px solid #fcefba!important;">
-                <option value="{{$party->exists?$party->size[0]:''}}">{{$party->exists?$party->size[0]:''}}</option>
+                <option selected value="{{$party->exists?$party->size[0]:''}}">{{$party->exists?$party->size[0]:''}}</option>
                 <option value="small">Small</option>
                 ...
                 <option value="medium">Medium</option>

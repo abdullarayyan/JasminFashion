@@ -75,7 +75,6 @@ class AccessoryController extends Controller
             'color' => 'required',
             'description' => 'required',
             'sale' => 'required',
-            'quantity' => 'required',
             'brand' => 'required',
             'status' => 'required',
             'model' => 'required',
@@ -89,11 +88,14 @@ class AccessoryController extends Controller
             ],
         ]);
 
-        $imgName =  $request->name . '.' . $request->file('file')->extension();
+
+        $data = $request->except(['_token']);
+        $data['quantity']=mt_rand(1000, 9999);
+        $imgName = $data['quantity']  . $request->file('file')->extension();
 
         $request->file->move(public_path('images'), $imgName);
-        $data = $request->except(['_token']);
-//        $data['size'] = json_encode($request->size);
+
+        $data['file']=$imgName;
 
         accessory::query()->insert($data);
 
@@ -145,29 +147,22 @@ class AccessoryController extends Controller
             'model' => 'required',
             'code' => 'required',
             'price'=>'required',
-            'quantity' => 'required',
             'brand' => 'required',
-            'file' => [
-                'required',
-                'file',
-                'mimes:jpg,jpeg,png',
-                'max:1024'
-            ],
+
         ]);
-        $imgName =  $request->name . '.' . $request->file('file')->extension();
-
-        $request->file->move(public_path('images'), $imgName);
-
         $accessory->name = $request->name;
         $accessory->color = $request->color;
         $accessory->description = $request->description;
-        $accessory->quantity = $request->quantity;
+        if ($request->hasFile('file')) {
+            $imgName = $accessory->quantity  . $request->file('file')->extension();
+            $request->file->move(public_path('images'), $imgName);
+            $accessory->file = $imgName;
+        }
         $accessory->sale = $request->sale;
-        $accessory->brand = $request->brand;
         $accessory->status = $request->status;
         $accessory->model = $request->model;
+        $accessory->brand = $request->brand;
         $accessory->code = $request->code;
-        $accessory->file = $imgName;
 
         $accessory->save();
 

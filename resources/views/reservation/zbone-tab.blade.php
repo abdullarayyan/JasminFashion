@@ -53,38 +53,10 @@
                 </div>
             </div>
 
-            {{--                <div class="form-group">--}}
-            {{--                    <label for="city"><span class="required_lbl">*</span>{{ __('المدينة') }}</label>--}}
-            {{--                    <input id="city" type="text"--}}
-            {{--                           class="form-control @error('city') is-invalid @enderror"--}}
-            {{--                           name="city"--}}
-            {{--                           value="{{ old('city') }}"--}}
-            {{--                           autocomplete="city" maxlength="10">--}}
-
-            {{--                    @error('city')--}}
-            {{--                    <span class="invalid-feedback" role="alert">--}}
-            {{--                            <strong>{{ $message }}</strong>--}}
-            {{--                        </span>--}}
-            {{--                    @enderror--}}
-            {{--                </div>--}}
-            {{--                <div class="form-group">--}}
-            {{--                    <label for="town"><span class="required_lbl">*</span>{{ __('البلدة') }}</label>--}}
-            {{--                    <input id="town" type="text"--}}
-            {{--                           class="form-control @error('town') is-invalid @enderror"--}}
-            {{--                           name="town"--}}
-            {{--                           value="{{ old('town') }}"--}}
-            {{--                           autocomplete="town" maxlength="10">--}}
-
-            {{--                    @error('town')--}}
-            {{--                    <span class="invalid-feedback" role="alert">--}}
-            {{--                            <strong>{{ $message }}</strong>--}}
-            {{--                        </span>--}}
-            {{--                    @enderror--}}
-            {{--                </div>--}}
             <div class="row">
                 <div class="col-md-6">
                     <div class="form-group">
-                        <label class="required_lbl">البلدة</label>
+                        <label class="required_lbl">المدينة</label>
                         {{Form::select("city",\App\classes\IHouse::city(),null,["id"=>"cities",'placeholder'=>'اختر البلد','class'=>'form-control'])}}
 
                     </div>
@@ -92,9 +64,8 @@
                 <div class="col-md-6">
 
                     <div class="form-group">
-                        <label class="required_lbl">القرية</label>
+                        <label class="required_lbl">البلده</label>
                         {{Form::select("town",[],null,['class'=>"form-control","id"=>"sub_cities"])}}
-
 
                     </div>
                 </div>

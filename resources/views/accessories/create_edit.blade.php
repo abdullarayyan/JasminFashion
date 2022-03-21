@@ -103,7 +103,7 @@
         <div class="form-group">
             <label for="model"><span class="required_lbl">*</span>{{ __('موديل الاكسسوار') }}</label>
             <select class="js-example-basic-single" name="model">
-                <option value="{{$accessory->exists?$accessory->model:""}}">{{$accessory->exists?$accessory->model:""}}</option>
+                <option selected value="{{$accessory->exists?$accessory->model:""}}">{{$accessory->exists?$accessory->model:""}}</option>
                 <option value="2019" style="background-color: #eeeeee">2019</option>
                 ...
                 <option value="2020" style="background-color: #eeeeee">2020</option>
@@ -115,7 +115,7 @@
         <div class="form-group">
             <label for="price"><span class="required_lbl">*</span>{{ __('سعر الاكسسوار') }}</label>
             <input id="price" type="text" class="form-control required @error('model') is-invalid @enderror"
-                   name="price" value="{{ $accessory->price??old('price')  }}" required
+                   name="price" value="{{ $accessory->price  }}" required
                    autocomplete="name" maxlength="10">
 
             @error('price')
@@ -124,18 +124,7 @@
             </span>
             @enderror
         </div>
-        <div class="form-group">
-            <label for="quantity"><span class="required_lbl">*</span>{{ __('الكمية') }}</label>
-            <input id="quantity" type="text" class="form-control required @error('model') is-invalid @enderror"
-                   name="quantity" value="{{ $accessory->quantity??old('quantity')  }}" required
-                   autocomplete="name" maxlength="10">
 
-            @error('quantity')
-            <span class="invalid-feedback" role="alert">
-                <strong>{{ $message }}</strong>
-            </span>
-            @enderror
-        </div>
 
         <div class="form-group">
             <label for="brand"><span class="required_lbl">*</span>{{ __('الماركة') }}</label>
@@ -155,18 +144,18 @@
             <select class="js-example-basic-single" name="sale">
                 <option value="" selected></option>
 
-                <option {{$accessory->status==1?'selected' : ''}} value="1">مسموح</option>
-                <option {{$accessory->status==0?'selected' : ''}} value="0">غير مسموح</option>
+                <option {{$accessory->status==0?'selected' : ''}} value="0">مسموح</option>
+                <option {{$accessory->status==1?'selected' : ''}} value="1">غير مسموح</option>
             </select>
         </div>
         <div class="form-group">
             <label for="status"><span class="required_lbl">*</span>{{ __('الحالة') }}</label>
             <select class="js-example-basic-single" name="status">
-                <option value=""></option>
+                <option value="{{$accessory->status?$accessory->status:""}}" selected>{{$accessory->exists?$accessory->status:""}}</option>
 
-                <option {{$accessory->status==1?'selected':""}} value="1">محجوز</option>
+                <option {{$accessory->status==0?'selected':""}} value="0">محجوز</option>
                 ...
-                <option {{$accessory->status==0?'selected' : ''}} value="0">غير محجوز</option>
+                <option {{$accessory->status==1?'selected' : ''}} value="1">غير محجوز</option>
             </select>
         </div>
 
@@ -191,9 +180,9 @@
                             onclick="document.getElementById('file_upload').click()">
                         اختار صورة
                     </button>
-                    <label class="filename"></label>
+                    <label class="filename">{{$accessory->file??''}}</label>
                 </div>
-                <input required type='file' class="hidden_file_input" name="file"
+                <input  type='file' class="hidden_file_input" name="file"
                        id="file_upload">
             </div>
         </div>
