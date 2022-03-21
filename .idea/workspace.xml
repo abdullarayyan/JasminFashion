@@ -24,18 +24,13 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="817c0f37-c9d6-4d2d-a9e2-ab43987fb601" name="Default Changelist" comment="push">
+    <list default="true" id="817c0f37-c9d6-4d2d-a9e2-ab43987fb601" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/AccessoriesController.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/AccessoryController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/AccessoryController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/PartyController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/PartyController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ProductController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ProductController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/accessories/create_edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/accessories/create_edit.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/parties/create_edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/parties/create_edit.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/parties/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/parties/index.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/products/create_edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/products/create_edit.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/reservation/dress-tab.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/reservation/dress-tab.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/reservation/zbone-tab.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/reservation/zbone-tab.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/products/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/products/index.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -246,7 +241,8 @@
       <workItem from="1647757572879" duration="15000" />
       <workItem from="1647785504067" duration="35000" />
       <workItem from="1647794893663" duration="1532000" />
-      <workItem from="1647885086417" duration="4977000" />
+      <workItem from="1647885086417" duration="5734000" />
+      <workItem from="1647893426188" duration="823000" />
     </task>
     <task id="LOCAL-00001" summary="push product">
       <created>1646048349470</created>
@@ -451,7 +447,14 @@
       <option name="project" value="LOCAL" />
       <updated>1647796187944</updated>
     </task>
-    <option name="localTasksCounter" value="30" />
+    <task id="LOCAL-00030" summary="push">
+      <created>1647890121288</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1647890121288</updated>
+    </task>
+    <option name="localTasksCounter" value="31" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -494,21 +497,21 @@
     </state>
     <state x="371" y="95" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1280.680/1920.0.1920.1040@0.0.1280.680" timestamp="1646039127635" />
     <state x="371" y="95" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1280.680@0.0.1280.680" timestamp="1647728171959" />
-    <state x="264" y="0" key="CommitChangelistDialog2" timestamp="1647796186925">
+    <state x="264" y="0" key="CommitChangelistDialog2" timestamp="1647890120066">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="264" y="0" key="CommitChangelistDialog2/0.0.1280.680/1920.0.1920.1040@0.0.1280.680" timestamp="1646745462541" />
-    <state x="264" y="0" key="CommitChangelistDialog2/0.0.1280.680@0.0.1280.680" timestamp="1647796186925" />
-    <state x="121" y="50" key="DiffContextDialog" timestamp="1647451565919">
+    <state x="264" y="0" key="CommitChangelistDialog2/0.0.1280.680@0.0.1280.680" timestamp="1647890120066" />
+    <state x="121" y="50" key="DiffContextDialog" timestamp="1647890129374">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="121" y="50" key="DiffContextDialog/0.0.1280.680/1920.0.1920.1040@0.0.1280.680" timestamp="1646745457053" />
-    <state x="121" y="50" key="DiffContextDialog/0.0.1280.680@0.0.1280.680" timestamp="1647451565919" />
-    <state x="502" y="253" key="Github.Dialog.Accounts.Choose" timestamp="1647796198665">
+    <state x="121" y="50" key="DiffContextDialog/0.0.1280.680@0.0.1280.680" timestamp="1647890129374" />
+    <state x="502" y="253" key="Github.Dialog.Accounts.Choose" timestamp="1647890157651">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="502" y="253" key="Github.Dialog.Accounts.Choose/0.0.1280.680/1920.0.1920.1040@0.0.1280.680" timestamp="1646745544583" />
-    <state x="502" y="253" key="Github.Dialog.Accounts.Choose/0.0.1280.680@0.0.1280.680" timestamp="1647796198665" />
+    <state x="502" y="253" key="Github.Dialog.Accounts.Choose/0.0.1280.680@0.0.1280.680" timestamp="1647890157650" />
     <state x="482" y="220" key="Github.ShareDialog" timestamp="1645897278094">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
@@ -534,11 +537,11 @@
     </state>
     <state width="534" height="446" key="SwitcherDM/0.0.1280.680/1920.0.1920.1040@0.0.1280.680" timestamp="1646046813820" />
     <state width="534" height="446" key="SwitcherDM/0.0.1280.680@0.0.1280.680" timestamp="1647888325353" />
-    <state x="233" y="73" key="Vcs.Push.Dialog.v2" timestamp="1647796190782">
+    <state x="233" y="73" key="Vcs.Push.Dialog.v2" timestamp="1647890154622">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="233" y="73" key="Vcs.Push.Dialog.v2/0.0.1280.680/1920.0.1920.1040@0.0.1280.680" timestamp="1646745542067" />
-    <state x="233" y="73" key="Vcs.Push.Dialog.v2/0.0.1280.680@0.0.1280.680" timestamp="1647796190782" />
+    <state x="233" y="73" key="Vcs.Push.Dialog.v2/0.0.1280.680@0.0.1280.680" timestamp="1647890154622" />
     <state x="93" y="93" width="1095" height="495" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1647890102673">
       <screen x="0" y="0" width="1280" height="680" />
     </state>

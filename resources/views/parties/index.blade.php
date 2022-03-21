@@ -50,10 +50,7 @@
                                 الكود
 
                             </th>
-                            <th class=" ">
-                                الكمية
 
-                            </th>
                             <th class=" ">
                                 السعر
 
@@ -95,8 +92,7 @@
                                 {{Form::text("code",Request::get("code",NULL),['class'=>"form-control form-filter input-sm",'placeholder'=>'بحث بواسطة الكود'])}}
 
                             </td>
-                            <td>
-                            </td>
+
                             <td>
                             </td>
                             <td>
@@ -139,9 +135,7 @@
                                 <td>
                                     {{$party->code}}
                                 </td>
-                                <td>
-                                    {{$party->quantity}}
-                                </td>
+
                                 <td>
                                     {{$party->price}}
                                 </td>

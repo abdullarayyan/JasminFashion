@@ -164,7 +164,7 @@
                             onclick="document.getElementById('file_upload').click()">
                         اختار صورة
                     </button>
-                    <label class="filename">{{$accessory->file??''}}</label>
+                    <label class="filename">{{$party->file}}</label>
                 </div>
                 <input  type='file' class="hidden_file_input" name="file"
                        id="file_upload">
