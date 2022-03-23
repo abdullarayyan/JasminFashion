@@ -125,7 +125,7 @@ class ReservationController extends Controller
 
         }
 
-        return redirect(url('/reservation'))->with('success', 'تم اضافة الحجز بنجاح');
+        return redirect(url('/reservation/create'))->with('success', 'تم اضافة الحجز بنجاح');
 
     }
 
@@ -189,5 +189,12 @@ class ReservationController extends Controller
         }
     }
 
+    public function updateTotalPrice(Request $request){
+
+
+        $reservation =Reservation::query()->latest()->first();
+        $reservation->update(['total_price'=>$request->get('total_price')]);
+        return redirect(url('/reservation'))->with('success', 'تم تخزين الحجز واضافة العربون بنجاح');
+    }
 
 }

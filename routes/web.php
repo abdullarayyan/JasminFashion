@@ -36,6 +36,7 @@ Route::resource('/product','App\Http\Controllers\ProductController');
 Route::resource('/party','App\Http\Controllers\PartyController');
 Route::resource('/accessory','App\Http\Controllers\AccessoryController');
 Route::get('/reservation/invoice/{id}','App\Http\Controllers\ReservationController@invoice')->name('reservation.invoice');
+Route::post('/update_price','App\Http\Controllers\ReservationController@updateTotalPrice')->name('update_total_price');
 
 Route::resource('reservation','App\Http\Controllers\ReservationController');
 
