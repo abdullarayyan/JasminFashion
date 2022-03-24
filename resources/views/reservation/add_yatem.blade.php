@@ -111,16 +111,18 @@
         </div>
         <div class="card-section">
             <div class="header" style="display: flex;
-    flex-direction: column;">
+    flex-direction: column;    width: 48%;">
                 <?php
                 $total_price = \App\Models\Reservation::query()
                     ->selectRaw('dress_price,dress_price_acc,party_price,party_price_acc,customer_name')->latest()->first();
                 ?>
-                <span class="alert alert-info " role="alert"
-                      style="font-weight: 900">دفع عربون لحجز باسم : {{$total_price->customer_name}}</span>
+                @if($total_price)
+                    <span class="alert alert-info " role="alert"
+                          style="font-weight: 900">دفع عربون لحجز باسم : {{$total_price->customer_name}}</span>
                     <span class="alert alert-info " style="font-weight: 900">
                         {{'السعر الاجمالي لهذا الحجز ='.($total_price->dress_price+$total_price->party_price+$total_price->dress_price_acc+$total_price->party_price_acc)}}
                     </span>
+                @endif
             </div>
 
 
@@ -156,12 +158,6 @@
 
                     </div>
                     <div class="row">
-                        {{--                                <div class="col-md-6">--}}
-                        {{--                                    <button type="submit" class="btn btn--primary type--uppercase" style="width: 46%">--}}
-                        {{--                                        تخزين العربون--}}
-                        {{--                                    </button>--}}
-
-                        {{--                                </div>--}}
                         <div class="col-md-6">
                             <button class="btn btn--primary type--uppercase" style="
     background-color: #fd9292!important;
