@@ -4,6 +4,7 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
+use phpDocumentor\Reflection\Types\Null_;
 
 class City extends Seeder
 {
@@ -521,6 +522,37 @@ class City extends Seeder
                 'id' => 166,
                 'city_id' => 6,
                 'name' => 'النبي موسى',
+                'created_at' => '2021-03-12 22:00:42.000000',
+                'updated_at' => '2021-03-12 22:00:42.000000'
+            ],
+
+            [
+                'id' => 200,
+                'city_id' => 10,
+                'name' => 'الاردن',
+                'created_at' => '2021-03-12 22:00:42.000000',
+                'updated_at' => '2021-03-12 22:00:42.000000'
+            ],
+
+            [
+                'id' => 300,
+                'city_id' => 10,
+                'name' => 'تركيا',
+                'created_at' => '2021-03-12 22:00:42.000000',
+                'updated_at' => '2021-03-12 22:00:42.000000'
+            ],
+
+            [
+                'id' => 400,
+                'city_id' => 10,
+                'name' => 'الصين',
+                'created_at' => '2021-03-12 22:00:42.000000',
+                'updated_at' => '2021-03-12 22:00:42.000000'
+            ],
+            [
+                'id' => 500,
+                'city_id' => 10,
+                'name' => 'فلسطين',
                 'created_at' => '2021-03-12 22:00:42.000000',
                 'updated_at' => '2021-03-12 22:00:42.000000'
             ],

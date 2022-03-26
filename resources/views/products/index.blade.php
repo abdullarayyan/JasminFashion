@@ -141,8 +141,13 @@
                         @forelse($products as $product)
                             <tr>
                                 <td>
-                                    <img alt="Image" src="{{ asset('images/').'/'.$product->file }}" style="max-width: 100px;
+                                    @if($product->file=='')
+                                        <img alt="Image" src="{{ asset('assets/images/logo.png') }}" style="max-width: 100px;
     max-height: 100%;" class="w-100 shadow-xl">
+                                    @else
+                                        <img alt="Image" src="{{ asset('images/').'/'.$product->file}}" style="max-width: 100px;max-height: 100%;" class="w-100 shadow-xl">
+                                    @endif
+
                                 </td>
                                 <td>
                                     {{$product->name}}

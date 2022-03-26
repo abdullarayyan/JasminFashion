@@ -6,6 +6,7 @@ namespace App\classes;
 use App\Models\Accessory;
 use App\Models\Party;
 use App\Models\Product;
+use App\Models\Supplier;
 use Illuminate\Support\Facades\DB;
 
 class IHouse
@@ -39,9 +40,22 @@ class IHouse
             return $orderObj+1;
         }
     }
+    public function getSequenceSuppliers()
+    {
+        $orderObj = Supplier::query()->count();
+        if ($orderObj==0) {
+            return $orderObj + 1;
+        } else {
+            return $orderObj+1;
+        }
+    }
 
     public function city()
     {
         return DB::table('cities')->whereNull("city_id")->pluck("name", "id");
+    }
+    public function country()
+    {
+        return DB::table('cities')->where("city_id",10)->pluck("name", "id");
     }
 }
