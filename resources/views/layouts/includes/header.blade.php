@@ -149,7 +149,6 @@
                                         <li class="dropdown-submenu">
                                             <a class="dropdown-item dropdown-toggle" href="/supplier">عرض</a>
                                             <a class="dropdown-item dropdown-toggle" href="/supplier/create">اضافة</a>
-
                                         </li>
                                     </ul>
 
