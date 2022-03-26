@@ -160,13 +160,10 @@
         </div>
 
         <div class="form-group">
-            <label for="color"><span class="required_lbl">*</span>{{ __('اللون') }}</label>
-            <select class="js-example-basic-single" name="color">
-                <option value="{{$accessory->exists?$accessory->color:""}}">{{$accessory->exists?$accessory->color:""}}</option>
-                <option value="ذهبي" style="background-color: #ffb101">ذهبي</option>
-                ...
-                <option value="فضي" style="background-color: #eeeeee">فضي</option>
-            </select>
+            <label for="description">اللون</label>
+
+            <input type='color' name='color' class='colorpicker' value="{{$product->color?$product->color:'#b49356'}}" style="padding-left: 15px"/>
+
         </div>
 
         <div class="form-group">

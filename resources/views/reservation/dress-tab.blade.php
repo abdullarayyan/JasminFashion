@@ -193,9 +193,15 @@
                         $('#dress_size').append(`<option selected value="${data[0].size}">
                                      ${data[0].size}
                                   </option>`);
-                        $('#dress_color').append(`<option selected value="${data[0].color}">
-                                     ${data[0].color}
-                                  </option>`);
+                        // $('#dress_color').append(`<option selected value="${data[0].color}">
+                        //              ${data[0].color}
+                        //           </option>`);
+
+
+                        var style =$('#dress_color').attr('style'); //it will return string
+//on submit update style as
+                        style = `background-color:${data[0].color}`;
+                        $('#dress_color').attr('style',style);
                     },
                     // cache: true
                 }
@@ -247,9 +253,12 @@
                             $('#dress_size_acc').append(`<option selected value="${data[0].size}">
                                      ${data[0].size}
                                   </option>`);
-                            $('#dress_color_acc').append(`<option selected value="${data[0].color}">
-                                     ${data[0].color}
-                                  </option>`);
+
+                            var style =$('#dress_color_acc').attr('style'); //it will return string
+//on submit update style as
+                            style = `background-color:${data[0].color}`;
+                            $('#dress_color_acc').attr('style',style);
+
                         },
                         // cache: true
                     }

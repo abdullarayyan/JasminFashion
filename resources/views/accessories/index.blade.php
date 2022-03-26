@@ -165,9 +165,8 @@
                                 <td>
                                     {{$accessory->price}}
                                 </td>
-                                <td>
-                                    {{$accessory->color}}
-                                </td>
+                                <td><span style="background-color: {{$product->color}};color: {{$product->color}};     display: inline-table;">color</span></td>
+
                                 <td>
                                     {{$accessory->brand}}
                                 </td>

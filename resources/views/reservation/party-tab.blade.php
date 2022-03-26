@@ -196,9 +196,11 @@
                         $('#party_size').append(`<option selected value="${data[0].size}">
                                      ${data[0].size}
                                   </option>`);
-                        $('#party_color').append(`<option selected value="${data[0].color}">
-                                     ${data[0].color}
-                                  </option>`);
+
+                        var style =$('#party_color').attr('style'); //it will return string
+//on submit update style as
+                        style = `background-color:${data[0].color}`;
+                        $('#party_color').attr('style',style);
                     },
                     // cache: true
                 }
@@ -250,9 +252,12 @@
                             $('#party_size_acc').append(`<option selected value="${data[0].size}">
                                      ${data[0].size}
                                   </option>`);
-                            $('#party_color_acc').append(`<option selected value="${data[0].color}">
-                                     ${data[0].color}
-                                  </option>`);
+
+
+                            var style =$('#party_color_acc').attr('style'); //it will return string
+//on submit update style as
+                            style = `background-color:${data[0].color}`;
+                            $('#party_color_acc').attr('style',style);
                         },
                         // cache: true
                     }

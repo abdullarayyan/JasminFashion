@@ -143,14 +143,10 @@
         </div>
 
         <div class="form-group">
-            <label for="color"><span class="required_lbl">*</span>{{ __('اللون') }}</label>
-            <select class="js-example-basic-single" name="color">
-                <option value="{{$product->exists?$product->color:""}}">{{$product->exists?$product->color:""}}</option>
-                <option value="ابيض" style="background-color: white">ابيض</option>
-                ...
-                <option value="سكري" style="background-color: #f6f3e8">سكري</option>
+            <label for="description">اللون</label>
 
-            </select>
+            <input type='color' name='color' class='colorpicker' value="{{$product->color?$product->color:'#b49356'}}" style="padding-left: 15px"/>
+
         </div>
 
         <div class="form-group">
@@ -170,6 +166,7 @@
                        id="file_upload">
             </div>
         </div>
+
         <div class="form-group">
             <label for="size"><span class="required_lbl">*</span>{{ __('الحجم') }}</label>
             <select class="js-example-basic-multiple" name="size[]" multiple="multiple"

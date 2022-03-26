@@ -142,15 +142,10 @@
         </div>
 
         <div class="form-group">
-            <label for="color"><span class="required_lbl">*</span>{{ __('اللون') }}</label>
-            <select class="js-example-basic-single" name="color">
-                <option value="{{$party->exists?$party->color:""}}">{{$party->exists?$party->color:""}}</option>
-                <option value="ابيض" style="background-color: white">ابيض</option>
-                ...
-                <option value="احمر" style="background-color: red">احمر</option>
-                <option value="اخضر" style="background-color: green">اخضر</option>
-                <option value="ازرق" style="background-color: blue">ازرق</option>
-            </select>
+            <label for="description">اللون</label>
+
+            <input type='color' name='color' class='colorpicker' value="{{$product->color?$product->color:'#b49356'}}" style="padding-left: 15px"/>
+
         </div>
 
         <div class="form-group">

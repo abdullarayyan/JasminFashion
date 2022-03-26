@@ -139,9 +139,8 @@
                                 <td>
                                     {{$party->price}}
                                 </td>
-                                <td>
-                                    {{$party->color}}
-                                </td>
+                                <td><span style="background-color: {{$product->color}};color: {{$product->color}};     display: inline-table;">color</span></td>
+
                                 <td>
                                     {{ $party->size[0]??''}}
                                     {{$party->size[2]??''}}

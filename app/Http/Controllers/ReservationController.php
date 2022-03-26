@@ -58,7 +58,6 @@ class ReservationController extends Controller
             "town" => 'required',
             "from" => 'required',
             "to" => 'required',
-            "dress_name" => 'required',
         ], [
             'customer_name.required' => 'هذا الحقل مطلوب',
             'mobile.required' => 'هذا الحقل مطلوب',
@@ -67,8 +66,6 @@ class ReservationController extends Controller
             'party_color.required' => 'هذا الحقل مطلوب',
             'from.required' => 'هذا الحقل مطلوب',
             'to.required' => 'هذا الحقل مطلوب',
-            'dress_name.required' => 'يرجى اكمال عملية الحجز ',
-
         ]);
 
         $reservation = new  Reservation();
@@ -195,8 +192,6 @@ class ReservationController extends Controller
 
     public function updateTotalPrice(Request $request)
     {
-
-
         $reservation = Reservation::query()->latest()->first();
         if ($reservation) {
             $reservation->update(['total_price' => $request->get('total_price')]);

@@ -157,9 +157,7 @@
                                 <td>
                                     {{$product->price}}
                                 </td>
-                                <td>
-                                    {{$product->color}}
-                                </td>
+                                <td><span style="background-color: {{$product->color}};color: {{$product->color}};     display: inline-table;">color</span></td>
                                 <td>
                                     {{ $product->size[0]??''}}
                                     {{$product->size[2]??''}}
