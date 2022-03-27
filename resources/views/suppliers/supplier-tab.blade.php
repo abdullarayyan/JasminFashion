@@ -16,8 +16,7 @@
                         <div class="form-group">
                             <label for="type"><span class="required_lbl">*</span>{{ __('اسم المخزون') }}</label>
                             <select class="js-example-basic-single" name="type" required>
-                                <option
-                                    value="{{$supplier->exists?$supplier->type:""}}">{{$supplier->exists?$supplier->type:""}}</option>
+
                                 <option value="App\Models\Product" style="background-color: #eeeeee">فساتين زفاف</option>
                                 ...
                                 <option value="App\Models\Party" style="background-color: #eeeeee">فساتين سهرة</option>
@@ -51,7 +50,7 @@
                         <div class="form-group">
                             <label for="name"><span class="required_lbl">*</span>{{ __('اسم الفستان او الاكسسوار') }}</label>
                             <select class="js-example-basic-single" name="name">
-                                <option value="{{$supplier->exists?$supplier->name:""}}">{{$supplier->exists?$supplier->name:""}}</option>
+{{--                                <option value="{{$supplier->exists?$supplier->name:""}}">{{$supplier->exists?$supplier->name:""}}</option>--}}
                                 <option value="فستان زفاف" style="background-color: #eeeeee">فستان زفاف</option>
                                 ...
                                 <option value="فستان سمكه" style="background-color: #eeeeee">فستان سمكه</option>
@@ -73,7 +72,7 @@
                         <div class="form-group">
                             <label for="model"><span class="required_lbl">*</span>{{ __('موديل الفستان او الاكسسوار') }}</label>
                             <select class="js-example-basic-single" name="model">
-                                <option value="{{$supplier->exists?$supplier->model:""}}">{{$supplier->exists?$supplier->model:""}}</option>
+{{--                                <option value="{{$supplier->exists?$supplier->model:""}}">{{$supplier->exists?$supplier->model:""}}</option>--}}
                                 <option value="2019" style="background-color: #eeeeee">2019</option>
                                 ...
                                 <option value="2020" style="background-color: #eeeeee">2020</option>

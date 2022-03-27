@@ -85,10 +85,7 @@
                                 الماركة
 
                             </th>
-                            <th class="">
-                                الكمية
 
-                            </th>
                             <th style="width: 30%">
                                 الوصف
 
@@ -124,8 +121,7 @@
                             </td>
                             <td>
                             </td>
-                            <td>
-                            </td>
+
                             <td>
                             </td>
                             <td>
@@ -170,9 +166,7 @@
                                 <td>
                                     {{$accessory->brand}}
                                 </td>
-                                <td>
-                                    {{$accessory->quantity}}
-                                </td>
+
                                 <td style="    word-break: break-all;">
                                     {{$accessory->description}}
                                 </td>
