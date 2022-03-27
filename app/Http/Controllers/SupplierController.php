@@ -133,7 +133,7 @@ class SupplierController extends Controller
                 $data['code'] = "#" . IHouse::getSequenceProduct() . '001';
             } elseif ($request->type === 'App\Models\Accessory') {
                 $data['code'] = "#" . IHouse::getSequenceAccessory() . '001';
-            } elseif ($request->type === 'App\Models\Accessory') {
+            } elseif ($request->type === 'App\Models\Party') {
                 $data['code'] = "#" . IHouse::getSequenceParty() . '001';
             }
 
