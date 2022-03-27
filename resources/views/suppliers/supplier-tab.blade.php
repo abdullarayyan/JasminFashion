@@ -120,7 +120,7 @@
                                 <option value="medium">Medium</option>
                                 <option value="large">Large</option>
                                 <option value="x-large">X-Large</option>
-                                <option value="x-large">All Size</option>
+                                <option value="All-large">All Size</option>
                             </select>
 
                         </div>

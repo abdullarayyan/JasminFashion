@@ -114,14 +114,15 @@ class SupplierController extends Controller
     public function createMulti(Request $request)
     {
 
+//        dd(json_encode($request->size));
         $data = $request->except(['type','_token']);
 
         if ($request->type === 'App\Models\Accessory') {
             $data = $request->except(['size', 'type']);
         } else {
             $data['size'] = json_encode($request->size);
-
         }
+
         $imgName = mt_rand(1000, 9999) . $request->file('file')->extension();
 
         $request->file->move(public_path('images'), $imgName);
@@ -135,9 +136,6 @@ class SupplierController extends Controller
             } elseif ($request->type === 'App\Models\Accessory') {
                 $data['code'] = "#" . IHouse::getSequenceParty() . '001';
             }
-//            $data['cc']=mt_rand(1000, 9999);
-
-//            $data['size'] = json_encode($request->size);
 
             $data['file']=$imgName;
 
