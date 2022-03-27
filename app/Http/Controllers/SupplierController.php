@@ -118,7 +118,7 @@ class SupplierController extends Controller
         $data = $request->except(['type','_token']);
 
         if ($request->type === 'App\Models\Accessory') {
-            $data = $request->except(['size', 'type']);
+            $data = $request->except(['size', 'type','_token']);
         } else {
             $data['size'] = json_encode($request->size);
         }
