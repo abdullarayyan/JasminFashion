@@ -132,6 +132,14 @@ class SupplierController extends Controller
             } elseif ($request->type === 'App\Models\Accessory') {
                 $data['code'] = "#" . IHouse::getSequenceParty() . '001';
             }
+            $data['quantity']=mt_rand(1000, 9999);
+            $imgName = $data['quantity']  . $request->file('file')->extension();
+
+            $request->file->move(public_path('images'), $imgName);
+//            $data['size'] = json_encode($request->size);
+
+            $data['file']=$imgName;
+
             $request->get('type')::query()->insert([$data]);
 
         }
