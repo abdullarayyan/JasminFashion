@@ -26,8 +26,11 @@
   <component name="ChangeListManager">
     <list default="true" id="817c0f37-c9d6-4d2d-a9e2-ab43987fb601" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ProductController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ProductController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/SupplierController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/SupplierController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/suppliers/supplier-tab.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/suppliers/supplier-tab.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/suppliers/suppliers-tab.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/suppliers/suppliers-tab.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -246,7 +249,8 @@
       <workItem from="1648114244302" duration="216000" />
       <workItem from="1648115033193" duration="61000" />
       <workItem from="1648287923253" duration="21280000" />
-      <workItem from="1648403098324" duration="771000" />
+      <workItem from="1648403098324" duration="4112000" />
+      <workItem from="1648407568905" duration="360000" />
     </task>
     <task id="LOCAL-00001" summary="push product">
       <created>1646048349470</created>
@@ -514,7 +518,14 @@
       <option name="project" value="LOCAL" />
       <updated>1648403175567</updated>
     </task>
-    <option name="localTasksCounter" value="39" />
+    <task id="LOCAL-00039" summary="push">
+      <created>1648403956814</created>
+      <option name="number" value="00039" />
+      <option name="presentableId" value="LOCAL-00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1648403956814</updated>
+    </task>
+    <option name="localTasksCounter" value="40" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -557,11 +568,11 @@
     </state>
     <state x="371" y="95" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1280.680/1920.0.1920.1040@0.0.1280.680" timestamp="1646039127635" />
     <state x="371" y="95" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1280.680@0.0.1280.680" timestamp="1647728171959" />
-    <state x="264" y="0" key="CommitChangelistDialog2" timestamp="1648403174387">
+    <state x="264" y="0" key="CommitChangelistDialog2" timestamp="1648403955640">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="264" y="0" key="CommitChangelistDialog2/0.0.1280.680/1920.0.1920.1040@0.0.1280.680" timestamp="1648115081192" />
-    <state x="264" y="0" key="CommitChangelistDialog2/0.0.1280.680@0.0.1280.680" timestamp="1648403174387" />
+    <state x="264" y="0" key="CommitChangelistDialog2/0.0.1280.680@0.0.1280.680" timestamp="1648403955640" />
     <state x="121" y="50" key="DiffContextDialog" timestamp="1648114439467">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
@@ -592,11 +603,11 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="142" y="0" key="SettingsEditor/0.0.1280.680@0.0.1280.680" timestamp="1645897121165" />
-    <state width="534" height="446" key="SwitcherDM" timestamp="1648326591604">
+    <state width="534" height="446" key="SwitcherDM" timestamp="1648406678995">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state width="534" height="446" key="SwitcherDM/0.0.1280.680/1920.0.1920.1040@0.0.1280.680" timestamp="1646046813820" />
-    <state width="534" height="446" key="SwitcherDM/0.0.1280.680@0.0.1280.680" timestamp="1648326591604" />
+    <state width="534" height="446" key="SwitcherDM/0.0.1280.680@0.0.1280.680" timestamp="1648406678995" />
     <state x="233" y="73" key="Vcs.Push.Dialog.v2" timestamp="1648403942143">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
@@ -614,12 +625,12 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="458" y="254" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1280.680@0.0.1280.680" timestamp="1648298477007" />
-    <state x="483" y="88" width="557" height="592" key="find.popup" timestamp="1648311763203">
+    <state x="483" y="88" width="557" height="592" key="find.popup" timestamp="1648405574401">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="483" y="88" width="557" height="592" key="find.popup/0.0.1280.680/1920.0.1920.1040@0.0.1280.680" timestamp="1646521930278" />
     <state x="2586" y="253" width="587" height="534" key="find.popup/0.0.1280.680/1920.0.1920.1040@1920.0.1920.1040" timestamp="1645568135848" />
-    <state x="483" y="88" width="557" height="592" key="find.popup/0.0.1280.680@0.0.1280.680" timestamp="1648311763203" />
+    <state x="483" y="88" width="557" height="592" key="find.popup/0.0.1280.680@0.0.1280.680" timestamp="1648405574401" />
     <state x="416" y="242" key="git4idea.remote.GitConfigureRemotesDialog" timestamp="1645897067941">
       <screen x="0" y="0" width="1280" height="680" />
     </state>

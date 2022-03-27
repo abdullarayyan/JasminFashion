@@ -37,7 +37,7 @@ Route::resource('/party','App\Http\Controllers\PartyController');
 Route::resource('/accessory','App\Http\Controllers\AccessoryController');
 Route::get('/reservation/invoice/{id}','App\Http\Controllers\ReservationController@invoice')->name('reservation.invoice');
 Route::post('/update_price','App\Http\Controllers\ReservationController@updateTotalPrice')->name('update_total_price');
-Route::get('/supplier/create/create-multi','App\Http\Controllers\SupplierController@createMulti')->name('supplier.create-multi');
+Route::post('/supplier/create/create-multi','App\Http\Controllers\SupplierController@createMulti')->name('supplier.create-multi');
 
 Route::resource('reservation','App\Http\Controllers\ReservationController');
 Route::resource('supplier','App\Http\Controllers\SupplierController');

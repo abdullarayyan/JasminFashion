@@ -89,6 +89,7 @@ class ProductController extends Controller
             ],
         ]);
 
+//        dd($request->file('file')->extension());
 
         $data = $request->except(['_token']);
         $data['quantity']=mt_rand(1000, 9999);

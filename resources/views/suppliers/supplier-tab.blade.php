@@ -6,7 +6,10 @@
     </div>
     <div class="collapse accordion-content" id="dress_section">
         <div class="">
-            <form action="{{route('supplier.create-multi')}}" method="GET">
+            {!! Form::open(["route"=>["supplier.create-multi"],"files"=>true,"class"=>"ajax-form",'method'=>'POST']) !!}
+            @csrf
+
+{{--            <form action="{{route('supplier.create-multi')}}" method="GET" enctype="multipart/form-data">--}}
                 <div class="row">
                     <div class="col-md-6">
 
@@ -130,11 +133,33 @@
                         </div>
                     </div>
                 </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+
+                            <label for="choose_file"><span
+                                    class="required_lbl">*</span>{{ __('اختيار صورة') }}</label>
+
+                            <div class="form-control form-upload" style="border: 1px solid #fcefba;">
+                                <div class="d-flex align-items-center">
+                                    <button type="button" style="color: #0e0d0d;background-color: #d4b880"
+                                            onclick="document.getElementById('file_upload').click()">
+                                        اختار صورة
+                                    </button>
+                                    <label class="filename">{{$supplier->file}}</label>
+                                </div>
+                                <input  type='file' class="hidden_file_input" name="file"
+                                        id="file_upload">
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
 
                 <div class="col-md-12">
                     <button class="btn btn--primary type--uppercase" type="submit" style="width: 36%">تخزين</button>
                 </div>
-            </form>
+            {!! Form::close() !!}
 
 
         </div>
