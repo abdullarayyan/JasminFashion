@@ -162,7 +162,7 @@
         <div class="form-group">
             <label for="description">اللون</label>
 
-            <input type='color' name='color' class='colorpicker' value="{{$product->color?$product->color:'#b49356'}}" style="padding-left: 15px"/>
+            <input type='color' name='color' class='colorpicker' value="{{$accessory->color?$accessory->color:'#b49356'}}" style="padding-left: 15px"/>
 
         </div>
 
