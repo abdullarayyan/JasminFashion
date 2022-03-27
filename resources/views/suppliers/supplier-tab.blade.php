@@ -16,7 +16,7 @@
                         <div class="form-group">
                             <label for="type"><span class="required_lbl">*</span>{{ __('اسم المخزون') }}</label>
                             <select class="js-example-basic-single" name="type" required>
-
+    
                                 <option value="App\Models\Product" style="background-color: #eeeeee">فساتين زفاف</option>
                                 ...
                                 <option value="App\Models\Party" style="background-color: #eeeeee">فساتين سهرة</option>
