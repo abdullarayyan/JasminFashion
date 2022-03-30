@@ -10,27 +10,14 @@
 
 @section('css')
     <style>
-        .bg-video-wrap {
+         .bxs-chevron-down{
+             margin:auto;
+         }
+        iframe {
+            width: 100%;
+            height: auto;
             position: relative;
-            overflow: hidden;
-            width: 100%;
-            height: 100vh;
-            background: url(https://www.instagram.com/reel/CXMZpfwhkZe/?utm_medium=copy_link&fbclid=IwAR1nBlIZ_tUHSyJJtjyWQE4DsDxOU_WtefyFw7Ph1VU2_ixWBBbTrceQ47s) no-repeat center center/cover;
-        }
-        video {
-            min-width: 100%;
-            min-height: 100vh;
-            z-index: 1;
-        }
-        .overlay {
-            width: 100%;
-            height: 100vh;
-            position: absolute;
-            top: 0;
-            left: 0;
-            background-image: linear-gradient(45deg, rgba(0,0,0,.3) 50%, rgba(0,0,0,.7) 50%);
-            background-size: 3px 3px;
-            z-index: 2;
+            top: 10px;
         }
 
         .datepicker > div {
@@ -96,7 +83,6 @@
                 </div>
             @endif
         </div>
-
         <div class="required_fields mt-2 mb-4 d-none">
             <div role="alert" class="alert alert-danger">
                 الرجاء ملئ جميع الخانات المطلوبة
@@ -114,125 +100,116 @@
             </li>
 
         </ul>
+        {{--        <div class="col-md-6">--}}
+        {{--            <div style="padding:177.100% 0 0 0;position:relative;"><iframe src="https://player.vimeo.com/video/694111705?h=5aced4dfc6&autoplay=1&loop=1&color=ff9933&title=0&byline=0&portrait=0&muted=1" style="position:absolute;top:0;left:0;width:100%;height:100%;" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe></div><script src="https://player.vimeo.com/api/player.js"></script>--}}{{--                        <iframe src="https://player.vimeo.com/video/76979871?background=1autoplay=1&loop=1&autopause=0" width="640" height="360" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>--}}
+        {{--        </div>--}}
         <div class="row">
-            <div class="col-md-12">
+
+            <div class="col-md-6">
                 <div class="row">
-                    <div class="col-md-6">
+                    <div class="col-md-12">
                         @include('reservation.zbone-tab')
-
                     </div>
-                    <div class="col-md-6">
-                        @include('reservation.dress-tab')
+                </div>
 
+                <div class="row">
+                    <div class="col-md-12">
+                        @include('reservation.party-tab')
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-md-6">
-                        @include('reservation.party-tab')
-
-                    </div>
-                    <div class="col-md-6">
-{{--                        <div class="bg-video-wrap">--}}
-{{--                            <video src="https://www.instagram.com/reel/CXMZpfwhkZe/?utm_medium=copy_link&fbclid=IwAR1nBlIZ_tUHSyJJtjyWQE4DsDxOU_WtefyFw7Ph1VU2_ixWBBbTrceQ47s" loop muted autoplay>--}}
-{{--                            </video>--}}
-{{--                            <div class="overlay">--}}
-{{--                            </div>--}}
-{{--                            <h1>Fullscreen video background--}}
-{{--                            </h1>--}}
-{{--                        </div>--}}
+                    <div class="col-md-12">
+                        @include('reservation.dress-tab')
                     </div>
                 </div>
 
-            </div>
-        </div>
-        <div class="col-md-4" style="    margin-top: 32px;">
 
-            @if (isset($errors) && $errors->any())
-                <div class="alert alert-danger">
-                    @foreach ($errors->all() as $error)
-                        {{ $error }}
-                    @endforeach
-                </div>
-            @endif
-            <div class="col-md-12">
-                <button class="btn btn--primary type--uppercase" type="submit" style="width: 36%">تخزين</button>
-            </div>
-            {!! Form::close() !!}
+                <div class="row">
+                    <div class="col-md-12 mt-4">
+                        @if (isset($errors) && $errors->any())
+                            <div class="alert alert-danger">
+                                @foreach ($errors->all() as $error)
+                                    {{ $error }}
+                                @endforeach
+                            </div>
+                        @endif
+                        <button class="btn btn--primary type--uppercase" type="submit" style="width: 36%">تخزين
+                        </button>
+                        {!! Form::close() !!}
 
-        </div>
-        <div class="card-section">
-            <div class="header" style="display: flex;
-    flex-direction: column;    width: 48%;">
-                <?php
-                $total_price = \App\Models\Reservation::query()
-                    ->selectRaw('dress_price,dress_price_acc,party_price,party_price_acc,customer_name')->latest()->first();
-                ?>
-                @if($total_price)
-                    <span class="alert alert-info " role="alert"
-                          style="font-weight: 900">دفع عربون لحجز باسم : {{$total_price->customer_name}}</span>
-                    <span class="alert alert-info " style="font-weight: 900">
+
+                        <div class="header" style="display: flex;flex-direction: column;    width: 48%;">
+                            <?php
+                            $total_price = \App\Models\Reservation::query()
+                                ->selectRaw('dress_price,dress_price_acc,party_price,party_price_acc,customer_name')->latest()->first();
+                            ?>
+                            @if($total_price)
+                                <span class="alert alert-info " role="alert"
+                                      style="font-weight: 900">دفع عربون لحجز باسم : {{$total_price->customer_name}}</span>
+                                <span class="alert alert-info " style="font-weight: 900">
                         {{'السعر الاجمالي لهذا الحجز ='.($total_price->dress_price+$total_price->party_price+$total_price->dress_price_acc+$total_price->party_price_acc)}}
-                    </span>
-                @endif
-            </div>
+                             </span>
+                            @endif
+                        </div>
 
+                        <div class="time">
+                            <form action="{{route('update_total_price')}}" method="POST">
+                                @csrf
+                                <div class="form-group">
+                                    <label for="total_price">{{ __('المبلغ المراد دفعه') }}</label>
+                                    <input id="total_price" type="text"
+                                           class="form-control @error('total_price') is-invalid @enderror"
+                                           name="total_price"
+                                           value="{{ old('total_price') }}"
+                                           autocomplete="total_price" maxlength="10">
 
-            <div class="time">
-
-                <form action="{{route('update_total_price')}}" method="POST">
-                    @csrf
-                    <div class="row">
-                        <div class="col-md-3">
-                            <div class="form-group">
-                                <label for="total_price">{{ __('المبلغ المراد دفعه') }}</label>
-                                <input id="total_price" type="text"
-                                       class="form-control @error('total_price') is-invalid @enderror"
-                                       name="total_price"
-                                       value="{{ old('total_price') }}"
-                                       autocomplete="total_price" maxlength="10">
-
-                                @error('total_price')
-                                <span class="invalid-feedback" role="alert">
+                                    @error('total_price')
+                                    <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
                                             </span>
-                                @enderror
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <button type="submit" class="btn btn--primary type--uppercase"
-                                    style="width: 46%;    top: 30%;">
-                                تخزين العربون
-                            </button>
-
-                        </div>
-
-
-                    </div>
-                    <div class="row">
-                        <div class="col-md-6">
-                            <button class="btn btn--primary type--uppercase" style="
-    background-color: #fd9292!important;
-;    width: inherit;
-"><a href="/reservation"> العوده لصفحة العرض</a></button>
-
+                                    @enderror
+                                </div>
+                                <button type="submit" class="btn btn--primary type--uppercase"
+                                        style="width: 46%;    top: 30%;">
+                                    تخزين العربون
+                                </button>
+                                <button class="btn btn--primary type--uppercase"
+                                        style="background-color: #fd9292!important;;    width: inherit;"><a
+                                        href="/reservation"> العوده لصفحة العرض</a></button>
+                            </form>
                         </div>
                     </div>
 
-                </form>
-
+                </div>
             </div>
-
+            <div class="col-md-6">
+                <div style="padding:177.100% 0 0 0;position:relative;">
+                                        <iframe
+                                            src="https://player.vimeo.com/video/694111705?h=5aced4dfc6&autoplay=1&loop=1&color=ff9933&title=0&byline=0&portrait=0&muted=1"
+                                            style="position:absolute;top:0;left:0;width:100%;height:100%;"
+                                            frameborder="0" allow="autoplay; fullscreen; picture-in-picture"
+                                            allowfullscreen></iframe>
+                                    </div>
+            </div>
 
         </div>
 
-        @endsection
 
-        @section('js')
-            <script>
-                $(document).ready(function () {
-                    $('.js-example-basic-multiple').select2();
-                });
-            </script>
+
+
+    </div>
+
+
 
 @endsection
+
+@section('js')
+    <script>
+        $(document).ready(function () {
+            $('.js-example-basic-multiple').select2();
+        });
+    </script>
+
+@endsection
+
 

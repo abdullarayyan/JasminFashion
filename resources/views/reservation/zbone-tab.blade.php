@@ -40,9 +40,10 @@
 
                     <div class="form-group">
                         <label for="mobile"><span class="required_lbl">*</span>{{ __('رقم الجوال') }}</label>
-                        <input id="mobile" type="text"
-                               class="form-control required @error('mobile') is-invalid @enderror" name="mobile"
-                               value="{{ old('mobile') }}" autocomplete="mobile" maxlength="10">
+                        <input id="mobile" type="number" maxlength="10"
+                                 oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
+                                 class="form-control required " name="mobile" value="" required="" autocomplete="mobile">
+
 
                         @error('mobile')
                         <span class="invalid-feedback" role="alert">

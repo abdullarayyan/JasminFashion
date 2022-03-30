@@ -104,7 +104,18 @@
                     </div>
 
                     <div class="col-md-6">
+
+                    </div>
+
+
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
                         @include('suppliers.supplier-tab')
+
+                    </div>
+                    <div class="col-md-6">
+                        <img src="{{asset('assets/images/supplier.png')}}">
 
                     </div>
                 </div>

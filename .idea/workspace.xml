@@ -24,14 +24,14 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="817c0f37-c9d6-4d2d-a9e2-ab43987fb601" name="Default Changelist" comment="push">
+    <list default="true" id="817c0f37-c9d6-4d2d-a9e2-ab43987fb601" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/public/assets/images/oo.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/images/supplier.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/SupplierController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/SupplierController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/includes/header.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/includes/header.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/reservation/add_yatem.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/reservation/add_yatem.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/reservation/zbone-tab.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/reservation/zbone-tab.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/suppliers/add_supplier.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/suppliers/add_supplier.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/suppliers/supplier-tab.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/suppliers/supplier-tab.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/suppliers/suppliers-tab.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/suppliers/suppliers-tab.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -171,7 +171,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/public/assets/images" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -183,16 +183,16 @@
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\laragon\www\jasmin-fashion\public\assets\images" />
+      <recent name="C:\laragon\www\jasmin\public\assets\images" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\laragon\www\jasmin-fashion\public\assets\images" />
       <recent name="C:\laragon\www\jasmin-fashion\resources\views" />
       <recent name="C:\laragon\www\jasmin-fashion\resources\views\reservation" />
       <recent name="C:\laragon\www\jasmin-fashion\resources\views\reservation\partials" />
       <recent name="C:\laragon\www\jasmin-fashion\app\Http\Controllers" />
-      <recent name="C:\laragon\www\jasmin-fashion\app" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\laragon\www\jasmin-fashion\public\assets\images" />
-      <recent name="C:\laragon\www\jasmin\public\assets\images" />
     </key>
   </component>
   <component name="RunManager">
@@ -254,7 +254,7 @@
       <workItem from="1648407568905" duration="3529000" />
       <workItem from="1648411351957" duration="1511000" />
       <workItem from="1648483736411" duration="609000" />
-      <workItem from="1648651378947" duration="7290000" />
+      <workItem from="1648651378947" duration="21924000" />
     </task>
     <task id="LOCAL-00001" summary="push product">
       <created>1646048349470</created>
@@ -592,7 +592,14 @@
       <option name="project" value="LOCAL" />
       <updated>1648411366541</updated>
     </task>
-    <option name="localTasksCounter" value="49" />
+    <task id="LOCAL-00049" summary="push">
+      <created>1648664340682</created>
+      <option name="number" value="00049" />
+      <option name="presentableId" value="LOCAL-00049" />
+      <option name="project" value="LOCAL" />
+      <updated>1648664340682</updated>
+    </task>
+    <option name="localTasksCounter" value="50" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -635,21 +642,21 @@
     </state>
     <state x="371" y="95" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1280.680/1920.0.1920.1040@0.0.1280.680" timestamp="1646039127635" />
     <state x="371" y="95" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1280.680@0.0.1280.680" timestamp="1647728171959" />
-    <state x="264" y="0" key="CommitChangelistDialog2" timestamp="1648411502979">
+    <state x="264" y="0" key="CommitChangelistDialog2" timestamp="1648664339105">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="264" y="0" key="CommitChangelistDialog2/0.0.1280.680/1920.0.1920.1040@0.0.1280.680" timestamp="1648115081192" />
-    <state x="264" y="0" key="CommitChangelistDialog2/0.0.1280.680@0.0.1280.680" timestamp="1648411502979" />
+    <state x="264" y="0" key="CommitChangelistDialog2/0.0.1280.680@0.0.1280.680" timestamp="1648664339105" />
     <state x="121" y="50" key="DiffContextDialog" timestamp="1648411363596">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="121" y="50" key="DiffContextDialog/0.0.1280.680/1920.0.1920.1040@0.0.1280.680" timestamp="1648114439467" />
     <state x="121" y="50" key="DiffContextDialog/0.0.1280.680@0.0.1280.680" timestamp="1648411363596" />
-    <state x="502" y="253" key="Github.Dialog.Accounts.Choose" timestamp="1648411372463">
+    <state x="502" y="253" key="Github.Dialog.Accounts.Choose" timestamp="1648664359477">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="502" y="253" key="Github.Dialog.Accounts.Choose/0.0.1280.680/1920.0.1920.1040@0.0.1280.680" timestamp="1648115086800" />
-    <state x="502" y="253" key="Github.Dialog.Accounts.Choose/0.0.1280.680@0.0.1280.680" timestamp="1648411372463" />
+    <state x="502" y="253" key="Github.Dialog.Accounts.Choose/0.0.1280.680@0.0.1280.680" timestamp="1648664359477" />
     <state x="482" y="220" key="Github.ShareDialog" timestamp="1645897278094">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
@@ -675,11 +682,11 @@
     </state>
     <state width="534" height="446" key="SwitcherDM/0.0.1280.680/1920.0.1920.1040@0.0.1280.680" timestamp="1646046813820" />
     <state width="534" height="446" key="SwitcherDM/0.0.1280.680@0.0.1280.680" timestamp="1648656122603" />
-    <state x="233" y="73" key="Vcs.Push.Dialog.v2" timestamp="1648411368481">
+    <state x="233" y="73" key="Vcs.Push.Dialog.v2" timestamp="1648664343149">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="233" y="73" key="Vcs.Push.Dialog.v2/0.0.1280.680/1920.0.1920.1040@0.0.1280.680" timestamp="1648115084371" />
-    <state x="233" y="73" key="Vcs.Push.Dialog.v2/0.0.1280.680@0.0.1280.680" timestamp="1648411368481" />
+    <state x="233" y="73" key="Vcs.Push.Dialog.v2/0.0.1280.680@0.0.1280.680" timestamp="1648664343149" />
     <state x="93" y="93" width="1095" height="495" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1647890102673">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
@@ -692,12 +699,16 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="458" y="254" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1280.680@0.0.1280.680" timestamp="1648298477007" />
-    <state x="483" y="88" width="557" height="592" key="find.popup" timestamp="1648660575526">
+    <state x="0" y="0" width="909" height="638" key="dock-window-1" timestamp="1648671684334">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="0" y="0" width="909" height="638" key="dock-window-1/0.0.1280.680@0.0.1280.680" timestamp="1648671684334" />
+    <state x="483" y="88" width="557" height="592" key="find.popup" timestamp="1648674412230">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="483" y="88" width="557" height="592" key="find.popup/0.0.1280.680/1920.0.1920.1040@0.0.1280.680" timestamp="1646521930278" />
     <state x="2586" y="253" width="587" height="534" key="find.popup/0.0.1280.680/1920.0.1920.1040@1920.0.1920.1040" timestamp="1645568135848" />
-    <state x="483" y="88" width="557" height="592" key="find.popup/0.0.1280.680@0.0.1280.680" timestamp="1648660575526" />
+    <state x="483" y="88" width="557" height="592" key="find.popup/0.0.1280.680@0.0.1280.680" timestamp="1648674412230" />
     <state x="416" y="242" key="git4idea.remote.GitConfigureRemotesDialog" timestamp="1645897067941">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
@@ -706,9 +717,9 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="297" y="151" key="run.anything.popup/0.0.1280.680/1920.0.1920.1040@0.0.1280.680" timestamp="1646043619603" />
-    <state x="303" y="1" width="672" height="678" key="search.everywhere.popup" timestamp="1648660803421">
+    <state x="303" y="1" width="672" height="678" key="search.everywhere.popup" timestamp="1648676846022">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="303" y="1" width="672" height="678" key="search.everywhere.popup/0.0.1280.680@0.0.1280.680" timestamp="1648660803421" />
+    <state x="303" y="1" width="672" height="678" key="search.everywhere.popup/0.0.1280.680@0.0.1280.680" timestamp="1648676846022" />
   </component>
 </project>
