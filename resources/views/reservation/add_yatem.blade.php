@@ -10,6 +10,29 @@
 
 @section('css')
     <style>
+        .bg-video-wrap {
+            position: relative;
+            overflow: hidden;
+            width: 100%;
+            height: 100vh;
+            background: url(https://www.instagram.com/reel/CXMZpfwhkZe/?utm_medium=copy_link&fbclid=IwAR1nBlIZ_tUHSyJJtjyWQE4DsDxOU_WtefyFw7Ph1VU2_ixWBBbTrceQ47s) no-repeat center center/cover;
+        }
+        video {
+            min-width: 100%;
+            min-height: 100vh;
+            z-index: 1;
+        }
+        .overlay {
+            width: 100%;
+            height: 100vh;
+            position: absolute;
+            top: 0;
+            left: 0;
+            background-image: linear-gradient(45deg, rgba(0,0,0,.3) 50%, rgba(0,0,0,.7) 50%);
+            background-size: 3px 3px;
+            z-index: 2;
+        }
+
         .datepicker > div {
             display: block;
         }
@@ -91,9 +114,37 @@
             </li>
 
         </ul>
-        @include('reservation.zbone-tab')
-        @include('reservation.dress-tab')
-        @include('reservation.party-tab')
+        <div class="row">
+            <div class="col-md-12">
+                <div class="row">
+                    <div class="col-md-6">
+                        @include('reservation.zbone-tab')
+
+                    </div>
+                    <div class="col-md-6">
+                        @include('reservation.dress-tab')
+
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        @include('reservation.party-tab')
+
+                    </div>
+                    <div class="col-md-6">
+{{--                        <div class="bg-video-wrap">--}}
+{{--                            <video src="https://www.instagram.com/reel/CXMZpfwhkZe/?utm_medium=copy_link&fbclid=IwAR1nBlIZ_tUHSyJJtjyWQE4DsDxOU_WtefyFw7Ph1VU2_ixWBBbTrceQ47s" loop muted autoplay>--}}
+{{--                            </video>--}}
+{{--                            <div class="overlay">--}}
+{{--                            </div>--}}
+{{--                            <h1>Fullscreen video background--}}
+{{--                            </h1>--}}
+{{--                        </div>--}}
+                    </div>
+                </div>
+
+            </div>
+        </div>
         <div class="col-md-4" style="    margin-top: 32px;">
 
             @if (isset($errors) && $errors->any())

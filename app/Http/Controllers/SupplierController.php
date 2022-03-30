@@ -59,7 +59,7 @@ class SupplierController extends Controller
      */
     public function store(Request $request)
     {
-//        dd($request->all());
+
         Supplier::query()->insert($request->except(['_token']));
         return redirect(url('/supplier/create'))->with('success', 'تم اضافة المورد بنجاح');
 

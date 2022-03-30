@@ -1,3 +1,10 @@
+<style>
+    .dropdown-menu{
+        right: 100%;
+
+    }
+</style>
+
 <header>
     <div class="logo-wrapper">
         {{--        <i class='bx bx-menu' onclick="toggleNav()"></i>--}}
@@ -29,7 +36,20 @@
                 </ul>
             </ul>
 
-
+            <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
+                ...
+                <li class="dropdown-submenu">
+                    <a tabindex="-1" href="#">More options</a>
+                    <ul class="dropdown-menu">
+                        ...
+                    </ul>
+                </li>
+            </ul>
+            <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu">
+                <li><a tabindex="-1" href="#">Regular link</a></li>
+                <li class="disabled"><a tabindex="-1" href="#">Disabled link</a></li>
+                <li><a tabindex="-1" href="#">Another link</a></li>
+            </ul>
             <ul class="level1" style="margin: 0">
                 <ul class="level2" style="margin: 0;">
                     <nav class="navbar navbar-expand-lg">

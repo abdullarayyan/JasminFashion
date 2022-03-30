@@ -39,9 +39,10 @@
 
                     <div class="form-group">
                         <label for="mobile"><span class="required_lbl">*</span>{{ __('رقم الجوال') }}</label>
-                        <input id="mobile" type="text"
-                               class="form-control required @error('mobile') is-invalid @enderror" name="mobile"
-                               value="{{ old('mobile') }}" autocomplete="mobile" maxlength="10" required>
+                        <input id="mobile" type="number" maxlength="10"
+                               oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
+                               class="form-control required " name="mobile" value="" required="" autocomplete="mobile">
+
 
                         @error('mobile')
                         <span class="invalid-feedback" role="alert">
@@ -57,9 +58,11 @@
 
                     <div class="form-group">
                         <label for="quantity"><span class="required_lbl">*</span>{{ __('الكمية') }}</label>
-                        <input id="quantity" type="text"
-                               class="form-control required @error('quantity') is-invalid @enderror" name="quantity"
-                               value="{{ old('quantity') }}" autocomplete="quantity" maxlength="10" required>
+                        <input id="quantity" type="number" maxlength="5"
+                               oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
+                               class="form-control required " name="quantity" value="" required="" autocomplete="quantity">
+
+
 
                         @error('quantity')
                         <span class="invalid-feedback" role="alert">
@@ -147,11 +150,10 @@
                 <div class="col-md-6">
                     <div class="form-group">
                         <label for="total_price"><span class="required_lbl">*</span>{{ __('سعر البضاعه') }}</label>
-                        <input id="total_price" type="text"
-                               class="form-control required @error('model') is-invalid @enderror"
-                               name="total_price" value="{{ $supplier->total_price??'' }}" required
-                               autocomplete="total_price" maxlength="10" required>
 
+                        <input id="total_price" type="number" maxlength="5"
+                               oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
+                               class="form-control required " name="total_price" value="" required="" autocomplete="total_price">
                         @error('total_price')
                         <span class="invalid-feedback" role="alert">
                 <strong>{{ $message }}</strong>
