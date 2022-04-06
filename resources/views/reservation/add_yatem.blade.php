@@ -10,9 +10,7 @@
 
 @section('css')
     <style>
-         .bxs-chevron-down{
-             margin:auto;
-         }
+
         iframe {
             width: 100%;
             height: auto;

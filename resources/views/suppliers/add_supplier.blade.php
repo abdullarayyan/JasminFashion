@@ -93,39 +93,30 @@
 
                 <div class="row">
                     <div class="col-md-6">
-                        {!! Form::open($supplier->exists?
+                        <div class="col-md-12">
+                            {!! Form::open($supplier->exists?
                                            ["route"=>["supplier.update",$supplier->id],"files"=>true,"class"=>"ajax-form",'method'=>'PUT']:
                                            ["route"=>["supplier.store"],"files"=>true,"class"=>"ajax-form",'method'=>'POST'] ) !!}
-                        @csrf
-                        @include('suppliers.suppliers-tab')
+                            @csrf
+                            @include('suppliers.suppliers-tab')
 
-                        {!! Form::close() !!}
-
+                            {!! Form::close() !!}
+                        </div>
+                        <div class="col-md-12" style="    padding-left: 0px;padding-right: 15px">
+                            @include('suppliers.supplier-tab')
+                        </div>
                     </div>
 
-                    <div class="col-md-6">
-
-                    </div>
-
-
-                </div>
-                <div class="row">
-                    <div class="col-md-6">
-                        @include('suppliers.supplier-tab')
-
-                    </div>
                     <div class="col-md-6">
                         <img src="{{asset('assets/images/supplier.png')}}">
-
                     </div>
                 </div>
+
             </div>
         </div>
 
 
-
-
-{{--        @include('suppliers.party-tab')--}}
+        {{--        @include('suppliers.party-tab')--}}
         <div class="col-md-4" style="    margin-top: 32px;">
 
             @if (isset($errors) && $errors->any())

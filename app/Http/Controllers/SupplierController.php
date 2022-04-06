@@ -130,11 +130,11 @@ class SupplierController extends Controller
         for ($i = 0; $i < $request->get('quantity'); $i++) {
             $data['status'] = 1;
             if ($request->type === 'App\Models\Product') {
-                $data['code'] = "#" . IHouse::getSequenceProduct() . '001';
+                $data['code'] = "#1" . IHouse::getSequenceProduct() . '00';
             } elseif ($request->type === 'App\Models\Accessory') {
-                $data['code'] = "#" . IHouse::getSequenceAccessories() . '001';
+                $data['code'] = "#2" . IHouse::getSequenceAccessories() . '00';
             } elseif ($request->type === 'App\Models\Party') {
-                $data['code'] = "#" . IHouse::getSequenceParties() . '001';
+                $data['code'] = "#3" . IHouse::getSequenceParties() . '00';
             }
 
             $data['file']=$imgName;

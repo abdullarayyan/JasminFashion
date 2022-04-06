@@ -26,8 +26,8 @@
             <ul class="level1" style="margin: 0">
                 <ul class="level2" style="margin: 0;">
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown"
-                           aria-haspopup="true" aria-expanded="false">
+                        <a class="nav-link dropdown-toggle" href="/" id="navbarDropdownMenuLink"
+                           aria-haspopup="true">
                             عام
                         </a>
 
@@ -213,7 +213,7 @@
                         {{ Auth::user()->username }}
                         <i class='bx bxs-chevron-down'></i>
                     </span>
-                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                    <div class="dropdown-menu dropdown-menu-right" style="right: 0" aria-labelledby="navbarDropdown">
                         <a class="dropdown-item" href="{{ route('logout') }}"
                            onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
                             {{ __('تسجيل الخروج') }}

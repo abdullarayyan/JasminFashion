@@ -86,7 +86,7 @@
             <label for="code"><span class="required_lbl">*</span>{{ __('كود القطعه') }}</label>
             <input id="code" type="text" class="form-control required @error('code') is-invalid @enderror"
                    name="code"
-                   value="{{ "#".\App\classes\IHouse::getSequenceParties().'001' }}"
+                   value="{{ "#2".\App\classes\IHouse::getSequenceParties().'00' }}"
 
                    required
                    autocomplete="code" maxlength="10">
