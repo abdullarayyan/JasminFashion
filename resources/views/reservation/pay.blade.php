@@ -32,7 +32,7 @@
                                 <input id="full_name" type="text"
                                        class="form-control "
                                        name="full_name"
-                                       value="{{ old('full_name') ?? $reservation->customer_name ?? '' }}"
+                                       value="{{ old('full_name') ?? $reservation->mobile ?? '' }}"
                                        readonly disabled>
                             </div>
                         </div>
