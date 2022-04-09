@@ -35,6 +35,10 @@ Route::post('/get-party','App\Http\Controllers\PartyController@getParty')->name(
 Route::resource('/product','App\Http\Controllers\ProductController');
 Route::resource('/party','App\Http\Controllers\PartyController');
 Route::resource('/accessory','App\Http\Controllers\AccessoryController');
+
+Route::get('/reservation/pay/{reservation}','App\Http\Controllers\ReservationController@pay')->name('reservation.pay');
+Route::get('/reservation/pay1','App\Http\Controllers\ReservationController@pay1')->name('reservation.pay1');
+
 Route::get('/reservation/invoice/{id}','App\Http\Controllers\ReservationController@invoice')->name('reservation.invoice');
 Route::post('/update_price','App\Http\Controllers\ReservationController@updateTotalPrice')->name('update_total_price');
 Route::post('/supplier/create/create-multi','App\Http\Controllers\SupplierController@createMulti')->name('supplier.create-multi');

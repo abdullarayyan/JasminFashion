@@ -25,23 +25,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="817c0f37-c9d6-4d2d-a9e2-ab43987fb601" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/public/assets/images/20done_0.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/images/32dfg_1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/images/40done_0.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/images/58633.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/images/58636.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/jasmin.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/jasmin.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/reservation/pay.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/SupplierController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/SupplierController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/accessories/create_edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/accessories/create_edit.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/home.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/home.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/includes/header.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/includes/header.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/parties/create_edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/parties/create_edit.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/products/create_edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/products/create_edit.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/reservation/add_yatem.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/reservation/add_yatem.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/suppliers/add_supplier.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/suppliers/add_supplier.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ReservationController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ReservationController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/reservation/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/reservation/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -181,7 +169,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/public/assets/images" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/views/reservation" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -193,16 +181,16 @@
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\laragon\www\jasmin-fashion\public\assets\images" />
-      <recent name="C:\laragon\www\jasmin-fashion\resources\views" />
-      <recent name="C:\laragon\www\jasmin-fashion\resources\views\reservation" />
-      <recent name="C:\laragon\www\jasmin-fashion\resources\views\reservation\partials" />
-      <recent name="C:\laragon\www\jasmin-fashion\app\Http\Controllers" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\laragon\www\jasmin-fashion\public\assets\images" />
       <recent name="C:\laragon\www\jasmin\public\assets\images" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\laragon\www\jasmin-fashion\resources\views\reservation" />
+      <recent name="C:\laragon\www\jasmin-fashion\public\assets\images" />
+      <recent name="C:\laragon\www\jasmin-fashion\resources\views" />
+      <recent name="C:\laragon\www\jasmin-fashion\resources\views\reservation\partials" />
+      <recent name="C:\laragon\www\jasmin-fashion\app\Http\Controllers" />
     </key>
   </component>
   <component name="RunManager">
@@ -268,14 +256,9 @@
       <workItem from="1648706726249" duration="175000" />
       <workItem from="1648733323792" duration="616000" />
       <workItem from="1648926574123" duration="1342000" />
-      <workItem from="1649279256386" duration="5346000" />
-    </task>
-    <task id="LOCAL-00003" summary="push product">
-      <created>1646594537525</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1646594537525</updated>
+      <workItem from="1649279256386" duration="5443000" />
+      <workItem from="1649365307705" duration="615000" />
+      <workItem from="1649537451636" duration="9339000" />
     </task>
     <task id="LOCAL-00004" summary="fix search,seq,">
       <created>1646683370522</created>
@@ -613,7 +596,14 @@
       <option name="project" value="LOCAL" />
       <updated>1648706874947</updated>
     </task>
-    <option name="localTasksCounter" value="52" />
+    <task id="LOCAL-00052" summary="push">
+      <created>1649284668456</created>
+      <option name="number" value="00052" />
+      <option name="presentableId" value="LOCAL-00052" />
+      <option name="project" value="LOCAL" />
+      <updated>1649284668456</updated>
+    </task>
+    <option name="localTasksCounter" value="53" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -651,26 +641,26 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="386" y="64" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1280.680@0.0.1280.680" timestamp="1646688975675" />
-    <state x="371" y="95" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1647728171959">
+    <state x="371" y="95" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1649538232564">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="371" y="95" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1280.680/1920.0.1920.1040@0.0.1280.680" timestamp="1646039127635" />
-    <state x="371" y="95" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1280.680@0.0.1280.680" timestamp="1647728171959" />
-    <state x="264" y="0" key="CommitChangelistDialog2" timestamp="1648706873942">
+    <state x="371" y="95" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1280.680@0.0.1280.680" timestamp="1649538232564" />
+    <state x="264" y="0" key="CommitChangelistDialog2" timestamp="1649284666645">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="264" y="0" key="CommitChangelistDialog2/0.0.1280.680/1920.0.1920.1040@0.0.1280.680" timestamp="1648706873942" />
-    <state x="264" y="0" key="CommitChangelistDialog2/0.0.1280.680@0.0.1280.680" timestamp="1648679282525" />
+    <state x="264" y="0" key="CommitChangelistDialog2/0.0.1280.680@0.0.1280.680" timestamp="1649284666645" />
     <state x="121" y="50" key="DiffContextDialog" timestamp="1648411363596">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="121" y="50" key="DiffContextDialog/0.0.1280.680/1920.0.1920.1040@0.0.1280.680" timestamp="1648114439467" />
     <state x="121" y="50" key="DiffContextDialog/0.0.1280.680@0.0.1280.680" timestamp="1648411363596" />
-    <state x="502" y="253" key="Github.Dialog.Accounts.Choose" timestamp="1648706887907">
+    <state x="502" y="253" key="Github.Dialog.Accounts.Choose" timestamp="1649284693716">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="502" y="253" key="Github.Dialog.Accounts.Choose/0.0.1280.680/1920.0.1920.1040@0.0.1280.680" timestamp="1648706887907" />
-    <state x="502" y="253" key="Github.Dialog.Accounts.Choose/0.0.1280.680@0.0.1280.680" timestamp="1648679873513" />
+    <state x="502" y="253" key="Github.Dialog.Accounts.Choose/0.0.1280.680@0.0.1280.680" timestamp="1649284693716" />
     <state x="482" y="220" key="Github.ShareDialog" timestamp="1645897278094">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
@@ -691,20 +681,20 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="142" y="0" key="SettingsEditor/0.0.1280.680@0.0.1280.680" timestamp="1645897121165" />
-    <state width="534" height="446" key="SwitcherDM" timestamp="1649282377535">
+    <state width="534" height="446" key="SwitcherDM" timestamp="1649538134023">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state width="534" height="446" key="SwitcherDM/0.0.1280.680/1920.0.1920.1040@0.0.1280.680" timestamp="1646046813820" />
-    <state width="534" height="446" key="SwitcherDM/0.0.1280.680@0.0.1280.680" timestamp="1649282377535" />
-    <state x="233" y="73" key="Vcs.Push.Dialog.v2" timestamp="1648706884977">
+    <state width="534" height="446" key="SwitcherDM/0.0.1280.680@0.0.1280.680" timestamp="1649538134023" />
+    <state x="233" y="73" key="Vcs.Push.Dialog.v2" timestamp="1649284673967">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="233" y="73" key="Vcs.Push.Dialog.v2/0.0.1280.680/1920.0.1920.1040@0.0.1280.680" timestamp="1648706884977" />
-    <state x="233" y="73" key="Vcs.Push.Dialog.v2/0.0.1280.680@0.0.1280.680" timestamp="1648679286009" />
-    <state x="93" y="93" width="1095" height="495" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1647890102673">
+    <state x="233" y="73" key="Vcs.Push.Dialog.v2/0.0.1280.680@0.0.1280.680" timestamp="1649284673967" />
+    <state x="93" y="93" width="1095" height="495" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1649546728412">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="93" y="93" width="1095" height="495" key="com.intellij.history.integration.ui.views.FileHistoryDialog/0.0.1280.680@0.0.1280.680" timestamp="1647890102673" />
+    <state x="93" y="93" width="1095" height="495" key="com.intellij.history.integration.ui.views.FileHistoryDialog/0.0.1280.680@0.0.1280.680" timestamp="1649546728412" />
     <state x="480" y="74" key="com.intellij.openapi.vcs.changes.SpecificFilesViewDialog" timestamp="1646695330276">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
@@ -717,23 +707,24 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="0" y="0" width="909" height="638" key="dock-window-1/0.0.1280.680@0.0.1280.680" timestamp="1648671684334" />
-    <state x="483" y="88" width="557" height="592" key="find.popup" timestamp="1649280978040">
+    <state x="483" y="88" width="557" height="592" key="find.popup" timestamp="1649545056975">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="483" y="88" width="557" height="592" key="find.popup/0.0.1280.680/1920.0.1920.1040@0.0.1280.680" timestamp="1646521930278" />
     <state x="2586" y="253" width="587" height="534" key="find.popup/0.0.1280.680/1920.0.1920.1040@1920.0.1920.1040" timestamp="1645568135848" />
-    <state x="483" y="88" width="557" height="592" key="find.popup/0.0.1280.680@0.0.1280.680" timestamp="1649280978040" />
+    <state x="483" y="88" width="557" height="592" key="find.popup/0.0.1280.680@0.0.1280.680" timestamp="1649545056975" />
     <state x="416" y="242" key="git4idea.remote.GitConfigureRemotesDialog" timestamp="1645897067941">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="416" y="242" key="git4idea.remote.GitConfigureRemotesDialog/0.0.1280.680@0.0.1280.680" timestamp="1645897067941" />
-    <state x="297" y="151" key="run.anything.popup" timestamp="1646043619603">
+    <state x="297" y="151" key="run.anything.popup" timestamp="1649539004666">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="297" y="151" key="run.anything.popup/0.0.1280.680/1920.0.1920.1040@0.0.1280.680" timestamp="1646043619603" />
-    <state x="303" y="1" width="672" height="678" key="search.everywhere.popup" timestamp="1648676846022">
+    <state x="297" y="151" key="run.anything.popup/0.0.1280.680@0.0.1280.680" timestamp="1649539004666" />
+    <state x="303" y="1" width="672" height="678" key="search.everywhere.popup" timestamp="1649538191531">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="303" y="1" width="672" height="678" key="search.everywhere.popup/0.0.1280.680@0.0.1280.680" timestamp="1648676846022" />
+    <state x="303" y="1" width="672" height="678" key="search.everywhere.popup/0.0.1280.680@0.0.1280.680" timestamp="1649538191531" />
   </component>
 </project>

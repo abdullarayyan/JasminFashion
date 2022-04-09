@@ -79,7 +79,15 @@
                             </th>
                             <th class="">
                                 تفاصيل الحجز
-
+                            </th>
+                            <th class="">
+                               اجمالي المبلغ
+                            </th>
+                            <th class="">
+                                المدفوع
+                            </th>
+                            <th class="">
+                                المتبقي
                             </th>
 
 
@@ -100,6 +108,12 @@
                             </td>
                             <td>
 
+                            </td>
+                            <td>
+                            </td>
+                            <td>
+                            </td>
+                            <td>
                             </td>
                             <td>
                             </td>
@@ -129,7 +143,6 @@
                             <tr>
                                 <td>
                                     <a href="{{route('reservation.invoice',$reservation->id)}}" style="color: blue!important;">{{$reservation->customer_name}}</a>
-
                                 </td>
                                 <td>
                                     {{$reservation->mobile}}
@@ -207,20 +220,32 @@
                                             class="fa fa-check text-success fs15 pr5"></i> @else <i
                                             class="fa fa-times text-danger fs15 pr5"></i> @endif</a>
                                 </td>
+                                <td>
+
+                                    {{$reservation->dress_price??0+$reservation->party_price??0+$reservation->dress_price_acc??0+$reservation->party_price_acc??0}}
+                                </td>
+                                <td>
+
+                                    {{$reservation->total_price??0}}
+
+                                </td>
+                                <td>
+                                    {{($reservation->dress_price??0+$reservation->party_price??0+$reservation->dress_price_acc??0+$reservation->party_price_acc??0)-$reservation->total_price}}
+                                </td>
 
                                 <td style="display: flex">
-                                    {{Form::open(['route'=>["reservation.destroy",$reservation->id],'method'=>"delete" ,'style'=>'display:flex'])}}
-{{--                                    <a href="{{url('/reservation/'.$reservation->id.'/edit')}}"--}}
-{{--                                       class="btn btn-info btn-sm" style="background-color: #0cdcff;--}}
-{{--                    padding-bottom: 0;--}}
-{{--                    padding-right: 15px;--}}
-{{--                    padding-left: 15px;--}}
-{{--                    line-height: 0;--}}
-{{--                                 display: flex "--}}
-{{--                                       title="Edit"><i--}}
-{{--                                            class="fa fa-edit"></i></a>--}}
+                                    {{Form::open(['route'=>["reservation.destroy",$reservation->id],'method'=>"delete" ,'style'=>'display:flex,    flex-direction: column'])}}
+                                    <a href="{{url('/reservation/pay/'.$reservation->id)}}"
+                                       class="btn btn-info btn-sm" style="background-color: whitesmoke;
+                    padding-bottom: 0;
+                    padding-right: 15px;
+                    padding-left: 15px;
+                    line-height: 0;
+
+                                     "><i
+                                            class="fa fa-money-bill"></i> دفع</a>
                                     <button type="submit"
-                                            class="btn btn-sm btn-danger"
+                                            class="btn btn-sm btn-primary"
                                             style="width: 0; padding-left: 15px!important;padding-right: 15px!important;">
                                         <i class="fa fa-trash"></i>
                                     </button> {!! Form::close() !!}

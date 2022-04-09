@@ -199,4 +199,38 @@ class ReservationController extends Controller
         return redirect(url('/reservation'))->with('success', 'تم تخزين الحجز واضافة العربون بنجاح');
     }
 
+    public function pay(Reservation $reservation)
+    {
+
+        return view('reservation.pay', compact('reservation'));
+    }
+
+    public function pay1(Request $request)
+    {
+
+
+
+        $this->validate($request, [
+            "total_price" => 'required|numeric',
+        ],[
+            "total_price.required"=>'حقل المبلغ المراد دفعه مطلوب ',
+            "total_price.numeric"=>'المبلغ المراد دفعه يجب ان يكون رقم فقط',
+
+        ]);
+
+        $reservation =Reservation::query()->find($request->get('id'));
+
+        $total_price = $reservation->dress_price??0+$reservation->party_price??0+$reservation->dress_price_acc??0+$reservation->party_price_acc??0;
+        $remaineng = ($reservation->dress_price??0+$reservation->party_price??0+$reservation->dress_price_acc??0+$reservation->party_price_acc??0)-$reservation->total_price ;
+
+        if (($request->total_price+($total_price-$remaineng))>$total_price){
+            return redirect()->back()->with("error", "المبلغ المراد دفعه لا يمكن ان يتجاوز المبلغ الاجمالي");
+        }
+
+        $reservation->update(['total_price'=>$reservation->total_price+$request->get('total_price')]);
+        return redirect()->back()->with("success", "تمت عملية الدفع بنجاح");
+
+
+    }
+
 }
