@@ -242,7 +242,7 @@
                                      "><i
                                             class="fa fa-money-bill"></i> دفع</a>
 
-                                    <a href="{{url('/reservation/pay/'.$reservation->id)}}"
+                                     <a href="{{route('reservation.invoice',$reservation->id)}}"
                                        class="btn btn-info btn-sm" style="background-color: whitesmoke;
                     padding-bottom: 0;
                     padding-right: 15px;
