@@ -182,7 +182,7 @@
                     @endif
                     <form action="{{route('reservation.pay1')}}" method="GET" style="    border: 25px solid #ff8080;">
                         <input type="hidden" name="id" value="{{$reservation->id}}">
-{{--                        <input type="hidden" name="remaining" value="{{($reservation->dress_price??0+$reservation->party_price??0+$reservation->dress_price_acc??0+$reservation->party_price_acc??0)-$reservation->total_price}}">--}}
+{{--                        <input type="hidden" name="remaining" value="{{($reservation->dress_price+$reservation->party_price+$reservation->dress_price_acc+$reservation->party_price_acc)-$reservation->total_price}}">--}}
 
                         @csrf
                         <div class="row">
@@ -193,7 +193,7 @@
                                     <input id="job_id" type="text"
                                            class="form-control required @error('job_id') is-invalid @enderror"
                                            name="job_id"
-                                           value="{{$reservation->dress_price??0+$reservation->party_price??0+$reservation->dress_price_acc??0+$reservation->party_price_acc??0}}"
+                                           value="{{$reservation->dress_price+$reservation->party_price+$reservation->dress_price_acc+$reservation->party_price_acc}}"
                                            disabled readonly>
                                 </div>
                             </div>
@@ -203,7 +203,7 @@
                                     <input id="full_name" type="text"
                                            class="form-control "
                                            name="full_name"
-                                           value="{{ $reservation->total_price??0 }}"
+                                           value="{{ $reservation->total_price }}"
                                            readonly disabled>
                                 </div>
                             </div>
@@ -212,12 +212,12 @@
                                     <label for="birth_of_date">{{ __('المتبقي') }}</label>
                                     <input id="birth_of_date" type="text" name="birth_of_date"
                                            class="date datepicker form-control"
-                                           value="{{ ($reservation->dress_price??0+$reservation->party_price??0+$reservation->dress_price_acc??0+$reservation->party_price_acc??0)-$reservation->total_price }}"
+                                           value="{{ ($reservation->dress_price+$reservation->party_price+$reservation->dress_price_acc+$reservation->party_price_acc)-$reservation->total_price }}"
                                            readonly disabled>
                                 </div>
                             </div>
-{{--                            {{dd((($reservation->dress_price??0+$reservation->party_price??0+$reservation->dress_price_acc??0+$reservation->party_price_acc??0)-$reservation->total_price))}}--}}
-                            @if((($reservation->dress_price??0+$reservation->party_price??0+$reservation->dress_price_acc??0+$reservation->party_price_acc??0)-$reservation->total_price)==0)
+{{--                            {{dd((($reservation->dress_price+$reservation->party_price+$reservation->dress_price_acc+$reservation->party_price_acc)-$reservation->total_price))}}--}}
+                            @if((($reservation->dress_price+$reservation->party_price+$reservation->dress_price_acc+$reservation->party_price_acc)-$reservation->total_price)==0)
                             <div class="col-md-3">
                                 <div class="form-group non-account-data">
 
@@ -247,7 +247,7 @@
 
 
                         <div class="row" style="justify-content: space-evenly;">
-                            @if((($reservation->dress_price??0+$reservation->party_price??0+$reservation->dress_price_acc??0+$reservation->party_price_acc??0)-$reservation->total_price)==0)
+                            @if((($reservation->dress_price+$reservation->party_price+$reservation->dress_price_acc+$reservation->party_price_acc)-$reservation->total_price)==0)
 
                             @else
                                 <div class="col-md-4">
@@ -262,8 +262,7 @@
 
                                 <button class="btn btn--primary type--uppercase"
                                         style="background-color: #fd9292!important;    width: -webkit-fill-available;">
-                                    <a
-                                        href="/reservation"> العوده لصفحة العرض</a></button>
+                                    <a href="/reservation"> العوده لصفحة العرض</a></button>
                             </div>
                         </div>
 

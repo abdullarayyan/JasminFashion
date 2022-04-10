@@ -140,7 +140,7 @@
                     <th scope="col">{{$dress->name??''}}</th>
                     <th scope="col">{{$customer->dress_code??''}}</th>
                     <th scope="col">{{$customer->dress_price??''}}</th>
-                    <th scope="col"></th>
+                    <th scope="col">{{$customer->dress_price??''}}</th>
                 </tr>
             @endif
             @if($party)
@@ -148,40 +148,40 @@
                     <th scope="col">{{$party->name??''}}</th>
                     <th scope="col">{{$customer->party_code}}</th>
                     <th scope="col">{{$customer->party_price}}</th>
-                    <th scope="col"></th>
+                    <th scope="col">{{$customer->party_price}}</th>
                 </tr>
             @endif
             @if($acc_dress)
                 <tr style="    border:solid 1px black !important ;">
                     <th scope="col">{{$acc_dress->name??''}}</th>
                     <th scope="col">{{$customer->dress_code_acc}}</th>
-                    <th scope="col">{{$customer->party_price_acc}}</th>
-                    <th scope="col"></th>
+                    <th scope="col">{{$customer->dress_price_acc}}</th>
+                    <th scope="col">{{$customer->dress_price_acc}}</th>
                 </tr>
             @endif
             @if($acc_party)
                 <tr style="    border:solid 1px black !important ;">
                     <th scope="col">{{$acc_party->name??''}}</th>
-                    <th scope="col">{{$customer->dress_code_acc}}</th>
+                    <th scope="col">{{$customer->party_code_acc}}</th>
                     <th scope="col">{{$customer->party_price_acc}}</th>
-                    <th scope="col"></th>
+                    <th scope="col">{{$customer->party_price_acc}}</th>
                 </tr>
             @endif
 
                 <tr style="border: none">
                 <th scope="col" colspan="2" style="border: none"></th>
                 <th scope="col" style="    border-top:solid 1px black !important ;">الصافي</th>
-                <th scope="col" style="    border-top:solid 1px black !important ;">{{$customer->party_price_acc}}</th>
+                <th scope="col" style="    border-top:solid 1px black !important ;">{{$customer->dress_price+$customer->party_price+$customer->party_price_acc+$customer->dress_price_acc}}</th>
             </tr>
             <tr style="border: none">
                 <th scope="col" colspan="2" style="border: none"></th>
                 <th scope="col">المدفوع</th>
-                <th scope="col"></th>
+                <th scope="col">{{$reservation->total_price}}</th>
             </tr>
             <tr style="border: none">
                 <th scope="col" colspan="2" style="border: none"></th>
                 <th scope="col">المتبقي</th>
-                <th scope="col">{{$customer->party_price_acc}}</th>
+                <th scope="col">{{($customer->dress_price+$customer->party_price+$customer->party_price_acc+$customer->dress_price_acc)-$reservation->total_price}}</th>
             </tr>
             </tbody>
         </table>

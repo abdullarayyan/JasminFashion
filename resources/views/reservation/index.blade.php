@@ -77,11 +77,11 @@
                                 القرية
 
                             </th>
-                            <th class="">
+                            <th class="" style="width: 100%">
                                 تفاصيل الحجز
                             </th>
                             <th class="">
-                               اجمالي المبلغ
+                                اجمالي المبلغ
                             </th>
                             <th class="">
                                 المدفوع
@@ -142,7 +142,8 @@
                             {{--                            {{dd($reservation)}}--}}
                             <tr>
                                 <td>
-                                    <a href="{{route('reservation.invoice',$reservation->id)}}" style="color: blue!important;">{{$reservation->customer_name}}</a>
+                                    <a href="{{route('reservation.invoice',$reservation->id)}}"
+                                       style="color: blue!important;">{{$reservation->customer_name}}</a>
                                 </td>
                                 <td>
                                     {{$reservation->mobile}}
@@ -152,7 +153,7 @@
                                     {{$reservation->start}}
                                 </td>
                                 <div class="hide">
-{{--                                    {{dd(DB::table('cities')->where('id',$reservation->city)->first())}}--}}
+                                    {{--                                    {{dd(DB::table('cities')->where('id',$reservation->city)->first())}}--}}
                                     {{$city = \App\Models\City::query()->where('id',$reservation->city)->first()}}
                                     {{$city_ = \App\Models\City::query()->where('id',$reservation->from)->first()}}
                                 </div>
@@ -168,15 +169,15 @@
                                 </td>
 
                                 {{--{{dd($reservation->dress_code)}}--}}
-                                <td class="text-body" style="width: 100%">
+                                <td class="text-body" style="width: 100%!important;font-family: monospace;">
+
                                     <div style="display: none">
                                         {{$product_name=\App\Models\Product::query()->where('code',$reservation->dress_code)->first()}}
                                         <br>
                                     </div>
                                     فستان الزفاف
-                                    =>
                                     <a
-                                        class="attribute is-active">@if ($product_name) {{$product_name->name}} <i
+                                        class="attribute is-active" style="color: forestgreen!important;">@if ($product_name) <i
                                             class="fa fa-check text-success fs15 pr5"></i> @else <i
                                             class="fa fa-times text-danger fs15 pr5"></i> @endif</a>
 
@@ -186,10 +187,8 @@
                                         <br>
                                     </div>
                                     فستان السهرة
-                                    =>
-                                    {{--{{dd($ss)}}--}}
                                     <a
-                                        class="attribute is-active">@if ($ss) {{$ss->name??''}} <i
+                                        class="attribute is-active" style="color: forestgreen!important;">@if ($ss)  <i
                                             class="fa fa-check text-success fs15 pr5"></i> @else <i
                                             class="fa fa-times text-danger fs15 pr5"></i> @endif</a>
 
@@ -199,10 +198,9 @@
                                         <br>
                                     </div>
                                     اكسسوار زفاف
-                                    =>
 
                                     <a
-                                        class="attribute is-active">@if ($dress_code_acc) {{$dress_code_acc->name??''}}{{$dress_code_acc->code}}
+                                        class="attribute is-active" style="color: forestgreen!important;">@if ($dress_code_acc)
                                         <i
                                             class="fa fa-check text-success fs15 pr5"></i> @else <i
                                             class="fa fa-times text-danger fs15 pr5"></i> @endif</a>
@@ -212,17 +210,16 @@
                                         <br>
                                     </div>
                                     اكسسوار سهرة
-                                    =>
 
                                     <a
-                                        class="attribute is-active">@if ($party_code_acc) {{$party_code_acc->name??''}}
+                                        class="attribute is-active" style="color: forestgreen!important;">@if ($party_code_acc)
                                         <i
                                             class="fa fa-check text-success fs15 pr5"></i> @else <i
                                             class="fa fa-times text-danger fs15 pr5"></i> @endif</a>
                                 </td>
                                 <td>
 
-                                    {{$reservation->dress_price??0+$reservation->party_price??0+$reservation->dress_price_acc??0+$reservation->party_price_acc??0}}
+                                    {{$reservation->dress_price+$reservation->party_price+$reservation->dress_price_acc+$reservation->party_price_acc}}
                                 </td>
                                 <td>
 
@@ -230,7 +227,7 @@
 
                                 </td>
                                 <td>
-                                    {{($reservation->dress_price??0+$reservation->party_price??0+$reservation->dress_price_acc??0+$reservation->party_price_acc??0)-$reservation->total_price}}
+                                    {{($reservation->dress_price+$reservation->party_price+$reservation->dress_price_acc+$reservation->party_price_acc)-$reservation->total_price}}
                                 </td>
 
                                 <td style="display: flex">
@@ -244,6 +241,17 @@
 
                                      "><i
                                             class="fa fa-money-bill"></i> دفع</a>
+
+                                    <a href="{{url('/reservation/pay/'.$reservation->id)}}"
+                                       class="btn btn-info btn-sm" style="background-color: whitesmoke;
+                    padding-bottom: 0;
+                    padding-right: 15px;
+                    padding-left: 15px;
+                    line-height: 0;
+
+                                     "><i class="fas fa-file-invoice"></i>
+                                        فاتورة</a>
+
                                     <button type="submit"
                                             class="btn btn-sm btn-primary"
                                             style="width: 0; padding-left: 15px!important;padding-right: 15px!important;">
@@ -275,5 +283,17 @@
 @endsection
 
 @section('js')
+    <script>
+        $(document).find('.popover-dismiss').popover({
+            trigger: 'focus'
+        })
+    </script>
+    <script>
+        $(function () {
+            $('[data-toggle="popover"]').popover({
+                trigger: 'focus'
+            })
+        });
+    </script>
     <script type="text/javascript" src="{{ url('js/pages/fathers/index.js') }}"></script>
 @endsection

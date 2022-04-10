@@ -174,10 +174,10 @@ class ReservationController extends Controller
 
     }
 
-    public function invoice($id)
+    public function invoice(Reservation $reservation)
     {
-        $customer = Reservation::query()->where('id', $id)->first();
-        return view('reservation.invoice')->with(compact('customer'));
+        $customer = Reservation::query()->where('id', $reservation->id)->first();
+        return view('reservation.invoice')->with(compact('customer','reservation'));
 
     }
 
@@ -220,8 +220,8 @@ class ReservationController extends Controller
 
         $reservation =Reservation::query()->find($request->get('id'));
 
-        $total_price = $reservation->dress_price??0+$reservation->party_price??0+$reservation->dress_price_acc??0+$reservation->party_price_acc??0;
-        $remaineng = ($reservation->dress_price??0+$reservation->party_price??0+$reservation->dress_price_acc??0+$reservation->party_price_acc??0)-$reservation->total_price ;
+        $total_price = $reservation->dress_price+$reservation->party_price+$reservation->dress_price_acc+$reservation->party_price_acc;
+        $remaineng = ($reservation->dress_price+$reservation->party_price+$reservation->dress_price_acc+$reservation->party_price_acc)-$reservation->total_price ;
 
         if (($request->total_price+($total_price-$remaineng))>$total_price){
             return redirect()->back()->with("error", "المبلغ المراد دفعه لا يمكن ان يتجاوز المبلغ الاجمالي");
