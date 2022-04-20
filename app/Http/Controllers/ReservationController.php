@@ -99,7 +99,7 @@ class ReservationController extends Controller
         $reservation->party_code_acc = $request->party_code_acc;
 
         $reservation->save();
-//        dd($reservation);
+
         $product = Product::query()->where('code', $reservation->dress_code)->first();
         if ($product != null) {
             $product->update(['status' => 0]);

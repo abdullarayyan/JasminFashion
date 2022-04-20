@@ -22,6 +22,7 @@ Route::get('foo',function () {
 //$test="#1234";
 //str
 //dd(str_replace($test,'#',1));
+    dd(\App\Models\Party::query()->forceDelete());
 });
 Auth::routes();
 
