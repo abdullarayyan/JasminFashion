@@ -890,6 +890,117 @@ Css orignal https://codepen.io/jlalovi/details/bIyAr
 
             </div>
 
+
+            <div class="row">
+
+                <div class="col-md-6">
+                    <ul class="nav nav-tabs" id="add_yatem_tab" role="tablist" style="margin-top: 15px" >
+
+                        <li class="nav-item">
+                            <a class="nav-link active show" id="parents-tab" data-toggle="tab" href="#parents" role="tab"
+                               aria-controls="parents" aria-selected="true">تقارير وملفات</a>
+                        </li>
+
+                    </ul>
+                    <table class="table table-info text-center">
+                        <thead>
+                        <tr>
+                            <th scope="col">انواع التقارير</th>
+                            <th scope="col">رؤية التقرير للطباعة</th>
+
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <th scope="col">تقرير عن البضاعه المتوفرة</th>
+                            <td>انقر هنا</td>
+
+                        </tr>
+                        <tr>
+                            <th scope="col">تقرير عن البضاعه المحجوزة</th>
+                            <td>انقر هنا</td>
+
+                        </tr>
+                        <tr>
+                            <th scope="col">تقرير عن اسعار المنتجات</th>
+                            <td>انقر هنا</td>
+
+                        </tr>
+                        <tr>
+                            <th scope="col">تقرير عن البضاعه المباعه سنويا</th>
+                            <td>انقر هنا</td>
+
+                        </tr>
+                        <tr>
+                            <th scope="col">التقرير المالي الاسبوعي</th>
+                            <td>انقر هنا</td>
+
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="col-md-6">
+                    <ul class="nav nav-tabs" id="add_yatem_tab" role="tablist" style="margin-top: 15px" >
+
+                        <li class="nav-item">
+                            <a class="nav-link active show" id="parents-tab" data-toggle="tab" href="#parents" role="tab"
+                               aria-controls="parents" aria-selected="true">البوم الصور</a>
+                        </li>
+
+                    </ul>
+
+                    <div class="owl-carousel owl-theme">
+                        <div class="item">
+                            <img src="{{asset('assets/images/58636.png')}}">
+
+                        </div>
+                        <div class="item">
+                            <img src="{{asset('assets/images/58633.png')}}">
+
+                        </div>
+                        <div class="item">
+                            <img src="{{asset('assets/images/40done_0.png')}}">
+
+                        </div>
+                        <div class="item">
+                            <img src="{{asset('assets/images/32dfg_1.png')}}">
+
+                        </div>
+                        <div class="item">
+                            <img src="{{asset('assets/images/20done_0.png')}}">
+
+                        </div>
+
+
+                        <div class="item">
+                            <img src="{{asset('assets/images/58636.png')}}">
+
+                        </div>
+                        <div class="item">
+                            <img src="{{asset('assets/images/58633.png')}}">
+
+                        </div>
+                        <div class="item">
+                            <img src="{{asset('assets/images/40done_0.png')}}">
+
+                        </div>
+                        <div class="item">
+                            <img src="{{asset('assets/images/32dfg_1.png')}}">
+
+                        </div>
+                        <div class="item">
+                            <img src="{{asset('assets/images/20done_0.png')}}">
+
+                        </div>
+
+
+                    </div>
+                </div>
+
+                <hr>
+            </div>
+
+
         </div>
     </div>
 
