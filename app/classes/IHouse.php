@@ -58,4 +58,7 @@ class IHouse
     {
         return DB::table('cities')->where("city_id",10)->pluck("name", "id");
     }
+
+
+
 }
