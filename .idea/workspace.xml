@@ -25,8 +25,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="817c0f37-c9d6-4d2d-a9e2-ab43987fb601" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/resources/views/available.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/not_available.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/weekly.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/yearly.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/home.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/home.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -166,7 +171,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/views" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -178,16 +183,16 @@
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\laragon\www\jasmin-fashion\resources\views" />
+      <recent name="C:\laragon\www\jasmin-fashion\resources\views\reservation" />
+      <recent name="C:\laragon\www\jasmin-fashion\public\assets\images" />
+      <recent name="C:\laragon\www\jasmin-fashion\resources\views\reservation\partials" />
+      <recent name="C:\laragon\www\jasmin-fashion\app\Http\Controllers" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\laragon\www\jasmin-fashion\public\assets\images" />
       <recent name="C:\laragon\www\jasmin\public\assets\images" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\laragon\www\jasmin-fashion\resources\views\reservation" />
-      <recent name="C:\laragon\www\jasmin-fashion\public\assets\images" />
-      <recent name="C:\laragon\www\jasmin-fashion\resources\views" />
-      <recent name="C:\laragon\www\jasmin-fashion\resources\views\reservation\partials" />
-      <recent name="C:\laragon\www\jasmin-fashion\app\Http\Controllers" />
     </key>
   </component>
   <component name="RunManager">
@@ -261,14 +266,8 @@
       <workItem from="1650483063059" duration="2314000" />
       <workItem from="1650524486864" duration="17000" />
       <workItem from="1651079779089" duration="4361000" />
-      <workItem from="1651092490855" duration="7379000" />
-    </task>
-    <task id="LOCAL-00010" summary="accessory">
-      <created>1646745258309</created>
-      <option name="number" value="00010" />
-      <option name="presentableId" value="LOCAL-00010" />
-      <option name="project" value="LOCAL" />
-      <updated>1646745258309</updated>
+      <workItem from="1651092490855" duration="7883000" />
+      <workItem from="1651679190988" duration="4891000" />
     </task>
     <task id="LOCAL-00011" summary="push accessory">
       <created>1646745507451</created>
@@ -606,7 +605,14 @@
       <option name="project" value="LOCAL" />
       <updated>1651097961557</updated>
     </task>
-    <option name="localTasksCounter" value="59" />
+    <task id="LOCAL-00059" summary="push">
+      <created>1651100628756</created>
+      <option name="number" value="00059" />
+      <option name="presentableId" value="LOCAL-00059" />
+      <option name="project" value="LOCAL" />
+      <updated>1651100628756</updated>
+    </task>
+    <option name="localTasksCounter" value="60" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -649,21 +655,21 @@
     </state>
     <state x="371" y="95" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1280.680/1920.0.1920.1040@0.0.1280.680" timestamp="1646039127635" />
     <state x="371" y="95" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1280.680@0.0.1280.680" timestamp="1650065030743" />
-    <state x="264" y="0" key="CommitChangelistDialog2" timestamp="1651097960790">
+    <state x="264" y="0" key="CommitChangelistDialog2" timestamp="1651100628183">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="264" y="0" key="CommitChangelistDialog2/0.0.1280.680/1920.0.1920.1040@0.0.1280.680" timestamp="1648706873942" />
-    <state x="264" y="0" key="CommitChangelistDialog2/0.0.1280.680@0.0.1280.680" timestamp="1651097960790" />
+    <state x="264" y="0" key="CommitChangelistDialog2/0.0.1280.680@0.0.1280.680" timestamp="1651100628183" />
     <state x="121" y="50" key="DiffContextDialog" timestamp="1651097967098">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="121" y="50" key="DiffContextDialog/0.0.1280.680/1920.0.1920.1040@0.0.1280.680" timestamp="1648114439467" />
     <state x="121" y="50" key="DiffContextDialog/0.0.1280.680@0.0.1280.680" timestamp="1651097967098" />
-    <state x="502" y="253" key="Github.Dialog.Accounts.Choose" timestamp="1651097972243">
+    <state x="502" y="253" key="Github.Dialog.Accounts.Choose" timestamp="1651100633067">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="502" y="253" key="Github.Dialog.Accounts.Choose/0.0.1280.680/1920.0.1920.1040@0.0.1280.680" timestamp="1648706887907" />
-    <state x="502" y="253" key="Github.Dialog.Accounts.Choose/0.0.1280.680@0.0.1280.680" timestamp="1651097972243" />
+    <state x="502" y="253" key="Github.Dialog.Accounts.Choose/0.0.1280.680@0.0.1280.680" timestamp="1651100633067" />
     <state x="482" y="220" key="Github.ShareDialog" timestamp="1645897278094">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
@@ -689,11 +695,11 @@
     </state>
     <state width="534" height="446" key="SwitcherDM/0.0.1280.680/1920.0.1920.1040@0.0.1280.680" timestamp="1646046813820" />
     <state width="534" height="446" key="SwitcherDM/0.0.1280.680@0.0.1280.680" timestamp="1650062367085" />
-    <state x="233" y="73" key="Vcs.Push.Dialog.v2" timestamp="1651097968194">
+    <state x="233" y="73" key="Vcs.Push.Dialog.v2" timestamp="1651100630625">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="233" y="73" key="Vcs.Push.Dialog.v2/0.0.1280.680/1920.0.1920.1040@0.0.1280.680" timestamp="1648706884977" />
-    <state x="233" y="73" key="Vcs.Push.Dialog.v2/0.0.1280.680@0.0.1280.680" timestamp="1651097968194" />
+    <state x="233" y="73" key="Vcs.Push.Dialog.v2/0.0.1280.680@0.0.1280.680" timestamp="1651100630625" />
     <state x="93" y="93" width="1095" height="495" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1651100545887">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
@@ -710,10 +716,10 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="0" y="0" width="909" height="638" key="dock-window-1/0.0.1280.680@0.0.1280.680" timestamp="1648671684334" />
-    <state x="483" y="88" width="557" height="592" key="find.popup" timestamp="1651095616652">
+    <state x="483" y="88" width="557" height="592" key="find.popup" timestamp="1651680006812">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="483" y="88" width="557" height="592" key="find.popup/0.0.1280.680/1920.0.1920.1040@0.0.1280.680" timestamp="1646521930278" />
+    <state x="483" y="88" width="557" height="592" key="find.popup/0.0.1280.680/1920.0.1920.1040@0.0.1280.680" timestamp="1651680006812" />
     <state x="2586" y="253" width="587" height="534" key="find.popup/0.0.1280.680/1920.0.1920.1040@1920.0.1920.1040" timestamp="1645568135848" />
     <state x="483" y="88" width="557" height="592" key="find.popup/0.0.1280.680@0.0.1280.680" timestamp="1651095616652" />
     <state x="416" y="242" key="git4idea.remote.GitConfigureRemotesDialog" timestamp="1645897067941">

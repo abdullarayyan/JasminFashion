@@ -46,6 +46,18 @@ Route::post('/supplier/create/create-multi','App\Http\Controllers\SupplierContro
 
 Route::resource('reservation','App\Http\Controllers\ReservationController');
 Route::resource('supplier','App\Http\Controllers\SupplierController');
+Route::get('weekly',function (){
+   return view('weekly');
+});
 
+Route::get('yearly',function (){
+    return view('yearly');
+});
 
+Route::get('available',function (){
+    return view('available');
+});
+Route::get('not-available',function (){
+    return view('not_available');
+});
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
