@@ -804,6 +804,7 @@ Css orignal https://codepen.io/jlalovi/details/bIyAr
                             <div class="card-body m-0">
                                 <h5 class="card-title" style="margin: 0;">اسم الفستان : {{$value->name}}</h5>
                                 <h5 class="card-title" style="margin: 0;">عدد مرات الحجز : {{rand(8,20)}}</h5>
+                                <h5 class="card-title" style="margin: 0;">المردود المادي : {{rand(5000,1000)}}₪</h5>
                                 <h5 class="card-title" style="margin: 0;">سعر الفستان : {{$value->price}}</h5>
                                 <h5 class="card-title" style="margin: 0;">موديل الفستان : {{$value->model}}</h5>
                                 <h5 class="card-title" style="margin: 0;">كود الفستان : {{$value->code}}</h5>
@@ -842,6 +843,7 @@ Css orignal https://codepen.io/jlalovi/details/bIyAr
                             <div class="card-body m-0">
                                 <h5 class="card-title" style="margin: 0;">اسم الفستان : {{$value->name}}</h5>
                                 <h5 class="card-title" style="margin: 0;">عدد مرات الحجز : {{rand(8,20)}}</h5>
+                                <h5 class="card-title" style="margin: 0;">المردود المادي : {{rand(5000,1000)}}₪</h5>
                                 <h5 class="card-title" style="margin: 0;">سعر الفستان : {{$value->price}}</h5>
                                 <h5 class="card-title" style="margin: 0;">موديل الفستان : {{$value->model}}</h5>
                                 <h5 class="card-title" style="margin: 0;">كود الفستان : {{$value->code}}</h5>
@@ -876,6 +878,7 @@ Css orignal https://codepen.io/jlalovi/details/bIyAr
                             <div class="card-body m-0">
                                 <h5 class="card-title" style="margin: 0;">اسم الاكسسوار : {{$value->name}}</h5>
                                 <h5 class="card-title" style="margin: 0;">عدد مرات الحجز : {{rand(8,20)}}</h5>
+                                <h5 class="card-title" style="margin: 0;">المردود المادي : {{rand(5000,1000)}}₪</h5>
                                 <h5 class="card-title" style="margin: 0;">سعر الاكسسوار : {{$value->price}}</h5>
                                 <h5 class="card-title" style="margin: 0;">موديل الاكسسوار : {{$value->model}}</h5>
                                 <h5 class="card-title" style="margin: 0;">كود الاكسسوار : {{$value->code}}</h5>
