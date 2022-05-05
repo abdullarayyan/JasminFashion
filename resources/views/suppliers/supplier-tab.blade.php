@@ -144,6 +144,22 @@
             <div class="row">
                 <div class="col-md-6">
                     <div class="form-group">
+                        <label for="brand">{{ __('الماركة') }}</label>
+                        <select class="js-example-basic-single" name="brand">
+{{--                            <option selected value="{{$supplier->exists?$accessory->brand:""}}">{{$accessory->exists?$accessory->brand:""}}</option>--}}
+                            <option value=" دولتشي & جبانا" style="background-color: #eeeeee"> دولتشي & جبانا</option>
+                            ...
+                            <option value="بوس" style="background-color: #eeeeee">بوس</option>
+                            <option value="بيير كاردان" style="background-color: #eeeeee">بيير كاردان</option>
+                            <option value="ايترو" style="background-color: #eeeeee">كريستن ديور</option>
+                            <option value="برادا" style="background-color: #eeeeee">ايترو</option>
+                            <option value="لويفي" style="background-color: #eeeeee">لويفي</option>
+                            <option value="سلفاتور فيراجامو" style="background-color: #eeeeee">سلفاتور فيراجامو</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
 
                         <label for="choose_file"><span
                                 class="required_lbl">*</span>{{ __('اختيار صورة') }}</label>
