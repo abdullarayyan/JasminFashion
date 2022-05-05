@@ -132,9 +132,9 @@ class SupplierController extends Controller
             if ($request->type === 'App\Models\Product') {
                 $data['code'] = "#1" . IHouse::getSequenceProduct() . '00';
             } elseif ($request->type === 'App\Models\Accessory') {
-                $data['code'] = "#2" . IHouse::getSequenceAccessories() . '00';
+                $data['code'] = "#3" . IHouse::getSequenceAccessories() . '00';
             } elseif ($request->type === 'App\Models\Party') {
-                $data['code'] = "#3" . IHouse::getSequenceParties() . '00';
+                $data['code'] = "#2" . IHouse::getSequenceParties() . '00';
             }
 
             $data['file']=$imgName;
