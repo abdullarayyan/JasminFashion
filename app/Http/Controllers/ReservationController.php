@@ -177,7 +177,7 @@ class ReservationController extends Controller
     public function invoice(Reservation $reservation)
     {
         $customer = Reservation::query()->where('id', $reservation->id)->first();
-        return view('reservation.invoice')->with(compact('customer','reservation'));
+        return view('reservation.invoice')->with(compact('customer', 'reservation'));
 
     }
 
@@ -194,7 +194,9 @@ class ReservationController extends Controller
     {
         $reservation = Reservation::query()->latest()->first();
         if ($reservation) {
-            $reservation->update(['total_price' => $request->get('total_price')]);
+            $reservation->total_price = $request->get('total_price');
+            $reservation->save();
+//            $reservation->update(['total_price' => $request->get('total_price')]);
         }
         return redirect(url('/reservation'))->with('success', 'تم تخزين الحجز واضافة العربون بنجاح');
     }
@@ -208,26 +210,27 @@ class ReservationController extends Controller
     public function pay1(Request $request)
     {
 
-
-
         $this->validate($request, [
             "total_price" => 'required|numeric',
-        ],[
-            "total_price.required"=>'حقل المبلغ المراد دفعه مطلوب ',
-            "total_price.numeric"=>'المبلغ المراد دفعه يجب ان يكون رقم فقط',
+        ], [
+            "total_price.required" => 'حقل المبلغ المراد دفعه مطلوب ',
+            "total_price.numeric" => 'المبلغ المراد دفعه يجب ان يكون رقم فقط',
 
         ]);
 
-        $reservation =Reservation::query()->find($request->get('id'));
+        $reservation = Reservation::query()->find($request->get('id'));
 
-        $total_price = $reservation->dress_price+$reservation->party_price+$reservation->dress_price_acc+$reservation->party_price_acc;
-        $remaineng = ($reservation->dress_price+$reservation->party_price+$reservation->dress_price_acc+$reservation->party_price_acc)-$reservation->total_price ;
+        $total_price = $reservation->dress_price + $reservation->party_price + $reservation->dress_price_acc + $reservation->party_price_acc;
+        $remaineng = ($reservation->dress_price + $reservation->party_price + $reservation->dress_price_acc + $reservation->party_price_acc) - ($reservation->total_price);
+//        dd($remaineng);
 
-        if (($request->total_price+($total_price-$remaineng))>$total_price){
+        if (($request->total_price + ($total_price - $remaineng)) > $total_price) {
             return redirect()->back()->with("error", "المبلغ المراد دفعه لا يمكن ان يتجاوز المبلغ الاجمالي");
         }
+        $reservation->total_price = $reservation->total_price + $request->get('total_price');
 
-        $reservation->update(['total_price'=>$reservation->total_price+$request->get('total_price')]);
+        $reservation->save();
+
         return redirect()->back()->with("success", "تمت عملية الدفع بنجاح");
 
 

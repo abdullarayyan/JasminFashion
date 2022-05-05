@@ -201,7 +201,6 @@ class AccessoryController extends Controller
             ->where('code', 'LIKE', '%' . $term . '%')->first();
 //            $query->where('status', 0);
 
-
         $formatted_sponsors []= [
             'id' => $accessory->id,
             'text' => $accessory->name,
