@@ -61,6 +61,7 @@ class SupplierController extends Controller
     {
 
         Supplier::query()->insert($request->except(['_token']));
+
         return redirect(url('/supplier/create'))->with('success', 'تم اضافة المورد بنجاح');
 
     }

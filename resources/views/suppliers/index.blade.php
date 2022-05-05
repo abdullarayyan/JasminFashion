@@ -119,10 +119,10 @@
                             {{--                            {{dd($supplier)}}--}}
                             <tr>
                                 <td>
-                                    {{$supplier->name}}
+                                    {{$supplier->name??''}}
                                 </td>
                                 <td>
-                                    {{$supplier->mobile}}
+                                    {{$supplier->mobile??''}}
 
                                 </td>
                                 <td style="width: 20%">
@@ -133,15 +133,15 @@
                                     {{$city = \App\Models\City::query()->where('id',$supplier->country)->first()}}
                                 </div>
                                 <td>
-                                    {{$city->name}}
+                                    {{$city->name??''}}
                                 </td>
                                 <td>
 
-                                    {{$supplier->code}}
+                                    {{$supplier->code??''}}
                                 </td>
 
                                 <td>
-                                    {{$supplier->total_price}}
+                                    {{$supplier->total_price??''}}
                                 </td>
                                 <td style="display: flex">
                                     {{Form::open(['route'=>["supplier.destroy",$supplier->id],'method'=>"delete" ,'style'=>'display:flex'])}}

@@ -26,8 +26,8 @@
   <component name="ChangeListManager">
     <list default="true" id="817c0f37-c9d6-4d2d-a9e2-ab43987fb601" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/AccessoryController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/AccessoryController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ReservationController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ReservationController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/SupplierController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/SupplierController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/suppliers/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/suppliers/index.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -264,14 +264,7 @@
       <workItem from="1651079779089" duration="4361000" />
       <workItem from="1651092490855" duration="7883000" />
       <workItem from="1651679190988" duration="7950000" />
-      <workItem from="1651746750846" duration="2104000" />
-    </task>
-    <task id="LOCAL-00016" summary="push reservation">
-      <created>1646864125895</created>
-      <option name="number" value="00016" />
-      <option name="presentableId" value="LOCAL-00016" />
-      <option name="project" value="LOCAL" />
-      <updated>1646864125895</updated>
+      <workItem from="1651746750846" duration="3314000" />
     </task>
     <task id="LOCAL-00017" summary="push">
       <created>1647381428261</created>
@@ -609,7 +602,14 @@
       <option name="project" value="LOCAL" />
       <updated>1651748050006</updated>
     </task>
-    <option name="localTasksCounter" value="65" />
+    <task id="LOCAL-00065" summary="push">
+      <created>1651749112658</created>
+      <option name="number" value="00065" />
+      <option name="presentableId" value="LOCAL-00065" />
+      <option name="project" value="LOCAL" />
+      <updated>1651749112658</updated>
+    </task>
+    <option name="localTasksCounter" value="66" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -652,21 +652,21 @@
     </state>
     <state x="371" y="95" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1280.680/1920.0.1920.1040@0.0.1280.680" timestamp="1646039127635" />
     <state x="371" y="95" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1280.680@0.0.1280.680" timestamp="1650065030743" />
-    <state x="264" y="0" key="CommitChangelistDialog2" timestamp="1651748049371">
+    <state x="264" y="0" key="CommitChangelistDialog2" timestamp="1651749112035">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="264" y="0" key="CommitChangelistDialog2/0.0.1280.680/1920.0.1920.1040@0.0.1280.680" timestamp="1651688924110" />
-    <state x="264" y="0" key="CommitChangelistDialog2/0.0.1280.680@0.0.1280.680" timestamp="1651748049371" />
+    <state x="264" y="0" key="CommitChangelistDialog2/0.0.1280.680@0.0.1280.680" timestamp="1651749112035" />
     <state x="121" y="50" key="DiffContextDialog" timestamp="1651097967098">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="121" y="50" key="DiffContextDialog/0.0.1280.680/1920.0.1920.1040@0.0.1280.680" timestamp="1648114439467" />
     <state x="121" y="50" key="DiffContextDialog/0.0.1280.680@0.0.1280.680" timestamp="1651097967098" />
-    <state x="502" y="253" key="Github.Dialog.Accounts.Choose" timestamp="1651748054900">
+    <state x="502" y="253" key="Github.Dialog.Accounts.Choose" timestamp="1651749164363">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="502" y="253" key="Github.Dialog.Accounts.Choose/0.0.1280.680/1920.0.1920.1040@0.0.1280.680" timestamp="1651687267610" />
-    <state x="502" y="253" key="Github.Dialog.Accounts.Choose/0.0.1280.680@0.0.1280.680" timestamp="1651748054900" />
+    <state x="502" y="253" key="Github.Dialog.Accounts.Choose/0.0.1280.680@0.0.1280.680" timestamp="1651749164363" />
     <state x="482" y="220" key="Github.ShareDialog" timestamp="1645897278094">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
@@ -692,11 +692,11 @@
     </state>
     <state width="534" height="446" key="SwitcherDM/0.0.1280.680/1920.0.1920.1040@0.0.1280.680" timestamp="1646046813820" />
     <state width="534" height="446" key="SwitcherDM/0.0.1280.680@0.0.1280.680" timestamp="1650062367085" />
-    <state x="233" y="73" key="Vcs.Push.Dialog.v2" timestamp="1651748051903">
+    <state x="233" y="73" key="Vcs.Push.Dialog.v2" timestamp="1651749114756">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="233" y="73" key="Vcs.Push.Dialog.v2/0.0.1280.680/1920.0.1920.1040@0.0.1280.680" timestamp="1651687231540" />
-    <state x="233" y="73" key="Vcs.Push.Dialog.v2/0.0.1280.680@0.0.1280.680" timestamp="1651748051903" />
+    <state x="233" y="73" key="Vcs.Push.Dialog.v2/0.0.1280.680@0.0.1280.680" timestamp="1651749114756" />
     <state x="93" y="93" width="1095" height="495" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1651100545887">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
@@ -713,12 +713,12 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="0" y="0" width="909" height="638" key="dock-window-1/0.0.1280.680@0.0.1280.680" timestamp="1648671684334" />
-    <state x="483" y="88" width="557" height="592" key="find.popup" timestamp="1651685433742">
+    <state x="483" y="88" width="557" height="592" key="find.popup" timestamp="1651749041903">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="483" y="88" width="557" height="592" key="find.popup/0.0.1280.680/1920.0.1920.1040@0.0.1280.680" timestamp="1651685433742" />
     <state x="2586" y="253" width="587" height="534" key="find.popup/0.0.1280.680/1920.0.1920.1040@1920.0.1920.1040" timestamp="1645568135848" />
-    <state x="483" y="88" width="557" height="592" key="find.popup/0.0.1280.680@0.0.1280.680" timestamp="1651095616652" />
+    <state x="483" y="88" width="557" height="592" key="find.popup/0.0.1280.680@0.0.1280.680" timestamp="1651749041903" />
     <state x="416" y="242" key="git4idea.remote.GitConfigureRemotesDialog" timestamp="1645897067941">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
@@ -728,9 +728,9 @@
     </state>
     <state x="297" y="151" key="run.anything.popup/0.0.1280.680/1920.0.1920.1040@0.0.1280.680" timestamp="1646043619603" />
     <state x="297" y="151" key="run.anything.popup/0.0.1280.680@0.0.1280.680" timestamp="1651090337692" />
-    <state x="303" y="1" width="672" height="678" key="search.everywhere.popup" timestamp="1650064677182">
+    <state x="303" y="1" width="672" height="678" key="search.everywhere.popup" timestamp="1651749046652">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="303" y="1" width="672" height="678" key="search.everywhere.popup/0.0.1280.680@0.0.1280.680" timestamp="1650064677182" />
+    <state x="303" y="1" width="672" height="678" key="search.everywhere.popup/0.0.1280.680@0.0.1280.680" timestamp="1651749046652" />
   </component>
 </project>
