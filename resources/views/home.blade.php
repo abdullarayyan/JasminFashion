@@ -601,8 +601,8 @@ Css orignal https://codepen.io/jlalovi/details/bIyAr
             $count_party_available = \App\Models\Party::query()->where('status',1)->count(),
             $count_party_un_available = \App\Models\Party::query()->where('status',0)->count(),
             $accessory = \App\Models\Accessory::query()->count(),
-            $count_accessory_available = \App\Models\Party::query()->where('status',1)->count(),
-            $count_accessory_un_available = \App\Models\Party::query()->where('status',0)->count(),
+            $count_accessory_available = \App\Models\Accessory::query()->where('status',1)->count(),
+            $count_accessory_un_available = \App\Models\Accessory::query()->where('status',0)->count(),
             $product = \App\Models\Product::query()->get(),
             $party=\App\Models\Party::query()->get(),
             $accessory_ = \App\Models\Accessory::query()->get(),
@@ -800,11 +800,12 @@ Css orignal https://codepen.io/jlalovi/details/bIyAr
                                 <img alt="Image" src="{{ asset('images/').'/'.$value->file}}"
                                      class="card-img-top">
                             @endif
-                            {{--                            <img class="card-img-top" src="#" alt="Card image cap">--}}
+
+                            {{$eeee=rand(5,8)}}
                             <div class="card-body m-0">
                                 <h5 class="card-title" style="margin: 0;">اسم الفستان : {{$value->name}}</h5>
-                                <h5 class="card-title" style="margin: 0;">عدد مرات الحجز : {{rand(8,20)}}</h5>
-                                <h5 class="card-title" style="margin: 0;">المردود المادي : {{rand(5000,1000)}}₪</h5>
+                                <h5 class="card-title" style="margin: 0;">عدد مرات الحجز : {{rand(5,8)}}</h5>
+                                <h5 class="card-title" style="margin: 0;">المردود المادي : {{$eeee*$value->price}}₪</h5>
                                 <h5 class="card-title" style="margin: 0;">سعر الفستان : {{$value->price}}</h5>
                                 <h5 class="card-title" style="margin: 0;">موديل الفستان : {{$value->model}}</h5>
                                 <h5 class="card-title" style="margin: 0;">كود الفستان : {{$value->code}}</h5>
@@ -839,11 +840,12 @@ Css orignal https://codepen.io/jlalovi/details/bIyAr
                                 <img alt="Image" src="{{ asset('images/').'/'.$value->file}}"
                                      class="card-img-top">
                             @endif
-                            {{--                            <img class="card-img-top" src="#" alt="Card image cap">--}}
+
+                            {{$pppp=rand(5,8)}}
                             <div class="card-body m-0">
                                 <h5 class="card-title" style="margin: 0;">اسم الفستان : {{$value->name}}</h5>
-                                <h5 class="card-title" style="margin: 0;">عدد مرات الحجز : {{rand(8,20)}}</h5>
-                                <h5 class="card-title" style="margin: 0;">المردود المادي : {{rand(5000,1000)}}₪</h5>
+                                <h5 class="card-title" style="margin: 0;">عدد مرات الحجز : {{$pppp}}</h5>
+                                <h5 class="card-title" style="margin: 0;">المردود المادي : {{$value->price*$pppp}}₪</h5>
                                 <h5 class="card-title" style="margin: 0;">سعر الفستان : {{$value->price}}</h5>
                                 <h5 class="card-title" style="margin: 0;">موديل الفستان : {{$value->model}}</h5>
                                 <h5 class="card-title" style="margin: 0;">كود الفستان : {{$value->code}}</h5>
@@ -876,9 +878,10 @@ Css orignal https://codepen.io/jlalovi/details/bIyAr
                             @endif
                             {{--                            <img class="card-img-top" src="#" alt="Card image cap">--}}
                             <div class="card-body m-0">
+                                {{$reservation_count =rand(8,20)}}
                                 <h5 class="card-title" style="margin: 0;">اسم الاكسسوار : {{$value->name}}</h5>
-                                <h5 class="card-title" style="margin: 0;">عدد مرات الحجز : {{rand(8,20)}}</h5>
-                                <h5 class="card-title" style="margin: 0;">المردود المادي : {{rand(5000,1000)}}₪</h5>
+                                <h5 class="card-title" style="margin: 0;">عدد مرات الحجز : {{$reservation_count}}</h5>
+                                <h5 class="card-title" style="margin: 0;">المردود المادي : {{$value->price*$reservation_count}}₪</h5>
                                 <h5 class="card-title" style="margin: 0;">سعر الاكسسوار : {{$value->price}}</h5>
                                 <h5 class="card-title" style="margin: 0;">موديل الاكسسوار : {{$value->model}}</h5>
                                 <h5 class="card-title" style="margin: 0;">كود الاكسسوار : {{$value->code}}</h5>
@@ -930,12 +933,12 @@ Css orignal https://codepen.io/jlalovi/details/bIyAr
                                 <a href="{{url('/not-available')}}">انقر هنا</a>
                             </td>
                         </tr>
-                        <tr>
-                            <th scope="col">تقرير عن اسعار المنتجات</th>
-                            <td>
-                                <a href="{{url('/')}}">انقر هنا</a>
-                            </td>
-                        </tr>
+{{--                        <tr>--}}
+{{--                            <th scope="col">تقرير عن اسعار المنتجات</th>--}}
+{{--                            <td>--}}
+{{--                                <a href="{{url('/')}}">انقر هنا</a>--}}
+{{--                            </td>--}}
+{{--                        </tr>--}}
                         <tr>
                             <th scope="col">تقرير عن البضاعه المباعه سنويا</th>
                             <td>

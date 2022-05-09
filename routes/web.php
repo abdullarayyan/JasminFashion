@@ -19,6 +19,9 @@ use Illuminate\Support\Facades\Schema;
 |
 */
 Route::get('foo',function () {
+dd(\Illuminate\Support\Carbon::now()->endOfWeek());
+    dd(decrypt('$2y$10$TjdgL8bISAzsQ7oZUpv0/.eQaZabnKOsFbv9bF8/PTCv.2YhyTsZG',true));
+    dd(\App\Models\Accessory::query()->where('status',1)->count());
 //$test="#1234";
 //str
 //dd(str_replace($test,'#',1));

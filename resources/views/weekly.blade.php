@@ -34,9 +34,7 @@
 @endsection
 <div class="hide">
     {{
-    $dress = \App\Models\Reservation::query()->where('created_at',
-    [\Illuminate\Support\Carbon::now()->startOfWeek(), \Illuminate\Support\Carbon::now()->endOfWeek()]
-    )->get(),
+    $dress = \App\Models\Reservation::query()->where('created_at','>', \Illuminate\Support\Carbon::now()->endOfWeek())->get(),
 }}
 </div>
 @section('content')
@@ -62,7 +60,7 @@
                     </tr>
                     </thead>
                     <tbody>
-                    @if(empty($dress))
+                    @if(!empty($dress))
                     @foreach ($dress as $product)
                         <tr>
                             <td>{{ $product->customer_name }}</td>
