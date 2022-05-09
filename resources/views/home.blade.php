@@ -800,8 +800,10 @@ Css orignal https://codepen.io/jlalovi/details/bIyAr
                                 <img alt="Image" src="{{ asset('images/').'/'.$value->file}}"
                                      class="card-img-top">
                             @endif
+                            <div class="hide">
+                                {{$eeee=rand(5,8)}}
 
-                            {{$eeee=rand(5,8)}}
+                            </div>
                             <div class="card-body m-0">
                                 <h5 class="card-title" style="margin: 0;">اسم الفستان : {{$value->name}}</h5>
                                 <h5 class="card-title" style="margin: 0;">عدد مرات الحجز : {{rand(5,8)}}</h5>
@@ -840,8 +842,10 @@ Css orignal https://codepen.io/jlalovi/details/bIyAr
                                 <img alt="Image" src="{{ asset('images/').'/'.$value->file}}"
                                      class="card-img-top">
                             @endif
+                            <div class="hide">
 
-                            {{$pppp=rand(5,8)}}
+                                {{$pppp=rand(5,8)}}
+                            </div>
                             <div class="card-body m-0">
                                 <h5 class="card-title" style="margin: 0;">اسم الفستان : {{$value->name}}</h5>
                                 <h5 class="card-title" style="margin: 0;">عدد مرات الحجز : {{$pppp}}</h5>
@@ -878,10 +882,14 @@ Css orignal https://codepen.io/jlalovi/details/bIyAr
                             @endif
                             {{--                            <img class="card-img-top" src="#" alt="Card image cap">--}}
                             <div class="card-body m-0">
-                                {{$reservation_count =rand(8,20)}}
+                                <div class="hide">
+
+                                    {{$reservation_count =rand(8,20)}}
+                                </div>
                                 <h5 class="card-title" style="margin: 0;">اسم الاكسسوار : {{$value->name}}</h5>
                                 <h5 class="card-title" style="margin: 0;">عدد مرات الحجز : {{$reservation_count}}</h5>
-                                <h5 class="card-title" style="margin: 0;">المردود المادي : {{$value->price*$reservation_count}}₪</h5>
+                                <h5 class="card-title" style="margin: 0;">المردود المادي
+                                    : {{$value->price*$reservation_count}}₪</h5>
                                 <h5 class="card-title" style="margin: 0;">سعر الاكسسوار : {{$value->price}}</h5>
                                 <h5 class="card-title" style="margin: 0;">موديل الاكسسوار : {{$value->model}}</h5>
                                 <h5 class="card-title" style="margin: 0;">كود الاكسسوار : {{$value->code}}</h5>
@@ -903,10 +911,11 @@ Css orignal https://codepen.io/jlalovi/details/bIyAr
             <div class="row">
 
                 <div class="col-md-6">
-                    <ul class="nav nav-tabs" id="add_yatem_tab" role="tablist" style="margin-top: 15px" >
+                    <ul class="nav nav-tabs" id="add_yatem_tab" role="tablist" style="margin-top: 15px">
 
                         <li class="nav-item">
-                            <a class="nav-link active show" id="parents-tab" data-toggle="tab" href="#parents" role="tab"
+                            <a class="nav-link active show" id="parents-tab" data-toggle="tab" href="#parents"
+                               role="tab"
                                aria-controls="parents" aria-selected="true">تقارير وملفات</a>
                         </li>
 
@@ -924,7 +933,7 @@ Css orignal https://codepen.io/jlalovi/details/bIyAr
                             <th scope="col">تقرير عن البضاعه المتوفرة</th>
                             <td>
                                 <a href="{{url('/available')}}">انقر هنا</a>
-                             </td>
+                            </td>
 
                         </tr>
                         <tr>
@@ -933,12 +942,12 @@ Css orignal https://codepen.io/jlalovi/details/bIyAr
                                 <a href="{{url('/not-available')}}">انقر هنا</a>
                             </td>
                         </tr>
-{{--                        <tr>--}}
-{{--                            <th scope="col">تقرير عن اسعار المنتجات</th>--}}
-{{--                            <td>--}}
-{{--                                <a href="{{url('/')}}">انقر هنا</a>--}}
-{{--                            </td>--}}
-{{--                        </tr>--}}
+                        {{--                        <tr>--}}
+                        {{--                            <th scope="col">تقرير عن اسعار المنتجات</th>--}}
+                        {{--                            <td>--}}
+                        {{--                                <a href="{{url('/')}}">انقر هنا</a>--}}
+                        {{--                            </td>--}}
+                        {{--                        </tr>--}}
                         <tr>
                             <th scope="col">تقرير عن البضاعه المباعه سنويا</th>
                             <td>
@@ -955,10 +964,11 @@ Css orignal https://codepen.io/jlalovi/details/bIyAr
                     </table>
                 </div>
                 <div class="col-md-6">
-                    <ul class="nav nav-tabs" id="add_yatem_tab" role="tablist" style="margin-top: 15px" >
+                    <ul class="nav nav-tabs" id="add_yatem_tab" role="tablist" style="margin-top: 15px">
 
                         <li class="nav-item">
-                            <a class="nav-link active show" id="parents-tab" data-toggle="tab" href="#parents" role="tab"
+                            <a class="nav-link active show" id="parents-tab" data-toggle="tab" href="#parents"
+                               role="tab"
                                aria-controls="parents" aria-selected="true">البوم الصور</a>
                         </li>
 
