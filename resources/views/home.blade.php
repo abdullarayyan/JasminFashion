@@ -806,7 +806,7 @@ Css orignal https://codepen.io/jlalovi/details/bIyAr
                             </div>
                             <div class="card-body m-0">
                                 <h5 class="card-title" style="margin: 0;">اسم الفستان : {{$value->name}}</h5>
-                                <h5 class="card-title" style="margin: 0;">عدد مرات الحجز : {{rand(5,8)}}</h5>
+                                <h5 class="card-title" style="margin: 0;">عدد مرات الحجز : {{$eeee}}</h5>
                                 <h5 class="card-title" style="margin: 0;">المردود المادي : {{$eeee*$value->price}}₪</h5>
                                 <h5 class="card-title" style="margin: 0;">سعر الفستان : {{$value->price}}</h5>
                                 <h5 class="card-title" style="margin: 0;">موديل الفستان : {{$value->model}}</h5>
